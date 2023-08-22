@@ -250,7 +250,17 @@
     iget-object v9, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
     iget-object v9, v9, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
+	
+#	move-object v8, v6
+#	move-object v6, v9
+#	move-object v7, v0
+#	const-string v9, "1"
+#	const-string v10, "2"
+#	const-string v11, "3"
+#	const/4 v12, 0x1
+#	move v12, v5
 
+#	invoke-static/range {v6 .. v12}, Lagc/Agc;->drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
     invoke-static {v9, v0, v6, v5}, Lagc/Agc;->drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_1

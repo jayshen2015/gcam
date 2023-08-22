@@ -101,6 +101,9 @@
     <string name="pref_watermark_logo_oneplus">一加</string>
 	<string name="pref_watermark_logo_hasselblad">苏哈-长</string>
 	<string name="pref_watermark_logo_hasselblad2">苏哈-方</string>
+	<string name="pref_watermark_logo_redmi">红米</string>
+	<string name="pref_watermark_logo_honor">荣耀</string>
+	<string name="pref_watermark_logo_custom">自定义</string>
     <string name="advice_dirty_lens">您可能需要清洁镜头</string>
     <string name="advice_dirty_lens_popup_text">"指纹、油渍或灰尘都可能会污染镜头，肉眼难以发现。
 

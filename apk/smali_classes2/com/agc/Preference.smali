@@ -1248,6 +1248,12 @@
 
     :goto_0
     const/16 v2, 0xc
+	
+	const-string v3, "pref_patch_profile_count_key"
+
+    invoke-static {v3,v2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v2
 
     const/4 v3, 0x1
 

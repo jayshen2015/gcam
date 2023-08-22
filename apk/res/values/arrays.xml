@@ -1953,6 +1953,7 @@
         <item>android.media.action.LONG_EXPOSURE</item>
     </string-array>
     <string-array name="pref_watermark_logo_entries">
+        <item>@string/pref_watermark_logo_custom</item>
         <item>@string/pref_watermark_logo_hasselblad</item>
         <item>@string/pref_watermark_logo_hasselblad2</item>
         <item>@string/pref_watermark_logo_oppo</item>
@@ -1978,8 +1979,11 @@
         <item>@string/pref_watermark_logo_zte</item>
         <item>@string/pref_watermark_logo_poco</item>
         <item>@string/pref_watermark_logo_nuoio</item>
+        <item>@string/pref_watermark_logo_redmi</item>
+        <item>@string/pref_watermark_logo_honor</item>
     </string-array>
     <string-array name="pref_watermark_logo_entryvalues">
+		<item>my.png</item>
         <item>hasselblad.png</item>
         <item>hasselblad2.png</item>
         <item>oppo.png</item>
@@ -2005,6 +2009,8 @@
         <item>zte.png</item>
         <item>poco.png</item>
         <item>nuoio.png</item>
+        <item>redmi.png</item>
+        <item>honor.png</item>
     </string-array>
     <string-array name="pref_watermark_bg_entries">
         <item>@string/pref_card_background_white</item>

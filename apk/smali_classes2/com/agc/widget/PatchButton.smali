@@ -253,32 +253,50 @@
 
     :goto_0
     const/16 v2, 0xc
+	
+	const-string v3, "pref_patch_profile_count_key"
 
-    const-string v3, "lib_profile_show_key_p"
-
-    if-ge v1, v2, :cond_1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+    invoke-static {v3,v2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result v2
+	
 
-    if-nez v2, :cond_0
+    if-ge v1, v2, :cond_1
+    
+	#const-string v3, "lib_profile_title_key_p"
+
+    #new-instance v2, Ljava/lang/StringBuilder;
+
+    #invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    #invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    #move-result-object v2
+
+    #invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    #move-result-object v2
+
+    #invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    #move-result-object v2
+	
+    #invoke-static {v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+	
+	
+	invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/agc/Preference;->getProfileTitle(ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+	
+	invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v3
+	
+    if-nez v3, :cond_0
 
     iget-object v2, p0, Lcom/agc/widget/PatchButton;->items:Ljava/util/List;
 
@@ -333,6 +351,8 @@
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+	
+	const-string v3, "lib_profile_show_key_p"
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

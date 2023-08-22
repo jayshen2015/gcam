@@ -3,7 +3,7 @@
 rem set BP=%~dp0build
 set ROOT=apk/
 set BP=%ROOT%build
-set apkname=111
+set apkname=AGC8.8.224_V5.1.2
 java.exe -jar "apktool-cli.jar" b -f  %ROOT% -o  "%BP%\%apkname%.R.apk"
 zipalign.exe -f -v 4 "%BP%\%apkname%.R.apk" "%BP%\%apkname%.RO.apk"
 del /F /Q  "%BP%\%apkname%.R.apk"
