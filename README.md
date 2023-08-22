@@ -8,3 +8,7 @@
 重建成功后，会在apk目录下的build里面生产apk包。 
 
 ```
+
+
+以下是收录的网页，供参考：
+>1.https://www.celsoazevedo.com/files/android/google-camera/
