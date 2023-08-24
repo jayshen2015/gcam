@@ -2874,3 +2874,40 @@
 
     return-void
 .end method
+
+#invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+.method public static getShutterColor(Landroid/content/res/Resources;)I
+	.locals 3
+	
+	const-string v1, "camera_mode_idle_color"
+
+    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+	
+	move-result-object  v1
+	
+	const/4 v2,0x0
+	
+	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+	
+	if-nez v2, :cond_0
+		
+	invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+	
+	move-result v2
+	
+	return v2
+	
+	:cond_0
+
+    const v1, 0x7f060054
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, v0}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v2
+	
+    return v2
+.end method

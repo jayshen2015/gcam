@@ -252,7 +252,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    const/16 v2, 0xc
+    const/16 v2, 0x2f
 	
 	const-string v3, "pref_patch_profile_count_key"
 
@@ -260,28 +260,31 @@
 
     move-result v2
 	
-
+	const-string v3, "lib_profile_show_key_p"
+	
     if-ge v1, v2, :cond_1
     
-	#const-string v3, "lib_profile_title_key_p"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    #new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    #invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    #invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    #move-result-object v2
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    #invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    #move-result-object v2
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    #invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    #move-result-object v2
-	
-    #invoke-static {v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-nez v2, :cond_0
 	
 	
 	invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;

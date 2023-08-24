@@ -193,6 +193,19 @@
     move-result-object v1
 
     iget-object v2, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
+	
+	
+	invoke-virtual {p0,v2}, Lcom/agc/widget/OptionButton;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	
+	move-result-object v3
+	
+	if-eqz v3, :cond_4
+	
+	invoke-virtual {p0, v3}, Lcom/agc/widget/OptionButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+	
+	goto :goto_3
+	
+	:cond_4
 
     invoke-virtual {p0}, Lcom/agc/widget/OptionButton;->getContext()Landroid/content/Context;
 
@@ -209,7 +222,7 @@
     move-result v1
 
     invoke-virtual {p0, v1}, Lcom/agc/widget/OptionButton;->setImageResource(I)V
-
+	:goto_3
     :cond_3
     return-void
 .end method
@@ -259,7 +272,6 @@
 
     return-void
 .end method
-
 
 # virtual methods
 .method public init(Landroid/content/Context;)V
@@ -440,4 +452,108 @@
     invoke-virtual {p0, v0}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
+.end method
+
+
+.method public getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .locals 5
+
+	const-string v3, "ffffffffffffffffffffffffffffffffffffffffff"
+	const-string v1, ""
+	const-string v4, ""
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "/AGC."
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	const-string v2, "/icons/"
+	
+	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+	
+	invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	const-string v2, ".png"
+	
+	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+	
+	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+	
+	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	
+	move-result-object v1
+	
+	if-eqz v1, :cond_0
+	
+    return-object v1
+	
+	:cond_0
+		
+	const-string v0, "agc_patch_profile_"
+	
+	const-string v2, ""
+	
+	invoke-virtual {p1,v0,v2}, Ljava/lang/String;->replace(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	
+	move-result-object v0
+	
+	invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	const-string v2, ".png"
+	
+	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+	
+	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+	
+	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	
+	move-result-object v1
+	
+	if-nez v1, :cond_1
+	
+	const-string v2, "Drawable is null "
+	
+	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+	
+	:cond_1
+	
+	return-object v1
 .end method

@@ -104,10 +104,6 @@
     <string name="pref_watermark_logo_google">Google</string>
     <string name="pref_watermark_logo_huawei">Huawei</string>
     <string name="pref_watermark_logo_oneplus">Oneplus</string>
-    <string name="pref_watermark_logo_hasselblad">Hasselblad-rect</string>
-    <string name="pref_watermark_logo_hasselblad2">Hasselblad-cube</string>
-	<string name="pref_watermark_logo_redmi">RedMi</string>
-	<string name="pref_watermark_logo_honor">Honor</string>
 	<string name="pref_watermark_logo_custom">Custom</string>
     <string name="advice_dirty_lens">Your lens may need cleaning</string>
     <string name="advice_dirty_lens_popup_text">"Lens smudges aren't always easy to see, and they can come from fingerprints, oil or dirt.
