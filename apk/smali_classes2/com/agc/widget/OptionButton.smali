@@ -456,11 +456,11 @@
 
 
 .method public getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    .locals 5
+    .locals 4
 
 	const-string v3, "ffffffffffffffffffffffffffffffffffffffffff"
 	const-string v1, ""
-	const-string v4, ""
+	#const-string v4, ""
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -491,9 +491,13 @@
 	
 	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 	
-	invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	#invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	
+	#move-result-object v4
+	
+	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 	
@@ -512,48 +516,6 @@
 	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 	
 	move-result-object v1
-	
-	if-eqz v1, :cond_0
-	
-    return-object v1
-	
-	:cond_0
-		
-	const-string v0, "agc_patch_profile_"
-	
-	const-string v2, ""
-	
-	invoke-virtual {p1,v0,v2}, Ljava/lang/String;->replace(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-	
-	move-result-object v0
-	
-	invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	const-string v2, ".png"
-	
-	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-	
-	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-	
-	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-	
-	move-result-object v1
-	
-	if-nez v1, :cond_1
-	
-	const-string v2, "Drawable is null "
-	
-	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-	
-	:cond_1
 	
 	return-object v1
 .end method
