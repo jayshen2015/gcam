@@ -2911,3 +2911,90 @@
 	
     return v2
 .end method
+
+#invoke-static {v1}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+.method public static getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    .locals 5
+
+	const-string v3, "ffffffffffffffffffffffffffffffffffffffffff"
+	
+	const-string v1, ""
+	
+	const-string v4, ""
+	
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "/AGC."
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	const-string v2, "/icons/"
+	
+	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+	
+	invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	const-string v2, ".png"
+	
+	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+	
+	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+	
+	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+	
+	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	
+	move-result-object v1
+	
+	if-eqz v1, :cond_0
+	
+	return-object v1
+		
+	:cond_0
+	
+	const-string v1, "agc_patch_profile_"
+
+    const-string v0, ""
+
+    invoke-virtual {v2, v1, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+	
+	move-result-object v2
+	
+	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+	
+	move-result-object v1
+	
+	return-object v1
+.end method

@@ -193,9 +193,8 @@
     move-result-object v1
 
     iget-object v2, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
-	
-	
-	invoke-virtual {p0,v2}, Lcom/agc/widget/OptionButton;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+		
+	invoke-static {v2}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 	
 	move-result-object v3
 	
@@ -452,70 +451,4 @@
     invoke-virtual {p0, v0}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
-.end method
-
-
-.method public getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    .locals 4
-
-	const-string v3, "ffffffffffffffffffffffffffffffffffffffffff"
-	const-string v1, ""
-	#const-string v4, ""
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "/AGC."
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	const-string v2, "/icons/"
-	
-	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	#invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-	
-	#move-result-object v4
-	
-	invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	const-string v2, ".png"
-	
-	invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-	
-	invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-	
-	invoke-static {v3,v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-	
-	invoke-static {v2}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-	
-	move-result-object v1
-	
-	return-object v1
 .end method
