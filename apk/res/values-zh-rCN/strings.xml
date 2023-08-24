@@ -99,7 +99,7 @@
     <string name="pref_watermark_logo_google">谷歌</string>
     <string name="pref_watermark_logo_huawei">华为</string>
     <string name="pref_watermark_logo_oneplus">一加</string>
-	<string name="pref_watermark_logo_custom">自定义</string>
+	<string name="pref_watermark_logo_my">自定义</string>
     <string name="advice_dirty_lens">您可能需要清洁镜头</string>
     <string name="advice_dirty_lens_popup_text">"指纹、油渍或灰尘都可能会污染镜头，肉眼难以发现。
 

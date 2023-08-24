@@ -1953,7 +1953,7 @@
         <item>android.media.action.LONG_EXPOSURE</item>
     </string-array>
     <string-array name="pref_watermark_logo_entries">
-        <item>@string/pref_watermark_logo_custom</item>
+        <item>@string/pref_watermark_logo_my</item>
         <item>@string/pref_watermark_logo_oppo</item>
         <item>@string/pref_watermark_logo_agc_8.8</item>
         <item>@string/pref_watermark_logo_agc_8.7</item>
@@ -2003,8 +2003,6 @@
         <item>zte.png</item>
         <item>poco.png</item>
         <item>nuoio.png</item>
-        <item>redmi.png</item>
-        <item>honor.png</item>
     </string-array>
     <string-array name="pref_watermark_bg_entries">
         <item>@string/pref_card_background_white</item>
