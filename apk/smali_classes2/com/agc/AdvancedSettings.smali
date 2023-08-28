@@ -93,6 +93,20 @@
     return v0
 .end method
 
+.method public static getAutoNs()I
+    .locals 2
+
+    const-string v0, "pref_auto_ns_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getCompressMergedDNG()Z
     .locals 2
 
@@ -288,6 +302,47 @@
     invoke-static {v2, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
 
     return v1
+.end method
+
+.method public static getMaxZoom(F)F
+    .locals 3
+
+    const-string v0, "pref_max_zoom_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-nez v1, :cond_0
+
+    move v0, p0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "getMaxZoom "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;F)I
+
+    return v0
 .end method
 
 .method public static getMicroVideo()I

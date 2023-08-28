@@ -637,7 +637,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+     invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v3
 
@@ -716,7 +716,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -724,7 +724,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -799,7 +799,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -807,7 +807,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -983,7 +983,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v3
 
@@ -1062,7 +1062,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -1070,7 +1070,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -1739,7 +1739,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v3
 
@@ -1972,7 +1972,7 @@
 
     #invoke-virtual {v1, v14, v12}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v4
 

@@ -9,7 +9,7 @@
 # instance fields
 .field private final extension:Ljava/lang/String;
 
-.field private final folder:Ljava/lang/String;
+.field private final folder:Ljava/io/File;
 
 .field private final fragment:Landroid/preference/Preference;
 
@@ -21,6 +21,28 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/agc/pref/FileLoader;->multipleCount:I
+
+    iput-object p1, p0, Lcom/agc/pref/FileLoader;->fragment:Landroid/preference/Preference;
+
+    iput-object p2, p0, Lcom/agc/pref/FileLoader;->title:Ljava/lang/String;
+
+    iput-object p3, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/io/File;
+
+    iput-object p4, p0, Lcom/agc/pref/FileLoader;->updateKey:Ljava/lang/String;
+
+    iput-object p5, p0, Lcom/agc/pref/FileLoader;->extension:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
@@ -34,7 +56,15 @@
 
     iput-object p2, p0, Lcom/agc/pref/FileLoader;->title:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/lang/String;
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p3}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/io/File;
 
     iput-object p4, p0, Lcom/agc/pref/FileLoader;->updateKey:Ljava/lang/String;
 
@@ -264,6 +294,30 @@
     throw v2
 .end method
 
+.method public static customFiles(Ljava/io/File;)[Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ljava/io/File;->list()[Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    :goto_0
+    return-object v0
+.end method
+
 .method public static customFiles(Ljava/lang/String;)[Ljava/lang/String;
     .locals 1
 
@@ -475,23 +529,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/agc/pref/FileLoader;->fragment:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/io/File;
 
-    invoke-virtual {v0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget-object v1, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    invoke-static {v0, v1}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    iget-object v0, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/io/File;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    :cond_0
+    iget-object v0, p0, Lcom/agc/pref/FileLoader;->folder:Ljava/io/File;
 
     invoke-direct {p0, p1, v0}, Lcom/agc/pref/FileLoader;->copyFile(Ljava/io/File;Ljava/io/File;)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 

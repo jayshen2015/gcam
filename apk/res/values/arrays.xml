@@ -1954,7 +1954,6 @@
     </string-array>
     <string-array name="pref_watermark_logo_entries">
         <item>@string/pref_watermark_logo_my</item>
-        <item>@string/pref_watermark_logo_oppo</item>
         <item>@string/pref_watermark_logo_agc_8.8</item>
         <item>@string/pref_watermark_logo_agc_8.7</item>
         <item>@string/pref_watermark_logo_agc_8.6</item>
@@ -1963,6 +1962,7 @@
         <item>@string/pref_watermark_logo_mi</item>
         <item>@string/pref_watermark_logo_huawei</item>
         <item>@string/pref_watermark_logo_oneplus</item>
+        <item>@string/pref_watermark_logo_oppo</item>
         <item>@string/pref_watermark_logo_vivo</item>
         <item>@string/pref_watermark_logo_samsung</item>
         <item>@string/pref_watermark_logo_sony</item>
@@ -1979,8 +1979,7 @@
         <item>@string/pref_watermark_logo_nuoio</item>
     </string-array>
     <string-array name="pref_watermark_logo_entryvalues">
-		<item>my.png</item>
-        <item>oppo.png</item>
+	<item>my.png</item>
         <item>agc88.png</item>
         <item>agc87.png</item>
         <item>agc86.png</item>
@@ -1989,6 +1988,7 @@
         <item>mi.png</item>
         <item>huawei.png</item>
         <item>oneplus.png</item>
+        <item>oppo.png</item>
         <item>vivo.png</item>
         <item>samsung.png</item>
         <item>sony.png</item>
@@ -5534,6 +5534,16 @@
         <item>HEXAGON</item>
         <item>Off (as in library)</item>
     </string-array>
+    <string-array name="pref_auto_ns_entries">
+        <item>@string/all_default_off</item>
+        <item>@string/all_default_auto</item>
+        <item>@string/all_default_always</item>
+    </string-array>
+    <string-array name="pref_auto_ns_entryvalues">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+    </string-array>
     <string-array name="lib_hex_hdrmodel_entries">
         <item>1</item>
         <item>2 (barbet)</item>
@@ -6473,7 +6483,7 @@
         <item>Off (as in library)</item>
     </string-array>
     <string-array name="lib_hex_setuxmode_entries">
-        <item>Hdr Plus ON</item>
+        <item>Hdr Plus ON (ZSL)</item>
         <item>Hdr Plus Enhanced</item>
         <item>Portrait</item>
         <item>Night Sight</item>
@@ -6482,12 +6492,12 @@
         <item>Off (as in library)</item>
     </string-array>
     <string-array name="lib_hex_setuxmode_entryvalues">
-        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
         <item>Off (as in library)</item>
     </string-array>
     <string-array name="lib_hex_smoothingsabre_entries">

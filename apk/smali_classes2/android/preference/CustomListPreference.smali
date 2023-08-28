@@ -240,9 +240,9 @@
 .method initCustomLut(Landroid/content/Context;)V
     .locals 2
 
-    const-string v0, "lut_data"
+    sget-object v0, Lcom/Globals;->lutFolder:Ljava/io/File;
 
-    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 

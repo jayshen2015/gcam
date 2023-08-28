@@ -642,13 +642,20 @@
 .end method
 
 .method public getRawSizeH()I
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/agc/Camera;->rawSizes:[Landroid/util/Size;
 
-    const/4 v1, 0x0
+    array-length v1, v0
 
-    aget-object v0, v0, v1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    return v2
+
+    :cond_0
+    aget-object v0, v0, v2
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
@@ -658,13 +665,20 @@
 .end method
 
 .method public getRawSizeW()I
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/agc/Camera;->rawSizes:[Landroid/util/Size;
 
-    const/4 v1, 0x0
+    array-length v1, v0
 
-    aget-object v0, v0, v1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    return v2
+
+    :cond_0
+    aget-object v0, v0, v2
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 

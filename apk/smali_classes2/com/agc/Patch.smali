@@ -3,10 +3,6 @@
 .source "Patch.java"
 
 
-# static fields
-.field public static final profileCount:I = 0xc
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -183,4 +179,24 @@
     invoke-static {v2, v1}, Lcom/agc/CrashHandler;->logWriteToFile(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
+.end method
+
+.method public static profileCount()I
+    .locals 2
+
+    const-string v0, "pref_patch_profile_count_key"
+
+    const/16 v1, 0xc
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    return v0
 .end method

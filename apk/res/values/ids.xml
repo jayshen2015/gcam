@@ -580,6 +580,7 @@
     <item type="id" name="zoom_toggle_wide" />
     <item type="id" name="zoom_ui" />
     <item type="id" name="zoom_ui_seekbar" />
+    <item type="id" name="proc_indecator" />
     <item type="id" name="options_menu_standalone_load_configs" />
     <item type="id" name="telegram_btn" />
     <item type="id" name="telegram_photography_btn" />

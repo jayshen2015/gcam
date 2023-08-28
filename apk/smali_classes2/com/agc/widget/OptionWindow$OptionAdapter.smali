@@ -112,19 +112,19 @@
 
     iget-object v5, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
 
-	const-string v8, ""
-		
-	invoke-static {v5}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-	
-	move-result-object v8
-	
-	if-eqz v8, :cond_1
-	
-	invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-	
-	goto :goto_2
-	
-	:cond_1
+    const-string v8, ""
+    
+    invoke-static {v5}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    
+    move-result-object v8
+    
+    if-eqz v8, :cond_1
+    
+    invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    
+    goto :goto_2
+    
+    :cond_1
 	
     iget-object v6, p0, Lcom/agc/widget/OptionWindow$OptionAdapter;->mContext:Landroid/content/Context;
 
@@ -135,13 +135,22 @@
     const-string v7, "drawable"
 
     invoke-virtual {v4, v5, v7, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    
-	
-	move-result v4
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
+    move-result v8
+    
+    if-nez v8, :cond_2
+    
+    const-string v5, "agc_lib_patcher"
+    
+    invoke-virtual {v4, v5, v7, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    
+    move-result v8
+    
+    :cond_2
+
+    invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 	
-	:goto_2
+    :goto_2
 
     const-string v3, "agc_option_tv"
 

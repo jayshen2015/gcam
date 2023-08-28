@@ -75,13 +75,16 @@
 .method public static native devSetting(Ljava/lang/String;)Z
 .end method
 
+.method public static native downloadFilePath(Ljava/lang/String;)V
+.end method
+
 .method public static native drawTimeWaterMark(Ljava/lang/String;)V
 .end method
 
 .method public static native drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
-.method public static native drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public static native drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
 .method public static native experimentalKeys(I)V
@@ -237,6 +240,9 @@
 .method public static native isRealmeDevice()Z
 .end method
 
+.method public static native isRedmiNote11()Z
+.end method
+
 .method public static native isRedmiNote9()Z
 .end method
 
@@ -384,7 +390,7 @@
 .method public static native preferenceImport(Ljava/lang/String;Ljava/lang/String;)I
 .end method
 
-.method public static native processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static native processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 .end method
 
 .method public static native ramPatcher(Ljava/lang/String;)V

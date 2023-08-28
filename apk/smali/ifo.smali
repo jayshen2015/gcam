@@ -119,7 +119,7 @@
 
     #invoke-virtual {p1, v4, v5}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-static {p1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {p1}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v4
 

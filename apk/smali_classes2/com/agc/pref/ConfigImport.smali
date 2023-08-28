@@ -487,6 +487,12 @@
 
     move-result-object v1
 
+    const/16 v2, 0xa
+
+    invoke-virtual {v1, v2}, Lcom/gcam/simple/filechooser/ChooserDialog;->withMultipleCount(I)Lcom/gcam/simple/filechooser/ChooserDialog;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Lcom/gcam/simple/filechooser/ChooserDialog;->build()Lcom/gcam/simple/filechooser/ChooserDialog;
 
     move-result-object v1
@@ -702,7 +708,7 @@
 .end method
 
 .method public onChoosePathList(Ljava/util/List;)V
-    .locals 0
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -712,6 +718,81 @@
         }
     .end annotation
 
+    :try_start_0
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/io/File;
+
+    iget-object v2, p0, Lcom/agc/pref/ConfigImport;->preference:Landroid/preference/Preference;
+
+    invoke-virtual {v2}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/agc/pref/ConfigImport;->processFile(Landroid/content/Context;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :cond_0
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "agc_config_import_failed"
+
+    invoke-static {v1}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/agc/pref/ConfigImport;->preference:Landroid/preference/Preference;
+
+    invoke-virtual {v2}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2, v1, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+
+    :goto_1
     return-void
 .end method
 

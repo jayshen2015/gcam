@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 12
+    .locals 13
 
     const-string v0, ""
 
@@ -79,80 +79,88 @@
 
     move-result-object v4
 
+    const-string v5, "lib_lut_intensity_key"
+
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    invoke-static {v5, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v5
+
     if-eqz v4, :cond_1
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_1
+    if-nez v6, :cond_1
 
     const/4 v2, 0x1
-
-    iget-object v5, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
-
-    iget-object v5, v5, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
 
     iget-object v6, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
     iget-object v6, v6, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
 
-    invoke-static {v5, v6, v4}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v7, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
+
+    iget-object v7, v7, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
+
+    invoke-static {v6, v7, v4, v5, v0}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 
     :cond_1
-    const-string v5, "pref_photo_watermark_key"
+    const-string v6, "pref_photo_watermark_key"
 
-    invoke-static {v5}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v6
 
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
-    if-ne v5, v6, :cond_7
+    if-ne v6, v7, :cond_7
 
     const/4 v2, 0x1
 
-    const-string v5, "pref_watermark_bg_key"
+    const-string v6, "pref_watermark_bg_key"
 
-    invoke-static {v5}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v6
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    if-ne v5, v6, :cond_2
+    if-ne v6, v7, :cond_2
 
     goto :goto_0
 
     :cond_2
-    move v6, v7
+    move v7, v8
 
     :goto_0
-    move v5, v6
+    move v6, v7
 
-    const-string v6, "pref_watermark_type_key"
+    const-string v7, "pref_watermark_type_key"
 
-    invoke-static {v6, v7}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_6
+    if-nez v7, :cond_6
 
-    const-string v6, "pref_watermark_title_key"
+    const-string v7, "pref_watermark_title_key"
 
-    invoke-static {v6, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "pref_watermark_logo_key"
-
-    invoke-static {v7}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    if-eqz v7, :cond_3
+    const-string v8, "pref_watermark_logo_key"
 
-    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v8}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_3
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -161,42 +169,42 @@
     :cond_3
     const-string v0, "agc88.png"
 
-    move-object v7, v0
+    move-object v8, v0
 
     :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v8, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+    sget-object v9, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
 
-    invoke-static {v8}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v9}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v8, "/AGC."
+    const-string v9, "/AGC."
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v9, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v9, "/logos/"
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v8, Lcom/Globals;->GcamVersion:Ljava/lang/String;
-
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v8, "/logos/"
-
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -204,64 +212,54 @@
 
     move-result-object v0
 
-    new-instance v8, Ljava/io/File;
+    new-instance v9, Ljava/io/File;
 
-    invoke-direct {v8, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+    invoke-virtual {v9}, Ljava/io/File;->exists()Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_5
+    if-nez v10, :cond_5
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v10
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "logos/"
+    const-string v12, "logos/"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v10
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v9
-
-    move-object v0, v9
+    move-object v0, v10
 
     :cond_5
-    iget-object v9, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
+    iget-object v10, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
-    iget-object v9, v9, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
-	
-#	move-object v8, v6
-#	move-object v6, v9
-#	move-object v7, v0
-#	const-string v9, "1"
-#	const-string v10, "2"
-#	const-string v11, "3"
-#	const/4 v12, 0x1
-#	move v12, v5
+    iget-object v10, v10, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
 
-#	invoke-static/range {v6 .. v12}, Lagc/Agc;->drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    invoke-static {v9, v0, v6, v5}, Lagc/Agc;->drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v10, v0, v7, v6}, Lagc/Agc;->drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_1
 

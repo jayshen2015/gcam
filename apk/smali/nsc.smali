@@ -5599,21 +5599,7 @@
 
     invoke-static/range {v3 .. v8}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_scene_flicker_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/SceneFlicker;)V
 
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v2, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    sput v3, Lcom/Globals;->ISOsystem:I
-
-    sput v3, Lcom/Globals;->ISO:I
+    invoke-static {v2}, LAGC;->setSensorISO(Lkou;)V
 
     const-string v12, "noise"
 
@@ -7397,6 +7383,8 @@
     :cond_51
     :goto_32
     return-object v13
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

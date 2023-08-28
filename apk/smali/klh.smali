@@ -885,6 +885,33 @@
 .method public final b()F
     .locals 2
 
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_ZOOM_RATIO_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {p0, v0}, Lklh;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getMaxZoom(F)F
+
+    move-result v0
+
+    return v0
+
+    :cond_0
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_AVAILABLE_MAX_DIGITAL_ZOOM:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -900,6 +927,10 @@
     check-cast v0, Ljava/lang/Float;
 
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getMaxZoom(F)F
 
     move-result v0
 

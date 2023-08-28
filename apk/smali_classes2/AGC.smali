@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static cameraDeviceInstance:Landroid/hardware/camera2/CameraDevice;
-
 .field public static gcaConfig:Ldit;
+
+.field public static linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
 
 .field private static logFormat:Lcom/agc/LogData$Format;
 
@@ -358,6 +358,58 @@
 
     :goto_0
     return v0
+.end method
+
+.method public static ProcIndicatorSwitch(I)V
+    .locals 2
+
+    const-string v0, "proc_indecator"
+
+    if-eqz p0, :cond_0
+
+    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
+
+    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+
+    invoke-static {v0}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
+
+    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+
+    invoke-static {v0}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p0
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :goto_0
+    return-void
 .end method
 
 .method private static convertToNrg(I)Lnrg;
@@ -2197,48 +2249,6 @@
 
     invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
 
-    const-string v0, "pref_enabled_catshark_key"
-
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    if-ne v0, v3, :cond_0
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldhq;->ac:Ldhj;
-
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldhq;->ad:Ldhj;
-
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldhq;->ac:Ldhj;
-
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldhq;->ad:Ldhj;
-
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldhu;->i:Ldhj;
-
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    :goto_0
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhw;->q:Ldhj;
@@ -2484,6 +2494,26 @@
     sget-object v1, Ldho;->aa:Ldhj;
 
     invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+
+    return-void
+.end method
+
+.method public static setSensorISO(Lkou;)V
+    .locals 1
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    sput p0, Lcom/Globals;->ISOsystem:I
 
     return-void
 .end method

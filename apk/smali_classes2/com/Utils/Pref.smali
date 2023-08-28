@@ -2996,5 +2996,8 @@
 	
 	move-result-object v1
 	
+	# if-eqz v1, :cond_1  #agc_lib_patcher
+	
 	return-object v1
+	
 .end method

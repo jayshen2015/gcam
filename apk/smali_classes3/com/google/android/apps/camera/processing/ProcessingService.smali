@@ -330,6 +330,10 @@
 .method public final onCreate()V
     .locals 5
 
+    const v1, 0x1
+
+    invoke-static {v1}, LAGC;->ProcIndicatorSwitch(I)V
+
     invoke-direct {p0}, Lcom/google/android/apps/camera/processing/ProcessingService;->d()V
 
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -602,6 +606,8 @@
     sput v0, Lcom/Globals;->sHdr_process:I
 
     invoke-static {v0}, Lcom/Globals;->sHdrProcessTime(I)V
+
+    invoke-static {v0}, LAGC;->ProcIndicatorSwitch(I)V
 
     return-void
 

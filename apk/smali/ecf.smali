@@ -277,13 +277,13 @@
 
     move-result-object v3
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_15
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_15
 
     const-string p1, "_t"
 
@@ -295,7 +295,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     move-object v2, p1
 
@@ -1038,6 +1038,14 @@
 
     move-result v5
 
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getAutoNs()I
+
+    move-result v7
+
+    if-gtz v7, :cond_12
+
+    if-ltz v7, :cond_13
+
     if-eqz v5, :cond_11
 
     check-cast v0, Leal;
@@ -1054,15 +1062,16 @@
     :goto_6
     cmpl-float v2, p1, v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_13
 
     cmpg-float p1, p1, v0
 
-    if-gez p1, :cond_12
-
-    goto :goto_7
+    if-gez p1, :cond_13
 
     :cond_12
+    goto :goto_7
+
+    :cond_13
     const/4 v3, 0x0
 
     :goto_7
@@ -1106,13 +1115,13 @@
 
     move-result p1
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_14
 
     check-cast v0, Ldaf;
 
     invoke-virtual {v0, v1}, Ldaf;->t(Lgeh;)V
 
-    :cond_13
+    :cond_14
     return-void
 
     :pswitch_13
@@ -1136,7 +1145,7 @@
 
     return-void
 
-    :cond_14
+    :cond_15
     :goto_8
     check-cast v1, Ljvk;
 

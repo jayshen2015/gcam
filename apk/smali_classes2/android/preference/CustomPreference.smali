@@ -242,9 +242,9 @@
 
     new-instance v6, Lcom/agc/pref/FileLoader;
 
-    const-string v2, "Import Lut File"
+    sget-object v3, Lcom/Globals;->lutFolder:Ljava/io/File;
 
-    const-string v3, "lut_data"
+    const-string v2, "Import Lut File"
 
     const-string v4, ""
 
@@ -254,7 +254,7 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v0, 0xa
 

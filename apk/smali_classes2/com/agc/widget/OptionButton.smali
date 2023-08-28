@@ -218,10 +218,19 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/widget/OptionButton;->setImageResource(I)V
-	:goto_3
+    move-result v0
+    
+    if-nez v0, :cond_5
+    
+    const-string v2, "agc_lib_patcher"
+    
+    invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    
+    move-result v0
+    
+    :cond_5
+    invoke-virtual {p0, v0}, Lcom/agc/widget/OptionButton;->setImageResource(I)V
+    :goto_3
     :cond_3
     return-void
 .end method

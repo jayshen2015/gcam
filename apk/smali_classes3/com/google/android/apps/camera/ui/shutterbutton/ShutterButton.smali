@@ -1024,15 +1024,15 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentPhotoCirclePaint:Landroid/graphics/Paint;
 
-    #invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
 
-    #move-result-object v3
+    move-result-object v3
 
     #const v4, 0x7f060054
 
     #invoke-virtual {v3, v4, v1}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-	invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getShutterColor()I
+    invoke-static {v3}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v3
 
@@ -1046,8 +1046,6 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentInnerPortraitRingPaint:Landroid/graphics/Paint;
 
-   
-
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -1055,12 +1053,10 @@
     const v4, 0x7f0607a4
 
     invoke-virtual {v3, v4, v1}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-		
-	move-result v3
+
+    move-result v3
 
     invoke-virtual {p1, v3}, Landroid/graphics/Paint;->setColor(I)V
-	
-	
 
     new-instance p1, Landroid/graphics/Paint;
 
@@ -2516,7 +2512,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentInnerPortraitRingPaint:Landroid/graphics/Paint;
-	
+
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -2593,17 +2589,15 @@
 
     :cond_0
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentInnerPortraitRingPaint:Landroid/graphics/Paint;
-	
 
-    #invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
 
-    #move-result-object v2
+    move-result-object v2
 
     #const v3, 0x7f060054
 
-    #invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-	invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getShutterColor()I
+    #invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I 
+    invoke-static {v2}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 
@@ -4058,44 +4052,4 @@
     :cond_1
     :goto_0
     return-void
-.end method
-
-.method public getShutterColor()I
-	.locals 3
-	
-	const-string v1, "camera_mode_idle_color"
-
-    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
-	
-	move-result-object  v1
-	
-	const/16 v2,0x0
-	
-	invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v2
-	
-	if-nez v2, :cond_0
-		
-	invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-	
-	move-result v2
-	
-	return v2
-	
-	:cond_0
-	
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v1, 0x7f060054
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v2, v1, v0}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-
-    move-result v2
-	
-    return v2
 .end method
