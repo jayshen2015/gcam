@@ -31,7 +31,7 @@ rmdir /S /Q %BP%
 java.exe -jar "apktool-cli.jar" b -f  %ROOT% -o  "%BP%\%apkname%.R.apk"
 zipalign.exe -f -v 4 "%BP%\%apkname%.R.apk" "%BP%\%apkname%.RO.apk"
 del /F /Q  "%BP%\%apkname%.R.apk"
-java -jar  signapk.jar gcam.x509.pem gcam.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
+java -jar  signapk.jar %pkg%.x509.pem %pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 
 d:\un\unload.bat
