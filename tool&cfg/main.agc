@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <map>
+<string name="my_hidden_kaka_items">1</string>
 <string name="pref_qjpg_key">99</string>
 <string name="lib_sharp_depth_1_key">Off (as in library)</string>
 <string name="lib_sabre_sharp_tuning_details_l9_key">Off (as in library)</string>

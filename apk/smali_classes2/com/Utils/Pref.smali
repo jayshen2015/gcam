@@ -3001,3 +3001,28 @@
 	return-object v1
 	
 .end method
+
+.method public static isHideKaKaItems()Z
+    .locals 2
+
+	const-string v0,"my_hidden_kaka_items"
+	
+    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+	
+	move-result v0
+	 
+	const/4 v1, 0x1
+	
+	if-ne v0, v1, :cond_0
+	
+		const/4 v1, 0x1
+		
+		return v1
+		
+	:cond_0
+	
+	const/4 v1, 0x0
+	
+	return v1
+	
+.end method
