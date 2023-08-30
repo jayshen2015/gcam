@@ -10,5 +10,10 @@
 ```
 
 
+[我要反馈](https://github.com/jayshen2015/gcam/issues) | 
+[我要分享](https://github.com/jayshen2015/gcam/issues) | 
+[我要讨论](https://github.com/jayshen2015/gcam/issues) 
+
 以下是收录的网页，供参考：
 >1.https://www.celsoazevedo.com/files/android/google-camera/
+>2.https://svgconverter.com/svg-to-png

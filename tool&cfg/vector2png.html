@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://static.runoob.com/assets/canvas2image/canvas2image.js"></script>
+<style>
+#img2{
+width: 300px;
+height:300px;
+border-radius: 5px;
+border: 10px solid #ccc;
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAIAAAD9MqGbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAsSURBVDhPY/iPF7zEDUZ1ggFUFTYwYnRCaRwAagA2MKoTDKCqsIGhpPP/fwBKigiaP80xegAAAABJRU5ErkJggg==);
+}
+
+</style>
+</head>
+<body>
+<div style="display:flex;height: 100%;">
+	<div style="height:90%;width:60%">
+		<p>将drawable中的矢量图标XML内容粘贴到此处V</p>
+		<textarea id='txt' style="height:100%;width:90%"></textarea>
+		<button onclick="zh()">转换</button>
+	</div>
+	<div style="height:90%;width:30%">
+		<p>可以右键图片另存为,点击可刷新</p>
+		<img id="img2" onclick="zh()" >
+	</div>
+</div>
+<img style="display:none"  id="img" >
+<div style="display:none" id="xmlTmp"></div>
+
+<script>
+var img =document.getElementById("img") 
+var img2 =document.getElementById("img2") 
+var txt =document.getElementById("txt")
+var xmlTmp=document.getElementById("xmlTmp")
+img.onload = function() {
+	  const width = img2.width;
+	  const height = img2.height;
+	  console.log(width,height);
+	  const canvas = document.createElement('canvas');
+	  
+	  canvas.setAttribute('width', width)
+	  canvas.setAttribute('height', height)
+	  const context = canvas.getContext('2d')
+	  context.drawImage(this, 0, 0, width, height)
+	  
+	img2.src=canvas.toDataURL('image/png', 1.0);
+	/*var aLink = document.createElement('a');
+	  aLink.style.display = "none";
+	  aLink.href = canvas.toDataURL('image/png', 1.0);//
+	  aLink.download = "图标" + ("-" + new Date().getTime()).substr(-4, 4); 
+	  document.body.appendChild(aLink);
+	  aLink.click();
+	  document.body.removeChild(aLink);*/
+} 
+
+function zh(){
+	xmlTmp.innerHTML=txt.value;
+	var v=xmlTmp.getElementsByTagName("vector")[0];
+	var w=300,h=300;
+	try{ w=v.attributes["android:viewportwidth"].value;}catch(e){ w=v.attributes["android:width"].value; }
+	try{ h=v.attributes["android:viewportheight"].value;}catch(e){ w=v.attributes["android:height"].value; }
+	var childCnt=v.children.length;
+	var svgInnerHtml="";
+	for(var i=0;i<childCnt;i++){
+		var tmp=v.children[i];
+		var d=tmp.attributes["android:pathData"].value;
+		var fill=tmp.attributes["android:fillColor"].value;
+		svgInnerHtml+=`<${tmp.tagName.toLowerCase()} fill="${fill}" d="${d}" />`;
+	}
+	var svgHtml=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${svgInnerHtml}</svg>` ;
+	console.log(svgHtml)
+	const svgDataBase64 = btoa(unescape(encodeURIComponent(svgHtml)));
+	img2.width=w;
+	img2.height=h;
+	img.width=w;
+	img.height=h;
+	const svgDataUrl = `data:image/svg+xml;charset=utf-8;base64,${svgDataBase64}`
+	img.src = svgDataUrl;
+}
+
+</script>
+</body>
+</html>
