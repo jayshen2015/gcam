@@ -104,7 +104,6 @@
     <string name="pref_watermark_logo_agc">AGC8.4</string>
     <string name="pref_watermark_logo_leica">Leica</string>
     <string name="pref_watermark_logo_mi">Mi</string>
-    <string name="pref_watermark_logo_my">Custom</string>
     <string name="advice_dirty_lens">Your lens may need cleaning</string>
     <string name="advice_dirty_lens_popup_text">"Lens smudges aren't always easy to see, and they can come from fingerprints, oil or dirt.
 

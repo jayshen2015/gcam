@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="pref_get_agctoolkit_title">AGC 工具包</string>
-    <string name="pref_get_agctoolkit_summary">点击下载 AGC 工具包获取 LUT 文件</string>
+    <string name="pref_get_agctoolkit_summary">下载 AGC 工具包件</string>
     <string name="pref_about_us_title">关于我们</string>
     <string name="abc_action_bar_up_description">转到上一层级</string>
     <string name="pref_about_us_summary">AGC 工具包 链接、最新动态</string>
     <string name="abc_action_mode_done">完成</string>
-    <string name="pref_gcamtools_title">点击下载 AGC 工具包</string>
+    <string name="pref_gcamtools_title">下载 AGC 工具包</string>
     <string name="pref_gcamtools_summary">AGC 工具包支持使用LUT处理照片、添加水印、调整配置、查看libpatch书签</string>
     <string name="abc_capital_off">关闭</string>
     <string name="abc_capital_on">开启</string>
@@ -98,7 +98,6 @@
     <string name="pref_card_background_black">黑色</string>
     <string name="pref_watermark_logo_leica">徕卡</string>
     <string name="pref_watermark_logo_mi">小米</string>
-    <string name="pref_watermark_logo_my">自定义</string>
     <string name="advice_dirty_lens">您可能需要清洁镜头</string>
     <string name="advice_dirty_lens_popup_text">"指纹、油渍或灰尘都可能会污染镜头，肉眼难以发现。
 
@@ -1944,4 +1943,33 @@ SM8150 = 32770, SM8250 = 40962"</string>
     <string name="color_mix_saturation">饱和度</string>
     <string name="color_mix_luminance">亮度</string>
     <string name="color_mix_done">完成</string>
+	
+
+    <string name="my_watermark_dateformat_summary">yyyy|MM|dd|HH|mm|ss分别会替换成年|月|日|时|分|秒的数字,\n其余内容不会被替换但要用英文下的单引号引用，例如：yyyy-MM-dd HH:mm:ss \'by nan_ren\'\n更多高级格式可以百度"JAVA 日期格式"</string>
+    <string name="my_watermark_dateformat_title">水印日期格式</string>
+	
+	<string name="my_watermark_location_summary">使用经纬度信息而不是时间，开启后水印将不显示时间信息</string>
+    <string name="my_watermark_location_title">水印显示经纬度</string>
+
+	
+	    <string name="my_patch_profile_title">配置设置</string>
+    <string name="my_patch_profile_summary">更换配置图标, 数量</string>
+		
+	<string name="my_hidden_kaka_items_summary">隐藏配置中顶部的3个配置项</string>
+    <string name="my_hidden_kaka_items_title">是否隐藏顶部3个配置</string>
+	
+	<string name="camera_mode_idle_color_summary">前两位代表透明度，后6位代表红黄蓝</string>
+    <string name="camera_mode_idle_color_title">快门颜色</string>
+	
+	
+	<string name="my_watermark_height_title">水印高度</string>
+    <string name="my_watermark_height_summary">水印高度，默认是450，可以根据自己喜欢调整，高度和字体大小最好一起调整达到喜欢的效果</string>
+	
+	<string name="my_watermark_fontsize_title">水印字体大小</string>
+    <string name="my_watermark_fontsize_summary">字体大小，默认80</string>
+		
+	<string name="my_watermark_asnew_title">保留原图</string>
+    <string name="my_watermark_asnew_summary">选中后，会同时保留原图和带水印的图</string>
+	
+	
 </resources>

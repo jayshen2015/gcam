@@ -1953,7 +1953,6 @@
         <item>android.media.action.LONG_EXPOSURE</item>
     </string-array>
     <string-array name="pref_watermark_logo_entries">
-        <item>@string/pref_watermark_logo_my</item>
         <item>@string/pref_watermark_logo_agc_8.8</item>
         <item>@string/pref_watermark_logo_agc_8.7</item>
         <item>@string/pref_watermark_logo_agc_8.6</item>
@@ -1979,7 +1978,6 @@
         <item>@string/pref_watermark_logo_nuoio</item>
     </string-array>
     <string-array name="pref_watermark_logo_entryvalues">
-	<item>my.png</item>
         <item>agc88.png</item>
         <item>agc87.png</item>
         <item>agc86.png</item>

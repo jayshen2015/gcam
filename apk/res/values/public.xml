@@ -2820,8 +2820,11 @@
     <public type="color" name="zoom_toggle_bar_text_color" id="0x7f060a93" />
     <public type="color" name="zoom_toggle_button_background_color" id="0x7f060a95" />
     <public type="color" name="zoom_toggle_unselect_background_color" id="0x7f060a96" />
-    <public type="color" name="settingslib_surface_dark" id="0x7f060938" />
-    <public type="color" name="settingslib_switch_track_on" id="0x7f06093d" />
+    <public type="color" name="settingslib_surface_dark" id="0x7f060a97" />
+    <public type="color" name="settingslib_switch_track_on" id="0x7f060a98" />
+    <public type="color" name="all_photos_grid_shadow" id="0x7f060a99" />
+    <public type="color" name="all_photos_grid_text" id="0x7f060a9a" />
+    <public type="color" name="account_settings_icon_background" id="0x7f060a9b" />
     <public type="dimen" name="abc_action_bar_content_inset_material" id="0x7f070000" />
     <public type="dimen" name="abc_action_bar_content_inset_with_nav" id="0x7f070001" />
     <public type="dimen" name="abc_action_bar_default_height_material" id="0x7f070002" />
@@ -8298,7 +8301,24 @@
     <public type="string" name="color_mix_saturation" id="0x7f14082c" />
     <public type="string" name="color_mix_luminance" id="0x7f14082d" />
     <public type="string" name="color_mix_done" id="0x7f14082e" />
-    <public type="string" name="pref_watermark_logo_my" id="0x7f14082f" />
+	
+    <public type="string" name="my_patch_profile_title" id="0x7f140830" />
+    <public type="string" name="my_watermark_dateformat_title" id="0x7f140831" />
+    <public type="string" name="my_watermark_dateformat_summary" id="0x7f140832" />
+    <public type="string" name="my_watermark_location_title" id="0x7f140833" />
+    <public type="string" name="my_watermark_location_summary" id="0x7f140834" />
+    <public type="string" name="camera_mode_idle_color_title" id="0x7f140835" />
+    <public type="string" name="camera_mode_idle_color_summary" id="0x7f140836" />
+    <public type="string" name="my_hidden_kaka_items_title" id="0x7f140837" />
+    <public type="string" name="my_hidden_kaka_items_summary" id="0x7f140838" />
+    <public type="string" name="my_watermark_height_title" id="0x7f140839" />
+    <public type="string" name="my_watermark_height_summary" id="0x7f14083a" />
+    <public type="string" name="my_watermark_fontsize_title" id="0x7f14083b" />
+    <public type="string" name="my_watermark_fontsize_summary" id="0x7f14083c" />
+    <public type="string" name="my_watermark_asnew_title" id="0x7f14083d" />
+    <public type="string" name="my_watermark_asnew_summary" id="0x7f14083e" />
+
+	
     <public type="style" name="AlertDialog.AppCompat" id="0x7f150000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f150001" />
     <public type="style" name="AlertDialogBodyText.BigTitle.Centered" id="0x7f150002" />

@@ -819,4 +819,8 @@
     <color name="zoom_toggle_bar_text_color">#ffffffff</color>
     <color name="zoom_toggle_button_background_color">?colorSecondary</color>
     <color name="zoom_toggle_unselect_background_color">#339a9a9a</color>
+    
+    <color name="all_photos_grid_shadow">#23368a</color>
+    <color name="all_photos_grid_text">#801ac5</color>
+    <color name="account_settings_icon_background">#f2df07</color>
 </resources>

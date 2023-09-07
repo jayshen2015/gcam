@@ -1,2 +1,16 @@
 apk/lib/**/*
 apk/build/**/*
+MyGcam/*.iml
+MyGcam/.gradle
+MyGcam/local.properties
+MyGcam/.idea/caches
+MyGcam/.idea/libraries
+MyGcam/.idea/modules.xml
+MyGcam/.idea/workspace.xml
+MyGcam/.idea/navEditor.xml
+MyGcam/.idea/assetWizardSettings.xml
+MyGcam/.DS_Store
+MyGcam/build
+MyGcam/captures
+MyGcam/.externalNativeBuild
+MyGcam/.cxx
