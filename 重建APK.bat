@@ -26,6 +26,10 @@ del /F /Q %ROOT%AndroidManifest.xml
 echo %ROOT%AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
 copy %ROOT%AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
 
+del /F /Q %ROOT%res\xml\shortcuts.xml
+echo %ROOT%res\xml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
+copy %ROOT%res\xml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
+
 rmdir /S /Q %BP%
 
 java.exe -jar "apktool-cli.jar" b -f  %ROOT% -o  "%BP%\%apkname%.R.apk"

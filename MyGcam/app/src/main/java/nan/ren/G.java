@@ -16,13 +16,19 @@ import com.agc.Camera;
 import java.util.List;
 
 public class G {
+    public static String PACKAGE_NAME="";
     public static boolean SHOW_TASK_LOG=false;
     public static Context CONTEXT;
     public static Resources RESOURCES;
+
+    public static String BASE_AGC_PATH="/sdcard/download/AGC.8.8";
+
     static {
         SHOW_TASK_LOG= Pref.MenuValue("show_task_log")==1;
         CONTEXT=Globals.getAppContext();
         RESOURCES=CONTEXT.getResources();
+        BASE_AGC_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion;
+        PACKAGE_NAME = CONTEXT.getPackageName();
     }
 // my_watermark_asnew
 // my_watermark_dateformat_enable
@@ -64,28 +70,7 @@ public class G {
      }
 
      public static Drawable getMyIcon(String str) {
-        try {
-            String logoFileName=str.toLowerCase().trim();
-            if(!logoFileName.endsWith(".png")&&!logoFileName.endsWith(".jpg")&&!logoFileName.endsWith(".jpeg"))logoFileName=logoFileName+".png";
-            String baseDownloadPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/icons/";
-            Drawable extDrawable = Drawable.createFromPath(baseDownloadPath + logoFileName);
-            if(extDrawable!=null) return extDrawable;
-            extDrawable=   Drawable.createFromPath(baseDownloadPath + logoFileName.replace("agc_patch_profile_", "") );
-            if(extDrawable!=null) return extDrawable;
-
-            String packageName = CONTEXT.getPackageName();
-            int identifier = RESOURCES.getIdentifier(str, "drawable", packageName);
-            if (identifier == 0) {
-                identifier = RESOURCES.getIdentifier("agc_lib_patcher", "drawable", packageName);
-            }
-            if(identifier!=0)return  RESOURCES.getDrawable(identifier, null);
-            return null;
-        }catch (Exception ex){
-            return null;
-        }catch (Throwable ex){
-            return null;
-        }
-
+        return ImageUtil.getMyIcon(str);
     }
 
     public static List<Camera> getAllCameras(List<Camera> llist){
@@ -116,5 +101,6 @@ public class G {
     public static void saveExifInterface(ExifInterface exif)  {
         ExifInterfaceUtil.saveExifInterface(exif);
     }
+
 
 }

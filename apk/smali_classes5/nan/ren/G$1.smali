@@ -27,7 +27,7 @@
 .method constructor <init>(Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
 
-    .line 38
+    .line 44
     iput-object p1, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
 
     iput-object p2, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
@@ -42,14 +42,14 @@
 .method public run()V
     .locals 3
 
-    .line 41
+    .line 47
     sget v0, Lcom/Globals;->sHdr_process:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 42
+    .line 48
     iget-object v0, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x64
@@ -58,13 +58,13 @@
 
     goto :goto_0
 
-    .line 44
+    .line 50
     :cond_0
     iget-object v0, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
 
     invoke-static {v0}, Lnan/ren/WaterMarkUtil;->addWaterMark(Ljava/lang/String;)V
 
-    .line 46
+    .line 52
     :goto_0
     return-void
 .end method
