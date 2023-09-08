@@ -8302,6 +8302,7 @@
     <public type="string" name="color_mix_luminance" id="0x7f14082d" />
     <public type="string" name="color_mix_done" id="0x7f14082e" />
 	
+    <public type="string" name="my_watermark_dateformat_enable_title" id="0x7f14082f" />
     <public type="string" name="my_patch_profile_title" id="0x7f140830" />
     <public type="string" name="my_watermark_dateformat_title" id="0x7f140831" />
     <public type="string" name="my_watermark_dateformat_summary" id="0x7f140832" />

@@ -1,6 +1,6 @@
-.class public Lnan/ren/L;
+.class public Lnan/ren/LocationUtil;
 .super Ljava/lang/Object;
-.source "L.java"
+.source "LocationUtil.java"
 
 
 # direct methods
@@ -134,7 +134,7 @@
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
     .line 33
-    invoke-static {}, Lnan/ren/L;->newLocation()Landroid/location/Location;
+    invoke-static {}, Lnan/ren/LocationUtil;->newLocation()Landroid/location/Location;
 
     move-result-object v1
 
@@ -167,7 +167,7 @@
     .locals 5
 
     .line 42
-    invoke-static {}, Lnan/ren/L;->getLocation()Landroid/location/Location;
+    invoke-static {}, Lnan/ren/LocationUtil;->getLocation()Landroid/location/Location;
 
     move-result-object v0
 
@@ -345,7 +345,7 @@
     const-string v4, "E"
 
     .line 70
-    invoke-static {}, Lnan/ren/L;->getLocation()Landroid/location/Location;
+    invoke-static {}, Lnan/ren/LocationUtil;->getLocation()Landroid/location/Location;
 
     move-result-object v9
 
@@ -355,7 +355,7 @@
 
     move-result-wide v10
 
-    invoke-static {v10, v11}, Lnan/ren/L;->degressToString(D)Ljava/lang/String;
+    invoke-static {v10, v11}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
 
     move-result-object v1
 
@@ -364,7 +364,7 @@
 
     move-result-wide v10
 
-    invoke-static {v10, v11}, Lnan/ren/L;->degressToString(D)Ljava/lang/String;
+    invoke-static {v10, v11}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
 
     move-result-object v2
 
@@ -387,7 +387,7 @@
     .line 78
     .end local v9    # "l":Landroid/location/Location;
     :cond_2
-    invoke-static {v1}, Lnan/ren/L;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -405,7 +405,7 @@
 
     move-result-object v5
 
-    invoke-static {v2}, Lnan/ren/L;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 

@@ -1,42 +1,17 @@
-.class public Lnan/ren/J;
+.class public Lnan/ren/JsonUtil;
 .super Ljava/lang/Object;
-.source "J.java"
+.source "JsonUtil.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lnan/ren/J$TypeReference;
+        Lnan/ren/JsonUtil$TypeReference;
     }
 .end annotation
 
 
-# static fields
-.field static ExifInterface_Field_Arr:[Ljava/lang/String;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 536
-    nop
-
-    .line 678
-    const-string v0, "FNumber\nApertureValue\nArtist\nBitsPerSample\nBrightnessValue\nCFAPattern\nColorSpace\nComponentsConfiguration\nCompressedBitsPerPixel\nCompression\nContrast\nCopyright\nCustomRendered\nDateTime\nDateTimeDigitized\nDateTimeOriginal\nDefaultCropSize\nDeviceSettingDescription\nDigitalZoomRatio\nDNGVersion\nExifVersion\nExposureBiasValue\nExposureIndex\nExposureMode\nExposureProgram\nExposureTime\nFileSource\nFlash\nFlashpixVersion\nFlashEnergy\nFocalLength\nFocalLengthIn35mmFilm\nFocalPlaneResolutionUnit\nFocalPlaneXResolution\nFocalPlaneYResolution\nFNumber\nGainControl\nGPSAltitude\nGPSAltitudeRef\nGPSAreaInformation\nGPSDateStamp\nGPSDestBearing\nGPSDestBearingRef\nGPSDestDistance\nGPSDestDistanceRef\nGPSDestLatitude\nGPSDestLatitudeRef\nGPSDestLongitude\nGPSDestLongitudeRef\nGPSDifferential\nGPSDOP\nGPSImgDirection\nGPSImgDirectionRef\nGPSLatitude\nGPSLatitudeRef\nGPSLongitude\nGPSLongitudeRef\nGPSMapDatum\nGPSMeasureMode\nGPSProcessingMethod\nGPSSatellites\nGPSSpeed\nGPSSpeedRef\nGPSStatus\nGPSTimeStamp\nGPSTrack\nGPSTrackRef\nGPSVersionID\nImageDescription\nImageLength\nImageUniqueID\nImageWidth\nInteroperabilityIndex\nISOSpeedRatings\nISOSpeedRatings\nJPEGInterchangeFormat\nJPEGInterchangeFormatLength\nLightSource\nMake\nMakerNote\nMaxApertureValue\nMeteringMode\nModel\nNewSubfileType\nOECF\nOffsetTime\nOffsetTimeDigitized\nOffsetTimeOriginal\nAspectFrame\nPreviewImageLength\nPreviewImageStart\nThumbnailImage\nOrientation\nPhotometricInterpretation\nPixelXDimension\nPixelYDimension\nPlanarConfiguration\nPrimaryChromaticities\nReferenceBlackWhite\nRelatedSoundFile\nResolutionUnit\nRowsPerStrip\nISO\nJpgFromRaw\nSensorBottomBorder\nSensorLeftBorder\nSensorRightBorder\nSensorTopBorder\nSamplesPerPixel\nSaturation\nSceneCaptureType\nSceneType\nSensingMethod\nSharpness\nShutterSpeedValue\nSoftware\nSpatialFrequencyResponse\nSpectralSensitivity\nStripByteCounts\nStripOffsets\nSubfileType\nSubjectArea\nSubjectDistance\nSubjectDistanceRange\nSubjectLocation\nSubSecTime\nSubSecTimeDigitized\nSubSecTimeDigitized\nSubSecTimeOriginal\nSubSecTimeOriginal\nThumbnailImageLength\nThumbnailImageWidth\nThumbnailOrientation\nTransferFunction\nUserComment\nWhiteBalance\nWhitePoint\nXmp\nXResolution\nYCbCrCoefficients\nYCbCrPositioning\nYCbCrSubSampling\nYResolution"
-
-    const-string v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lnan/ren/J;->ExifInterface_Field_Arr:[Ljava/lang/String;
-
-    .line 536
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -58,7 +33,7 @@
 
     .line 528
     .local v0, "result":Lorg/json/JSONObject;
-    sget-object v1, Lnan/ren/J;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    sget-object v1, Lnan/ren/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
 
     array-length v2, v1
 
@@ -179,7 +154,7 @@
 
     .line 322
     .local v6, "value":Ljava/lang/Object;
-    invoke-static {v5}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v5}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v7
 
@@ -224,13 +199,13 @@
 
     .line 328
     .local v7, "jsonArray":Lorg/json/JSONArray;
-    invoke-static {v7, v5}, Lnan/ren/J;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v7, v5}, Lnan/ren/JsonUtil;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v8
 
     .line 329
     .local v8, "arr":Ljava/lang/Object;
-    invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 330
     .end local v7    # "jsonArray":Lorg/json/JSONArray;
@@ -265,13 +240,13 @@
 
     .line 335
     .local v8, "typeClass":Ljava/lang/reflect/Type;
-    invoke-static {v8, v7}, Lnan/ren/J;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
+    invoke-static {v8, v7}, Lnan/ren/JsonUtil;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
 
     move-result-object v9
 
     .line 336
     .local v9, "list":Ljava/util/List;
-    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 337
     .end local v7    # "jsonArray":Lorg/json/JSONArray;
@@ -307,13 +282,13 @@
 
     .line 342
     .restart local v8    # "typeClass":Ljava/lang/reflect/Type;
-    invoke-static {v8, v7}, Lnan/ren/J;->createSet(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/Set;
+    invoke-static {v8, v7}, Lnan/ren/JsonUtil;->createSet(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/Set;
 
     move-result-object v9
 
     .line 343
     .local v9, "set":Ljava/util/Set;
-    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 344
     .end local v7    # "jsonArray":Lorg/json/JSONArray;
@@ -349,13 +324,13 @@
 
     .line 349
     .local v8, "jsonObj":Lorg/json/JSONObject;
-    invoke-static {v7, v8}, Lnan/ren/J;->createMap(Ljava/lang/reflect/Type;Lorg/json/JSONObject;)Ljava/util/Map;
+    invoke-static {v7, v8}, Lnan/ren/JsonUtil;->createMap(Ljava/lang/reflect/Type;Lorg/json/JSONObject;)Ljava/util/Map;
 
     move-result-object v9
 
     .line 350
     .local v9, "map":Ljava/util/Map;
-    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 351
     .end local v7    # "typeClass":Ljava/lang/reflect/Type;
@@ -391,13 +366,13 @@
 
     .line 356
     .local v7, "obj":Lorg/json/JSONObject;
-    invoke-static {v7, v5}, Lnan/ren/J;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v7, v5}, Lnan/ren/JsonUtil;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v8
 
     .line 357
     .local v8, "fieldObj":Ljava/lang/Object;
-    invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -406,14 +381,14 @@
     .end local v8    # "fieldObj":Ljava/lang/Object;
     :cond_8
     :goto_1
-    invoke-static {p1, v4, v5, p2, v6}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v6}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_3
 
     .line 324
     :cond_9
     :goto_2
-    invoke-static {p1, v4, v5, p2, v6}, Lnan/ren/J;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, v4, v5, p2, v6}, Lnan/ren/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 312
     .end local v3    # "field":Ljava/lang/reflect/Field;
@@ -434,7 +409,7 @@
 
     .line 362
     .local v1, "superClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {p0, v1, p2}, Lnan/ren/J;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-static {p0, v1, p2}, Lnan/ren/JsonUtil;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 363
     return-void
@@ -524,7 +499,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v4}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v4
 
@@ -574,7 +549,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lnan/ren/J;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v4, v5}, Lnan/ren/JsonUtil;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -600,7 +575,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lnan/ren/J;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v4, v5}, Lnan/ren/JsonUtil;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -638,13 +613,13 @@
     .end annotation
 
     .line 409
-    invoke-static {p0}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {p0}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v0
 
     .line 410
     .local v0, "klacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v0}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v0}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v1
 
@@ -678,7 +653,7 @@
 
     .line 415
     .local v5, "nextType":Ljava/lang/reflect/Type;
-    invoke-static {v5}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {v5}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v6
 
@@ -742,7 +717,7 @@
 
     .line 427
     .local v10, "jsonObject":Lorg/json/JSONObject;
-    invoke-static {v10, v6, v9}, Lnan/ren/J;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-static {v10, v6, v9}, Lnan/ren/JsonUtil;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 428
     invoke-interface {v3, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -765,7 +740,7 @@
 
     .line 432
     .local v9, "jsonArrayNext":Lorg/json/JSONArray;
-    invoke-static {v5, v9}, Lnan/ren/J;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
+    invoke-static {v5, v9}, Lnan/ren/JsonUtil;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
 
     move-result-object v10
 
@@ -822,13 +797,13 @@
 
     .line 379
     .local v2, "nextType":Ljava/lang/reflect/Type;
-    invoke-static {v2}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {v2}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v3
 
     .line 380
     .local v3, "itemKlacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v3}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v3}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v4
 
@@ -907,7 +882,7 @@
 
     .line 394
     .local v9, "jsonObjectNext":Lorg/json/JSONObject;
-    invoke-static {v9, v3, v8}, Lnan/ren/J;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-static {v9, v3, v8}, Lnan/ren/JsonUtil;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 395
     invoke-interface {v0, v6, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -930,7 +905,7 @@
 
     .line 399
     .local v8, "jsonArrayNext":Lorg/json/JSONArray;
-    invoke-static {v2, v8}, Lnan/ren/J;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
+    invoke-static {v2, v8}, Lnan/ren/JsonUtil;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
 
     move-result-object v9
 
@@ -980,7 +955,7 @@
 
     .line 302
     .local v0, "t":Ljava/lang/Object;, "TT;"
-    invoke-static {p0, p1, v0}, Lnan/ren/J;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-static {p0, p1, v0}, Lnan/ren/JsonUtil;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 303
     return-object v0
@@ -997,13 +972,13 @@
     .end annotation
 
     .line 442
-    invoke-static {p0}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {p0}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v0
 
     .line 443
     .local v0, "klacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v0}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v0}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v1
 
@@ -1037,7 +1012,7 @@
 
     .line 448
     .local v5, "nextType":Ljava/lang/reflect/Type;
-    invoke-static {v5}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {v5}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v6
 
@@ -1101,7 +1076,7 @@
 
     .line 460
     .local v10, "jsonObject":Lorg/json/JSONObject;
-    invoke-static {v10, v6, v9}, Lnan/ren/J;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-static {v10, v6, v9}, Lnan/ren/JsonUtil;->assignField(Lorg/json/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 461
     invoke-interface {v3, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -1124,7 +1099,7 @@
 
     .line 465
     .local v9, "jsonArrayNext":Lorg/json/JSONArray;
-    invoke-static {v5, v9}, Lnan/ren/J;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
+    invoke-static {v5, v9}, Lnan/ren/JsonUtil;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
 
     move-result-object v10
 
@@ -1185,7 +1160,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {v1}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v1
 
@@ -1407,7 +1382,7 @@
     if-nez v0, :cond_e
 
     .line 216
-    invoke-static {p1}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {p1}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v0
 
@@ -1511,7 +1486,7 @@
     if-eqz v2, :cond_5
 
     .line 239
-    invoke-static {v1, p1}, Lnan/ren/J;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v1, p1}, Lnan/ren/JsonUtil;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1673,7 +1648,7 @@
     if-eqz v0, :cond_c
 
     .line 267
-    invoke-static {v0, p1}, Lnan/ren/J;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v0, p1}, Lnan/ren/JsonUtil;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1731,7 +1706,7 @@
     throw v0
 .end method
 
-.method public static jsonToObject(Ljava/lang/String;Lnan/ren/J$TypeReference;)Ljava/lang/Object;
+.method public static jsonToObject(Ljava/lang/String;Lnan/ren/JsonUtil$TypeReference;)Ljava/lang/Object;
     .locals 7
     .param p0, "json"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
@@ -1740,7 +1715,7 @@
             "Ljava/lang/Object;",
             ">(",
             "Ljava/lang/String;",
-            "Lnan/ren/J$TypeReference<",
+            "Lnan/ren/JsonUtil$TypeReference<",
             "TT;>;)TT;"
         }
     .end annotation
@@ -1752,7 +1727,7 @@
     .end annotation
 
     .line 159
-    .local p1, "typeReference":Lnan/ren/J$TypeReference;, "Lnan/ren/J$TypeReference<TT;>;"
+    .local p1, "typeReference":Lnan/ren/JsonUtil$TypeReference;, "Lnan/ren/JsonUtil$TypeReference<TT;>;"
     if-eqz p0, :cond_b
 
     const-string v0, ""
@@ -1774,19 +1749,19 @@
     if-nez v0, :cond_b
 
     .line 163
-    invoke-virtual {p1}, Lnan/ren/J$TypeReference;->genericParamType()Ljava/lang/reflect/Type;
+    invoke-virtual {p1}, Lnan/ren/JsonUtil$TypeReference;->genericParamType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
     .line 164
     .local v0, "type":Ljava/lang/reflect/Type;
-    invoke-static {v0}, Lnan/ren/J;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    invoke-static {v0}, Lnan/ren/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v1
 
     .line 166
     .local v1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    invoke-static {v1}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v1}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v2
 
@@ -1890,7 +1865,7 @@
     if-eqz v4, :cond_5
 
     .line 187
-    invoke-static {v3, v1}, Lnan/ren/J;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v3, v1}, Lnan/ren/JsonUtil;->createArr(Lorg/json/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -1907,7 +1882,7 @@
     if-eqz v4, :cond_6
 
     .line 189
-    invoke-static {v0, v3}, Lnan/ren/J;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
+    invoke-static {v0, v3}, Lnan/ren/JsonUtil;->createList(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/List;
 
     move-result-object v4
 
@@ -1924,7 +1899,7 @@
     if-eqz v4, :cond_7
 
     .line 191
-    invoke-static {v0, v3}, Lnan/ren/J;->createSet(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/Set;
+    invoke-static {v0, v3}, Lnan/ren/JsonUtil;->createSet(Ljava/lang/reflect/Type;Lorg/json/JSONArray;)Ljava/util/Set;
 
     move-result-object v4
 
@@ -1941,7 +1916,7 @@
     if-eqz v4, :cond_8
 
     .line 193
-    invoke-static {v0, v2}, Lnan/ren/J;->createMap(Ljava/lang/reflect/Type;Lorg/json/JSONObject;)Ljava/util/Map;
+    invoke-static {v0, v2}, Lnan/ren/JsonUtil;->createMap(Ljava/lang/reflect/Type;Lorg/json/JSONObject;)Ljava/util/Map;
 
     move-result-object v4
 
@@ -1952,7 +1927,7 @@
     if-eqz v2, :cond_9
 
     .line 198
-    invoke-static {v2, v1}, Lnan/ren/J;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v2, v1}, Lnan/ren/JsonUtil;->createObject(Lorg/json/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2094,7 +2069,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -2114,7 +2089,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, p1, p2}, Lnan/ren/J;->parseObject(Ljava/lang/Class;Lorg/json/JSONObject;Ljava/lang/Object;)V
+    invoke-static {v1, p1, p2}, Lnan/ren/JsonUtil;->parseObject(Ljava/lang/Class;Lorg/json/JSONObject;Ljava/lang/Object;)V
 
     .line 116
     return-void
@@ -2178,7 +2153,7 @@
 
     move-result-object v0
 
-    invoke-static {p1}, Lnan/ren/J;->captureName(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lnan/ren/JsonUtil;->captureName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2254,7 +2229,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lnan/ren/J;->isBaseType(Ljava/lang/Class;)Z
+    invoke-static {v0}, Lnan/ren/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v0
 
@@ -2323,7 +2298,7 @@
 
     move-result-object v5
 
-    invoke-static {v4}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -2376,7 +2351,7 @@
 
     .line 69
     .local v3, "obj":Ljava/lang/Object;
-    invoke-static {v3}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2428,7 +2403,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2473,7 +2448,7 @@
 
     check-cast v0, Landroid/media/ExifInterface;
 
-    invoke-static {v0}, Lnan/ren/J;->ExifInterfaceToMap(Landroid/media/ExifInterface;)Lorg/json/JSONObject;
+    invoke-static {v0}, Lnan/ren/JsonUtil;->ExifInterfaceToMap(Landroid/media/ExifInterface;)Lorg/json/JSONObject;
 
     move-result-object v0
 
@@ -2493,7 +2468,7 @@
 
     .line 84
     .local v1, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v1, v0, p0}, Lnan/ren/J;->parseObject(Ljava/lang/Class;Lorg/json/JSONObject;Ljava/lang/Object;)V
+    invoke-static {v1, v0, p0}, Lnan/ren/JsonUtil;->parseObject(Ljava/lang/Class;Lorg/json/JSONObject;Ljava/lang/Object;)V
 
     .line 85
     return-object v0
@@ -2521,7 +2496,7 @@
     .line 35
     :cond_0
     :try_start_0
-    invoke-static {p0}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -2548,7 +2523,7 @@
 
     .line 483
     :try_start_0
-    invoke-static {p0}, Lnan/ren/J;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lnan/ren/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,11 +1,11 @@
-.class abstract Lnan/ren/J$TypeReference;
+.class abstract Lnan/ren/JsonUtil$TypeReference;
 .super Ljava/lang/Object;
-.source "J.java"
+.source "JsonUtil.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lnan/ren/J;
+    value = Lnan/ren/JsonUtil;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,17 +24,17 @@
 
 
 # instance fields
-.field final synthetic this$0:Lnan/ren/J;
+.field final synthetic this$0:Lnan/ren/JsonUtil;
 
 
 # direct methods
-.method constructor <init>(Lnan/ren/J;)V
+.method constructor <init>(Lnan/ren/JsonUtil;)V
     .locals 0
-    .param p1, "this$0"    # Lnan/ren/J;
+    .param p1, "this$0"    # Lnan/ren/JsonUtil;
 
     .line 500
-    .local p0, "this":Lnan/ren/J$TypeReference;, "Lnan/ren/J$TypeReference<TT;>;"
-    iput-object p1, p0, Lnan/ren/J$TypeReference;->this$0:Lnan/ren/J;
+    .local p0, "this":Lnan/ren/JsonUtil$TypeReference;, "Lnan/ren/JsonUtil$TypeReference<TT;>;"
+    iput-object p1, p0, Lnan/ren/JsonUtil$TypeReference;->this$0:Lnan/ren/JsonUtil;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +47,7 @@
     .locals 4
 
     .line 507
-    .local p0, "this":Lnan/ren/J$TypeReference;, "Lnan/ren/J$TypeReference<TT;>;"
+    .local p0, "this":Lnan/ren/JsonUtil$TypeReference;, "Lnan/ren/JsonUtil$TypeReference<TT;>;"
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0

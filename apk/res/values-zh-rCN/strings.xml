@@ -1944,6 +1944,8 @@ SM8150 = 32770, SM8250 = 40962"</string>
     <string name="color_mix_luminance">亮度</string>
     <string name="color_mix_done">完成</string>
 	
+	
+    <string name="my_watermark_dateformat_enable_title">是否显示日期</string>
 
     <string name="my_watermark_dateformat_summary">yyyy|MM|dd|HH|mm|ss分别会替换成年|月|日|时|分|秒的数字,\n其余内容不会被替换但要用英文下的单引号引用，例如：yyyy-MM-dd HH:mm:ss \'by nan_ren\'\n更多高级格式可以百度"JAVA 日期格式"</string>
     <string name="my_watermark_dateformat_title">水印日期格式</string>

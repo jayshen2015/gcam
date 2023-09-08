@@ -109,7 +109,7 @@
 		
 		move-result-object v0
 		
-		invoke-static {v0}, Lnan/ren/C;->getAllCameras(Ljava/util/List;)Ljava/util/List;
+		invoke-static {v0}, Lnan/ren/G;->getAllCameras(Ljava/util/List;)Ljava/util/List;
 		
 		move-result-object v0
 		

@@ -1,25 +1,16 @@
 package g;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.media.ExifInterface;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.Globals;
-import com.agc.CrashHandler;
-
-import java.io.File;
-import java.io.IOException;
-
-import nan.ren.G;
-import nan.ren.J;
-import nan.ren.L;
+import nan.ren.WaterMarkUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -29,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Globals.context=getApplicationContext();
         setContentView(R.layout.activity_main);
         bind();
+
     }
 
     void bind(){
@@ -36,8 +28,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
         buttonAdd.setOnClickListener(this);
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public void onClick(View view) {
+
+/*        LinearLayout popup_view= (LinearLayout)getLayoutInflater().inflate(R.layout.poto_list_layout,null);
+
+        popup_view.setMinimumHeight(200);
+        popup_view.setMinimumWidth(200);
+        PopupWindow popupWindow = new PopupWindow(popup_view);
+        //设置弹出窗口应该接收外部触摸事件
+        popupWindow.setOutsideTouchable(true);
+        //设置可聚焦
+        popupWindow.setFocusable(true);
+        popupWindow.showAtLocation(findViewById(R.id.btn001),0,0,1);*/
+
+       // popupWindow.showAsDropDown(btn_popupWindow);
+       // ly.sh
+
 //        String a=L.getLocationInfo();
 //        File b=new File("/sdcard/DCIM/a.jpg");
 //        Bitmap decodeFile = BitmapFactory.decodeFile(b.getAbsolutePath());
@@ -55,8 +63,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        //String title,Bitmap logo,String picInfo,String secInfo,String bgColor,String txtColor,int waterMarkWidth,int waterMarkHeight,int fontSize
 //        Bitmap bt= G.getBitmapFromUri("/sdcard/Download/x.png");
 //        G.getWaterMarkBitMap("OPPO Find X6 Pro",bt,a,c, Color.WHITE,Color.BLACK,decodeFile.getWidth(),400,80);
-        G.drawWaterMark("/sdcard/DCIM/a.jpg");
-        Log.w("getLocationInfoxxxxxxxxxxxxxxxx:"," donw");
+        WaterMarkUtil.addWaterMark("/sdcard/DCIM/b.jpg","/sdcard/Download/x.png","Title is Here",false);
+//        Log.w("getLocationInfoxxxxxxxxxxxxxxxx:"," donw");
         //       File f=new File("/sdcard/DCIM/a.jpg");
 //        File b=new File("/sdcard/DCIM/b.jpg");
 //        try {
