@@ -22,6 +22,8 @@ public class Pref {
         if(a.equals("my_watermark_location"))return 1;
         if(a.equals("show_task_log"))return 1;
         if(a.equals("my_watermark_height"))return -350;
+        if(a.equals("my_preview_luts"))return 1;
+
       //  if(a.equals("my_watermark_fontsize"))return 1;
         return 0;
     }
@@ -30,4 +32,16 @@ public class Pref {
         if(b==0)return i;
         return b;
     }
+
+    public static  int getAuxPrefIntValue(String a){
+        return  0;
+    }
+    public static  String getAuxProfilePrefStringValue(String a){
+        return  "a";
+    }
+    public static  float getAuxProfilePrefFloatValue(String a,float b){
+        return  b;
+    }
+
+
 }

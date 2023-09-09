@@ -36,7 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="nan.ren.GActivity"></activity>
+        <activity android:name="nan.ren.activity.GActivity"></activity>
+        <activity android:name="nan.ren.activity.PreviewActivity"></activity>
+
     </application>
 
 </manifest>

@@ -2,25 +2,16 @@ package g;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Size;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.Globals;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
 
 import nan.ren.G;
-import nan.ren.ImageUtil;
 import nan.ren.WaterMarkUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -29,21 +20,23 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Globals.context=getApplicationContext();
-        setContentView(R.layout.poto_list_layout);
-        int width=getResources().getDisplayMetrics().widthPixels;
-        GridLayout v=findViewById(R.id.poto_grid);
-        int cnt=v.getColumnCount();
-        G.log(width+"   "+cnt);
-        for(int i=0;i<6;i++){
-            ImageView iv=new ImageView(this);
-            iv.setBackgroundColor(Color.parseColor("#55000000"));
-            Size size=new Size((int)(0.9*width/cnt),200);
-            Bitmap pic=ImageUtil.compressImage(ImageUtil.TMP_PATH+"0.jpg",size,true);
-            iv.setImageDrawable(ImageUtil.bitmap2Drawable(pic));
-            iv.setLayoutParams(new ViewGroup.LayoutParams(pic.getWidth(),pic.getHeight()));
-            iv.setPadding(10,10,0,0);
-            v.addView(iv);
-        }
+        setContentView(R.layout.activity_main);
+        //bind();
+        G.medianFilter(new File("/sdcard/DCIM/2.jpg"));
+//        int width=getResources().getDisplayMetrics().widthPixels;
+//        GridLayout v=findViewById(R.id.poto_grid);
+//        int cnt=v.getColumnCount();
+//        G.log(width+"   "+cnt);
+//        for(int i=0;i<6;i++){
+//            ImageView iv=new ImageView(this);
+//            iv.setBackgroundColor(Color.parseColor("#55000000"));
+//            Size size=new Size((int)(0.9*width/cnt),200);
+//            Bitmap pic=ImageUtil.compressImage(ImageUtil.TMP_PATH+"0.jpg",size,true);
+//            iv.setImageDrawable(ImageUtil.bitmap2Drawable(pic));
+//            iv.setLayoutParams(new ViewGroup.LayoutParams(pic.getWidth(),pic.getHeight()));
+//            iv.setPadding(10,10,0,0);
+//            v.addView(iv);
+//        }
     }
 
 
@@ -56,6 +49,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
+        Log.i("xxxxxxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxx");
+        G.medianFilter(new File("/sdcard/DCIM/2.jpg"));
 /*        LinearLayout popup_view= (LinearLayout)getLayoutInflater().inflate(R.layout.poto_list_layout,null);
 
         popup_view.setMinimumHeight(200);
@@ -87,7 +82,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        //String title,Bitmap logo,String picInfo,String secInfo,String bgColor,String txtColor,int waterMarkWidth,int waterMarkHeight,int fontSize
 //        Bitmap bt= G.getBitmapFromUri("/sdcard/Download/x.png");
 //        G.getWaterMarkBitMap("OPPO Find X6 Pro",bt,a,c, Color.WHITE,Color.BLACK,decodeFile.getWidth(),400,80);
-        WaterMarkUtil.addWaterMark("/sdcard/DCIM/b.jpg","/sdcard/Download/x.png","Title is Here",false);
+     //   WaterMarkUtil.addWaterMark("/sdcard/DCIM/b.jpg","/sdcard/Download/x.png","Title is Here",false);
 //        Log.w("getLocationInfoxxxxxxxxxxxxxxxx:"," donw");
         //       File f=new File("/sdcard/DCIM/a.jpg");
 //        File b=new File("/sdcard/DCIM/b.jpg");

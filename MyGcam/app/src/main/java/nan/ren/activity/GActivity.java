@@ -1,4 +1,4 @@
-package nan.ren;
+package nan.ren.activity;
 
 import android.app.Activity;
 import android.content.Intent;
