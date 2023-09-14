@@ -872,7 +872,7 @@
     if-eqz v1, :cond_0
 
     .line 279
-    invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->finish()V
+    invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->finishAndRemoveTask()V
 
     .line 280
     return-void

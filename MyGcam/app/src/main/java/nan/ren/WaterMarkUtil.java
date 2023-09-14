@@ -72,7 +72,14 @@ public class WaterMarkUtil {
 //        String title=Pref.getStringValue("pref_watermark_title_key", "");
 //        addWaterMark(absolutePath,logoPath,title,z3);
 //    }
-    public static Bitmap  getWaterMarkBitMap(String title,Bitmap logo,String picInfo,String locationInfo,String dateFormat,int bgColor,int txtColor,int waterMarkWidth,int waterMarkHeight,int fontSize ){
+    public static Bitmap  getWaterMarkBitMap(String title,Bitmap logo,String picInfo,String locationInfo,String dateFormat,
+                                             int bgColor,int txtColor, int waterMarkWidth,int waterMarkHeight,int fontSize ){
+
+        int secTxtColor=waterMarkHeight>0?Color.parseColor("#ffb7b7b7"):Color.parseColor("#ffff9535");
+        return getWaterMarkBitMap(title,logo,picInfo,locationInfo,dateFormat, bgColor,txtColor,secTxtColor, waterMarkWidth,waterMarkHeight,fontSize);
+    }
+    public static Bitmap  getWaterMarkBitMap(String title,Bitmap logo,String picInfo,String locationInfo,String dateFormat,
+                                             int bgColor,int txtColor,int secTxtColor,int waterMarkWidth,int waterMarkHeight,int fontSize ){
         boolean isInner=waterMarkHeight<0;
         waterMarkHeight=Math.abs(waterMarkHeight);
         int t=0;
@@ -91,8 +98,7 @@ public class WaterMarkUtil {
         if(!isInner)txtPaint.setTypeface(Typeface.DEFAULT_BOLD);
         else txtPaint.setTypeface(Typeface.DEFAULT);
 
-        if(!isInner)secTxtPaint.setColor(Color.parseColor("#ffb7b7b7"));
-        else secTxtPaint.setColor(Color.parseColor("#ffff9535"));
+        secTxtPaint.setColor(secTxtColor);
         secTxtPaint.setTextSize(fontSize*0.9f);
         secTxtPaint.setDither(true);
         secTxtPaint.setFilterBitmap(true);

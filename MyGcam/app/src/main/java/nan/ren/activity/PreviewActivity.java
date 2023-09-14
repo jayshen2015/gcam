@@ -276,7 +276,7 @@ public class PreviewActivity extends Activity  implements View.OnClickListener {
         if(view instanceof Button){
             Button btn=(Button)view;
             if(btn.getText().equals("关闭")) {
-                finish();
+                finishAndRemoveTask();
                 return;
             }
             if(btn.getText().equals("选择图片")) {

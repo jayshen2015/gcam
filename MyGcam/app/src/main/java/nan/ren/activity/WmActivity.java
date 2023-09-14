@@ -18,8 +18,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -57,6 +59,8 @@ public class WmActivity extends Activity  implements View.OnClickListener {
     int wmBgColor=z3?Color.BLACK:Color.WHITE;
 
     int wmTextColor=z3?Color.WHITE:Color.BLACK;
+
+    int wmSecTextColor=waterMarkHeight>0?Color.parseColor("#ffb7b7b7"):Color.parseColor("#ffff9535");
 
 
 
@@ -126,7 +130,7 @@ public class WmActivity extends Activity  implements View.OnClickListener {
     Bitmap getWaterMark(String absolutePath){
         Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
         if(decodeFile==null)return null;
-        Bitmap waterMark=WaterMarkUtil.getWaterMarkBitMap(title,bt,picinfo,locationInfo,dateformat,wmBgColor,wmTextColor,decodeFile.getWidth(),waterMarkHeight,wmFontSize);
+        Bitmap waterMark=WaterMarkUtil.getWaterMarkBitMap(title,bt,picinfo,locationInfo,dateformat,wmBgColor,wmTextColor,wmSecTextColor,decodeFile.getWidth(),waterMarkHeight,wmFontSize);
         return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
     }
 
@@ -182,10 +186,10 @@ public class WmActivity extends Activity  implements View.OnClickListener {
        locationInfo=  LocationUtil.getExifInterfaceLocalInfo(exb);
    }
 
-   void selectPic(){
+   void selectPic(int code){
        Intent intent = new Intent(Intent.ACTION_PICK, null);
        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-       startActivityForResult(intent, 2);
+       startActivityForResult(intent, code);
    }
 
    void savePic(Button btn){
@@ -275,11 +279,11 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         if(view instanceof Button){
             Button btn=(Button)view;
             if(btn.getText().equals("关闭")) {
-                finish();
+                finishAndRemoveTask();
                 return;
             }
             if(btn.getText().equals("选择图片")) {
-                selectPic();
+                selectPic(2);
                 return;
             }
             if(btn.getText().equals("保存")||btn.getText().equals("保存失败")) {
@@ -316,6 +320,22 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                     }
                 }
             }
+        }else if (requestCode == 3) {
+            // 从相册返回的数据
+            if (data != null) {
+                // 得到图片的全路径
+                Uri uri = data.getData();
+                if(uri!=null) {
+                    String url= UriUtil.Uri2Path(uri);
+                    if(url!=null && !url.trim().isEmpty()) {
+                        if(url!=null && !url.trim().isEmpty()) {
+                            Bitmap logtbt=ImageUtil.compressImage(url,new Size(selectLogoBtn.getWidth(),selectLogoBtn.getHeight()),false);
+                            selectLogoBtn.setImageDrawable(ImageUtil.bitmap2Drawable(logtbt));
+                            selectLogoBtn.setTag(url);
+                        }
+                    }
+                }
+            }
         }
     }
     AlertDialog dialog;
@@ -340,11 +360,22 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                                 if(txtTxtcolor!=null&&!txtTxtcolor.startsWith("#"))txtTxtcolor="#"+txtTxtcolor;
                                 wmTextColor=Color.parseColor(txtTxtcolor); }catch (Exception ex){ }
 
+                            try {
+                                String txtTxtcolor=edSecTextColor.getText().toString();
+                                if(txtTxtcolor!=null&&!txtTxtcolor.startsWith("#"))txtTxtcolor="#"+txtTxtcolor;
+                                wmSecTextColor=Color.parseColor(txtTxtcolor); }catch (Exception ex){ }
+
                             try { waterMarkHeight = Integer.parseInt(edHeight.getText().toString()); }catch (Exception ex){ }
 
                             try { picinfo =edPicInfo.getText().toString(); }catch (Exception ex){ }
                             try { locationInfo =edLocalInfo.getText().toString(); }catch (Exception ex){ }
                             try { dateformat =edDateFormt.getText().toString(); }catch (Exception ex){ }
+                            if(cbHideLogo.isChecked()){
+                                bt=null;
+                            }else{
+                                logoPath=selectLogoBtn.getTag().toString();
+                                if(logoPath!=null&&!logoPath.trim().isEmpty())bt=WaterMarkUtil.getBitmapFromUri(logoPath);
+                            }
                             dialog.dismiss();
                             show();
                         }
@@ -359,7 +390,9 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         dialog.show();
     }
 
-    EditText edTitle,edFontSize,edBgColor,edTextColor,edHeight,edPicInfo,edLocalInfo,edDateFormt;
+    EditText edTitle,edFontSize,edBgColor,edTextColor,edHeight,edPicInfo,edLocalInfo,edDateFormt,edSecTextColor;
+    CheckBox cbHideLogo;
+    ImageButton selectLogoBtn;
 
     View getWmParamerView(){
         LinearLayout linearLayout=new LinearLayout(this);
@@ -382,6 +415,10 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         edTextColor=(EditText) f4.getChildAt(1);
         linearLayout.addView(f4);
 
+        ViewGroup f4_1=getEditField("副文字颜色：",getColorString(wmSecTextColor));
+        edSecTextColor=(EditText) f4_1.getChildAt(1);
+        linearLayout.addView(f4_1);
+
         ViewGroup f5=getEditField("水印高度：",waterMarkHeight);
         edHeight=(EditText) f5.getChildAt(1);
         linearLayout.addView(f5);
@@ -398,6 +435,11 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         edDateFormt=(EditText) f8.getChildAt(1);
         linearLayout.addView(f8);
 
+        ViewGroup f9=getLogoCfgView("选择图标：",bt==null);
+        cbHideLogo=(CheckBox) f9.getChildAt(2);
+        selectLogoBtn=(ImageButton) f9.getChildAt(1);
+
+        linearLayout.addView(f9);
         return linearLayout;
     }
     ViewGroup getEditField(String label,Object value){
@@ -411,7 +453,42 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         EditText field=new EditText(this);
         field.setText(value==null?"":value.toString());
         setTextSize(field);
+        field.setMinWidth(200);
         linearLayout.addView(field);
+        return linearLayout;
+    }
+
+    ViewGroup getLogoCfgView(String label,boolean checked){
+        LinearLayout linearLayout=new LinearLayout(this);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        TextView tv=new TextView(this);
+        tv.setText(label);
+        setTextSize(tv);
+        linearLayout.addView(tv);
+
+        ImageButton ib=new ImageButton(this);
+        ib.setLayoutParams(new ViewGroup.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
+        ib.setMinimumWidth(150);
+        if(bt!=null){
+            ib.setImageDrawable(ImageUtil.bitmap2Drawable(bt));
+            ib.setTag(logoPath);
+        }else{
+            ib.setBackgroundColor(Color.parseColor("#aa9c9fab"));
+        }
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectPic(3);
+            }
+        });
+        linearLayout.addView(ib);
+
+        CheckBox cb=new CheckBox(this);
+        cb.setText("隐藏图标");
+        cb.setChecked(checked);
+        setTextSize(cb);
+        linearLayout.addView(cb);
         return linearLayout;
     }
     String getColorString(int c){

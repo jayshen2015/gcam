@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 328
+    .line 348
     iput-object p1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 331
+    .line 351
     const-string v0, "#"
 
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -58,7 +58,7 @@
 
     iput-object v2, v1, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
 
-    .line 332
+    .line 352
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -85,7 +85,7 @@
     :catch_0
     move-exception v1
 
-    .line 334
+    .line 354
     :goto_0
     :try_start_1
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -100,7 +100,7 @@
 
     move-result-object v1
 
-    .line 335
+    .line 355
     .local v1, "txtbgcolor":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -128,7 +128,7 @@
 
     move-object v1, v2
 
-    .line 336
+    .line 356
     :cond_0
     iget-object v2, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -146,7 +146,7 @@
     :catch_1
     move-exception v1
 
-    .line 339
+    .line 359
     :goto_1
     :try_start_2
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -161,7 +161,7 @@
 
     move-result-object v1
 
-    .line 340
+    .line 360
     .local v1, "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -170,6 +170,67 @@
     move-result v2
 
     if-nez v2, :cond_1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object v1, v2
+
+    .line 361
+    :cond_1
+    iget-object v2, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    iput v3, v2, Lnan/ren/activity/WmActivity;->wmTextColor:I
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    .end local v1    # "txtTxtcolor":Ljava/lang/String;
+    goto :goto_2
+
+    :catch_2
+    move-exception v1
+
+    .line 364
+    :goto_2
+    :try_start_3
+    iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v1, v1, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 365
+    .restart local v1    # "txtTxtcolor":Ljava/lang/String;
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -189,27 +250,27 @@
 
     move-object v1, v0
 
-    .line 341
-    :cond_1
+    .line 366
+    :cond_2
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v2
 
-    iput v2, v0, Lnan/ren/activity/WmActivity;->wmTextColor:I
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    iput v2, v0, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
     .end local v1    # "txtTxtcolor":Ljava/lang/String;
-    goto :goto_2
+    goto :goto_3
 
-    :catch_2
+    :catch_3
     move-exception v0
 
-    .line 343
-    :goto_2
-    :try_start_3
+    .line 368
+    :goto_3
+    :try_start_4
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->edHeight:Landroid/widget/EditText;
@@ -227,17 +288,17 @@
     move-result v1
 
     iput v1, v0, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
 
-    goto :goto_3
+    goto :goto_4
 
-    :catch_3
+    :catch_4
     move-exception v0
 
-    .line 345
-    :goto_3
-    :try_start_4
+    .line 370
+    :goto_4
+    :try_start_5
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->edPicInfo:Landroid/widget/EditText;
@@ -251,17 +312,17 @@
     move-result-object v1
 
     iput-object v1, v0, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
 
-    goto :goto_4
+    goto :goto_5
 
-    :catch_4
+    :catch_5
     move-exception v0
 
-    .line 346
-    :goto_4
-    :try_start_5
+    .line 371
+    :goto_5
+    :try_start_6
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->edLocalInfo:Landroid/widget/EditText;
@@ -275,17 +336,17 @@
     move-result-object v1
 
     iput-object v1, v0, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_6
 
-    goto :goto_5
+    goto :goto_6
 
-    :catch_5
+    :catch_6
     move-exception v0
 
-    .line 347
-    :goto_5
-    :try_start_6
+    .line 372
+    :goto_6
+    :try_start_7
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->edDateFormt:Landroid/widget/EditText;
@@ -299,23 +360,92 @@
     move-result-object v1
 
     iput-object v1, v0, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_6
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_7
 
-    goto :goto_6
+    goto :goto_7
 
-    :catch_6
+    :catch_7
     move-exception v0
 
-    .line 348
-    :goto_6
+    .line 373
+    :goto_7
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v0, v0, Lnan/ren/activity/WmActivity;->cbHideLogo:Landroid/widget/CheckBox;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 374
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lnan/ren/activity/WmActivity;->bt:Landroid/graphics/Bitmap;
+
+    goto :goto_8
+
+    .line 376
+    :cond_3
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v1, v0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
+
+    invoke-virtual {v1}, Landroid/widget/ImageButton;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
+
+    .line 377
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v0, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v0, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v1, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
+
+    invoke-static {v1}, Lnan/ren/WaterMarkUtil;->getBitmapFromUri(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lnan/ren/activity/WmActivity;->bt:Landroid/graphics/Bitmap;
+
+    .line 379
+    :cond_4
+    :goto_8
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 349
+    .line 380
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->show()V
 
-    .line 350
+    .line 381
     return-void
 .end method
