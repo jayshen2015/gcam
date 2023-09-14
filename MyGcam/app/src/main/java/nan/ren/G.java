@@ -9,26 +9,32 @@ import android.media.ExifInterface;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.Globals;
 import com.Utils.Pref;
 import com.agc.Camera;
+import com.agc.widget.OptionButton;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import agc.Agc;
 import nan.ren.activity.PreviewActivity;
 
 public class G {
+
     public static String PACKAGE_NAME="";
     public static boolean SHOW_TASK_LOG=false;
     public static Context CONTEXT;
     public static Resources RESOURCES;
 
     public static String BASE_AGC_PATH="/sdcard/Download/AGC.8.8";
+    public static String ICON_PATH;
+    public static String LOGO_PATH;
+    public static String TMP_PATH;
+    public static String LUT_PATH;
 
     static {
         SHOW_TASK_LOG= Pref.MenuValue("show_task_log")==1;
@@ -36,60 +42,66 @@ public class G {
         RESOURCES=CONTEXT.getResources();
         BASE_AGC_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion;
         PACKAGE_NAME = CONTEXT.getPackageName();
-    }
-// my_watermark_asnew
-// my_watermark_dateformat_enable
-// my_watermark_dateformat
-// my_watermark_location
-// my_hidden_kaka_items
-// my_watermark_height
-// my_watermark_fontsize
-// my_use_cust_cameras
-// show_task_log
-    public static void drawWaterMark(String absolutePath){
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (Globals.sHdr_process == 1) {
-                    handler.postDelayed(this, 100L);
-                } else {
-                    WaterMarkUtil.addWaterMark(absolutePath);
-                }
-            }
-        },100L);
+        ICON_PATH=G.BASE_AGC_PATH+"/icons/";
+        LOGO_PATH=G.BASE_AGC_PATH+"/logos/";
+        TMP_PATH=G.BASE_AGC_PATH+"/.tmp/";
+        LUT_PATH=G.BASE_AGC_PATH+"/luts/";
     }
 
-    public static void drawWaterMark(String absolutePath, String logoPath, String title, boolean z3){
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (Globals.sHdr_process == 1) {
-                    handler.postDelayed(this, 100L);
-                } else {
-                    WaterMarkUtil.addWaterMark(absolutePath,logoPath,title,z3);
-                }
-
+    public static void initIcon(OptionButton op,String fileName) {
+        ImageView iv=(ImageView)op;
+        initIcon(iv,fileName);
+    }
+    public static void initIcon(ImageView iv,String fileName) {
+        try {
+            G.log("getMyIcon>>>>>:"+fileName);
+            Drawable extDrawable= ImageUtil.getOuterDrawable(G.ICON_PATH+fileName,true);
+            if(extDrawable==null && fileName.startsWith("agc_patch_profile_")){
+                extDrawable=ImageUtil.getOuterDrawable(G.ICON_PATH+fileName.replace("agc_patch_profile_", ""),true);
             }
-        },100L);
+            if(extDrawable==null) {
+                G.log("getMyIcon getOuterDrawable is null >>>>>:"+fileName);
+                int identifier = G.RESOURCES.getIdentifier(fileName, "drawable", G.PACKAGE_NAME);
+                if (identifier == 0) {
+                    G.log("getMyIcon getInnerDrawable is null  loadDefault >>>>>:"+fileName);
+                    identifier = G.RESOURCES.getIdentifier("agc_lib_patcher", "drawable", G.PACKAGE_NAME);
+                }
+                iv.setImageResource(identifier);
+            }else{
+                iv.setImageDrawable(extDrawable);
+            }
+            G.log("getMyIcon success:"+fileName);
+        }catch (Exception ex){
+            G.log("getMyIcon error:"+fileName);
+            NUtil.dumpExceptionToSDCard(ex);
+        }catch (Throwable ex){
+            G.log("getMyIcon error:"+fileName);
+            NUtil.dumpExceptionToSDCard(ex);
+        }
 
-     }
-
-     public static Drawable getMyIcon(String str) {
-        return ImageUtil.getMyIcon(str);
     }
 
     public static List<Camera> getAllCameras(List<Camera> llist){
         return  CameraUtil.getAllCameras(llist);
+    }
+    public static List<Camera> initCameras(List<Camera> list){
+        return  CameraUtil.reSetCameras(list);
     }
     public static int getShutterColor() {
         String colorStr = Pref.getStringValue("camera_mode_idle_color","#ff808080");
         return Color.parseColor(colorStr.trim());
     }
 
-    public static int getShutterColor(Drawable d) {
+    public static int getShutterColor(Resources res) {
         return getShutterColor();
+    }
+
+
+
+    public  static void initKaKaItems(List<OptionButton.OptionButtonItem> items){
+        if(Pref.MenuValue("my_hidden_kaka_items")==1){
+            items.clear();
+        }
     }
 
 
@@ -104,11 +116,6 @@ public class G {
     }
 
 
-
-    public static void saveExifInterface(ExifInterface exif)  {
-        ExifInterfaceUtil.saveExifInterface(exif);
-    }
-
     public static void medianFilter(File file) {
         final String absolutePath = file.getAbsolutePath();
         final Handler handler = new Handler(Looper.getMainLooper());
@@ -122,8 +129,9 @@ public class G {
                         @Override
                         public void run() {
                             try {
-                                ExifInterface exifInterface = new ExifInterface(absolutePath);
-                                Agc.getImageExif(absolutePath, "", "", "", "");
+//                                ExifInterface exifInterface = new ExifInterface(absolutePath);
+//                                Agc.getImageExif(absolutePath, "", "", "", "");
+
                                 int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
                                 if (auxPrefIntValue != 0) {
                                     Agc.medianFilter(absolutePath, auxPrefIntValue);
@@ -134,22 +142,11 @@ public class G {
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                     CONTEXT.startActivity(intent);
                                 }else {
-                                    String auxProfilePrefStringValue = Pref.getAuxProfilePrefStringValue("lib_lut_key");
-                                    float auxProfilePrefFloatValue = Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f);
-                                    if (auxProfilePrefStringValue != null && !auxProfilePrefStringValue.equals("")) {
-                                        Agc.processImageWithLUT(absolutePath, absolutePath, auxProfilePrefStringValue, auxProfilePrefFloatValue, "");
-                                    }
-                                    if (Pref.MenuValue("pref_photo_watermark_key") == 1) {
-                                        if (Pref.MenuValue("pref_watermark_type_key", 0) == 0) {
-                                            G.drawWaterMark(absolutePath);
-                                        } else {
-                                            Agc.drawTimeWaterMark(absolutePath);
-                                        }
-                                    }
+                                    G.saveImageByLUT(absolutePath,Pref.getAuxProfilePrefStringValue("lib_lut_key"));
                                 }
                             } catch (Exception e) {
-                                e.printStackTrace();
-                                log("ExifInterface Error: " + e.getMessage());
+                                NUtil.dumpExceptionToSDCard(e);
+                                log("Error: " + e.getMessage());
                             }
                         }
                     });
@@ -158,5 +155,18 @@ public class G {
         }, 100L);
     }
 
+    public static String saveImageByLUT(String srcImage,String lutFileName){
+        if(lutFileName==null || lutFileName.trim().length()<=0)return null;
+        String  newFile=srcImage.substring(0,srcImage.length()-4)+lutFileName.substring(0,lutFileName.lastIndexOf("."))+".jpg";
+        float auxProfilePrefFloatValue = Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f);
+        Agc.processImageWithLUT(srcImage, newFile, lutFileName, auxProfilePrefFloatValue, "");
+        File f=new File(newFile);
+        if(f.exists()&&f.length()>1000) {
+            ExifInterfaceUtil.copyExifInterface(newFile, srcImage);
+            WaterMarkUtil.noticSysPhoto(new File(newFile));
+            return newFile;
+        }
+        return null;
+    }
 
 }

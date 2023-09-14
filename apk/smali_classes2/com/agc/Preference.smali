@@ -1211,9 +1211,9 @@
 
     move-result-object v6
 
-    const-string v7, "noise_model"
+    sget-object v7, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
-    invoke-static {v7}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v7}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v7
 

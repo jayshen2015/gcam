@@ -85,44 +85,7 @@
     return-void
 .end method
 
-
 .method private static getAllCameras()Ljava/util/List;
-    .locals 1
-	    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Lcom/agc/Camera;",
-            ">;"
-        }
-    .end annotation
-	
-	sget-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-	
-		invoke-static {}, Lcom/Utils/Lens;->getAllCameras2()Ljava/util/List;
-		
-		move-result-object v0
-		
-		invoke-static {v0}, Lnan/ren/G;->getAllCameras(Ljava/util/List;)Ljava/util/List;
-		
-		move-result-object v0
-		
-		if-eqz v0, :cond_0
-		
-		sput-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;
-	
-	:cond_0
-    sget-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;	
-    return-object v0
-.end method	
-
-.method private static getAllCameras2()Ljava/util/List;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -132,8 +95,7 @@
             ">;"
         }
     .end annotation
-	
-	
+
     sget-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -375,7 +337,7 @@
 
     :cond_5
     sget-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;
-	
+
     return-object v0
 .end method
 

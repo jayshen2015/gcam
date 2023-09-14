@@ -1032,7 +1032,7 @@
 
     #invoke-virtual {v3, v4, v1}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 	
-    invoke-static {v3}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v3}, Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v3
 
@@ -2597,7 +2597,7 @@
     #const v3, 0x7f060054
 
     #invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I 
-    invoke-static {v2}, Lcom/Utils/Pref;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-static {v2}, Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
 
     move-result v2
 

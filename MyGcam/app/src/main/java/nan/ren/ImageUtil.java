@@ -14,10 +14,6 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class ImageUtil {
-    public static String ICON_PATH=G.BASE_AGC_PATH+"/icons/";
-    public static String LOGO_PATH=G.BASE_AGC_PATH+"/logos/";
-    public static String TMP_PATH=G.BASE_AGC_PATH+"/.tmp/";
-    public static String LUT_PATH=G.BASE_AGC_PATH+"/luts/";
 
     /**
      * 获取临时生成的图片
@@ -26,10 +22,12 @@ public class ImageUtil {
      */
     public static Drawable getTempPic(String picfile) {
         try {
-            return getOuterDrawable(TMP_PATH+picfile);
+            return getOuterDrawable(G.TMP_PATH+picfile);
         }catch (Exception ex){
+            NUtil.dumpExceptionToSDCard(ex);
             return null;
         }catch (Throwable ex){
+            NUtil.dumpExceptionToSDCard(ex);
             return null;
         }
 
@@ -37,15 +35,28 @@ public class ImageUtil {
 
     public static Drawable getMyIcon(String fileName) {
         try {
-            Drawable extDrawable=getOuterDrawable(ICON_PATH+fileName,true);
-            if(extDrawable==null && fileName.startsWith("agc_patch_profile_")){
-                extDrawable=getOuterDrawable(ICON_PATH+fileName.replace("agc_patch_profile_", ""),true);
+            G.log("getMyIcon>>>>>:"+fileName);
+            Drawable extDrawable=null;
+            try{extDrawable=getOuterDrawable(G.ICON_PATH+fileName,true);}catch (Exception ex){}
+            try{
+                if(extDrawable==null && fileName.startsWith("agc_patch_profile_")){
+                    extDrawable=getOuterDrawable(G.ICON_PATH+fileName.replace("agc_patch_profile_", ""),true);
+                }
+            }catch (Exception ex){}
+            if(extDrawable==null) {
+                G.log("getMyIcon getOuterDrawable is null >>>>>:"+fileName);
+                extDrawable= getInnerDrawable(fileName);
             }
-            if(extDrawable==null) return getInnerDrawable(fileName);
+
+            G.log("getMyIcon success:"+fileName);
             return extDrawable;
         }catch (Exception ex){
+            G.log("getMyIcon error:"+fileName);
+            NUtil.dumpExceptionToSDCard(ex);
             return null;
         }catch (Throwable ex){
+            G.log("getMyIcon error:"+fileName);
+            NUtil.dumpExceptionToSDCard(ex);
             return null;
         }
     }
@@ -53,18 +64,23 @@ public class ImageUtil {
         return getOuterDrawable(filePath,false);
     }
     public static Drawable getOuterDrawable(String filePath,boolean checkPx){
-        String myFilePath=filePath;
-        if(checkPx) {
-            String tmpStr = filePath.toLowerCase().trim();
-            if (!tmpStr.endsWith(".png") && !tmpStr.endsWith(".jpg") && !tmpStr.endsWith(".jpeg"))
-                myFilePath = filePath + ".png";
+        try {
+            String myFilePath = filePath;
+            if (checkPx) {
+                String tmpStr = filePath.toLowerCase().trim();
+                if (!tmpStr.endsWith(".png") && !tmpStr.endsWith(".jpg") && !tmpStr.endsWith(".jpeg"))
+                    myFilePath = filePath + ".png";
+            }
+            return Drawable.createFromPath(myFilePath);
+        }catch (Exception ex){
+            return null;
         }
-        return  Drawable.createFromPath( myFilePath);
     }
 
     public static Drawable getInnerDrawable(String filename){
         int identifier = G.RESOURCES.getIdentifier(filename, "drawable", G.PACKAGE_NAME);
         if (identifier == 0) {
+            G.log("getMyIcon getInnerDrawable is null  loadDefault >>>>>:"+filename);
             identifier = G.RESOURCES.getIdentifier("agc_lib_patcher", "drawable", G.PACKAGE_NAME);
         }
         if(identifier!=0)return  G.RESOURCES.getDrawable(identifier, null);
@@ -124,6 +140,7 @@ public class ImageUtil {
                 isBm.close();
                 baos.close();
             }catch (Exception ex){
+                NUtil.dumpExceptionToSDCard(ex);
                 try { if (isBm != null)isBm.close(); }catch (Exception ex2){ }
                 try { if (baos != null)baos.close(); }catch (Exception ex2){ }
             }

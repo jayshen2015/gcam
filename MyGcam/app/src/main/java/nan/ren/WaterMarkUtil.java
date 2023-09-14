@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.location.Location;
 import android.media.ExifInterface;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -35,49 +36,42 @@ import java.util.Locale;
 
 public class WaterMarkUtil {
 
-    public static void addWaterMark(String absolutePath, String logoPath, String title, boolean z3){
-        ExifInterface exb=null;
-        try {
-            exb=new ExifInterface(absolutePath);
-        } catch (IOException e) {
+//    public static void addWaterMark(String absolutePath, String logoPath, String title, boolean z3){
+//        ExifInterface exb=null;
+//        try {
+//            exb=new ExifInterface(absolutePath);
+//        } catch (IOException e) {
+//
+//        }
+//        Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
+//        if(decodeFile==null)return ;
+//        int waterMarkHeight = Pref.MenuValue("my_watermark_height", 450);
+//        int fontSize = Pref.MenuValue("my_watermark_fontsize", 80);
+//        String picinfo= getPicInfo(exb);
+//        String locationInfo= getLocationInfo(exb);
+//        String dateformat= getDateFormatInfo();
+//        Bitmap bt= getBitmapFromUri(logoPath);
+//        Bitmap waterMark=getWaterMarkBitMap(title,bt,picinfo,locationInfo,dateformat,z3? Color.BLACK:Color.WHITE,z3?Color.WHITE:Color.BLACK,decodeFile.getWidth(),waterMarkHeight,fontSize);
+//        Bitmap newBit=mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
+//
+//        String savePath=absolutePath;
+//        boolean asNew= Pref.MenuValue("my_watermark_asnew") == 1;
+//        if(asNew)savePath=savePath.substring(0,savePath.length()-4)+"_WM.jpg";
+//        WriteBitmapFile(savePath,newBit);
+//    }
 
-        }
-        Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
-        int waterMarkHeight = Pref.MenuValue("my_watermark_height", 450);
-        int fontSize = Pref.MenuValue("my_watermark_fontsize", 80);
-        String picinfo= getPicInfo(exb);
-        String locationInfo= getLocationInfo(exb);
-        String dateformat= getDateFormatInfo();
-        Bitmap bt= getBitmapFromUri(logoPath);
-        Bitmap waterMark=getWaterMarkBitMap(title,bt,picinfo,locationInfo,dateformat,z3? Color.BLACK:Color.WHITE,z3?Color.WHITE:Color.BLACK,decodeFile.getWidth(),waterMarkHeight,fontSize);
-        Bitmap newBit=mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
-
-        String savePath=absolutePath;
-        boolean asNew= Pref.MenuValue("my_watermark_asnew") == 1;
-        if(asNew)savePath=savePath.substring(0,savePath.length()-4)+"_WM.jpg";
-        WriteBitmapFile(savePath,newBit);
-        if(asNew){
-            ExifInterfaceUtil.copyExifInterface(savePath,exb);
-            noticSysPhoto(new File(savePath));
-        }
-        if (Pref.MenuValue("pref_lost_exif_key")!=1) {
-            ExifInterfaceUtil.saveExifInterface(exb);
-        }
-
-    }
-
-    public static void addWaterMark(String absolutePath){
-        String logoFileName = Pref.getStringValue("pref_watermark_logo_key", "agc88.png");
-        String logoPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + logoFileName;
-        if (!new File(logoPath).exists()) {
-            try {
-                logoPath = AssetsUtil.getAssetsFile(G.CONTEXT, "logos/" + logoFileName).getAbsolutePath();
-            }catch (Exception ex){ }
-        }
-        boolean z3= Pref.MenuValue("pref_watermark_bg_key") == 1;
-        String title=Pref.getStringValue("pref_watermark_title_key", "");
-        addWaterMark(absolutePath,logoPath,title,z3);
-    }
+//    public static void addWaterMark(String absolutePath){
+//        String logoFileName = Pref.getStringValue("pref_watermark_logo_key", "agc88.png");
+//        String logoPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + logoFileName;
+//        if (!new File(logoPath).exists()) {
+//            try {
+//                logoPath = AssetsUtil.getAssetsFile(G.CONTEXT, "logos/" + logoFileName).getAbsolutePath();
+//            }catch (Exception ex){ }
+//        }
+//        boolean z3= Pref.MenuValue("pref_watermark_bg_key") == 1;
+//        String title=Pref.getStringValue("pref_watermark_title_key", "");
+//        addWaterMark(absolutePath,logoPath,title,z3);
+//    }
     public static Bitmap  getWaterMarkBitMap(String title,Bitmap logo,String picInfo,String locationInfo,String dateFormat,int bgColor,int txtColor,int waterMarkWidth,int waterMarkHeight,int fontSize ){
         boolean isInner=waterMarkHeight<0;
         waterMarkHeight=Math.abs(waterMarkHeight);
@@ -164,7 +158,7 @@ public class WaterMarkUtil {
         }
     }
 
-    private static void noticSysPhoto(File file){
+    public static void noticSysPhoto(File file){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             ContentValues values = new ContentValues();
             values.put(MediaStore.MediaColumns.DISPLAY_NAME, file.getName());
@@ -222,13 +216,16 @@ public class WaterMarkUtil {
                 }
             }
             sb.append("mm f/").append(exifInterface.getAttribute("FNumber")).append(" ");
-            double d=Double.parseDouble(exifInterface.getAttribute("ExposureTime"));
-            if (d > 1.0d) {
-                sb.append(String.format(Locale.ROOT, "%.2f", d));
-            }else if (d >= 0.1d) {
-                sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
-            }else {
-                sb.append("1/") .append( ((int) (1.0d / d)));
+            String ept=exifInterface.getAttribute("ExposureTime");
+            if(ept!=null&&!ept.isEmpty()) {
+                double d = Double.parseDouble(ept);
+                if (d > 1.0d) {
+                    sb.append(String.format(Locale.ROOT, "%.2f", d));
+                } else if (d >= 0.1d) {
+                    sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
+                } else {
+                    sb.append("1/").append(((int) (1.0d / d)));
+                }
             }
 
             sb.append(" ISO").append(exifInterface.getAttribute("ISOSpeedRatings"));
@@ -253,7 +250,7 @@ public class WaterMarkUtil {
     public static String getLocationInfo(ExifInterface exifInterface) {
         try {
             if(Pref.MenuValue("my_watermark_location") != 0)
-                return LocationUtil.getLocationInfoByExifInterface(exifInterface);
+                return LocationUtil.getExifInterfaceLocalInfo(exifInterface);
             else return "";
         } catch (Exception e) {
             e.printStackTrace();

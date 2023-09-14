@@ -16,6 +16,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import agc.Agc;
+
 public class CameraUtil {
     private static JSONObject my_use_cust_cameras=null;
     private static String cid="";
@@ -69,6 +71,40 @@ public class CameraUtil {
                 }
             }
             return cameras;
+        }
+        return  llist;
+    }
+
+    public static List<Camera> reSetCameras(List<Camera> llist){
+        if(llist!=null)return llist;
+        for(Camera c:llist){
+            if(c.isFront()){
+                c.setName("前置");
+            }else  if("Main".equalsIgnoreCase(c.getName())){
+                c.setName("主摄");
+            }else  if("Wide".equalsIgnoreCase(c.getName())){
+                c.setName("广角");
+            }else  if("Tele".equalsIgnoreCase(c.getName())){
+                c.setName("长焦");
+            }
+        }
+
+        if(Build.MODEL.equals("PGEM10")) {
+            for(Camera c:llist){
+                if(c.getId().equals("0")){
+                    c.setName("主摄+广角");
+                }else if(c.getId().equals("5")){
+                    c.setName("主摄+广角+长焦");
+                }
+                if (c.getId().equals(cid)) {
+                    //{"id":"0","fl":15.38,"mnfd":4.0,"fl35":144,"ps":2.0,"at":2.6,"n":"","zs":1,"pid":"4"}
+                    Camera nc=  getCamerAsTele();
+                    nc.setSizes(c.getSizes());
+                    llist.add(nc);
+                    llist.remove(c);
+                    break;
+                }
+            }
         }
         return  llist;
     }

@@ -11,11 +11,12 @@ public class GActivity extends Activity {
         Class c=null;
         try {
             c=Class.forName("com.google.android.apps.camera.legacy.app.activity.CameraImageActivity");
+            Intent intent = new Intent(this,c);
+            intent.setAction(MediaStore.INTENT_ACTION_VIDEO_CAMERA);
+            startActivity(intent);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        Intent intent = new Intent(this,c);
-        intent.setAction(MediaStore.INTENT_ACTION_VIDEO_CAMERA);
-        startActivity(intent);
+        finish();
     }
 }

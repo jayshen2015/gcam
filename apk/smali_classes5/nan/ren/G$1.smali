@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/G;->drawWaterMark(Ljava/lang/String;)V
+    value = Lnan/ren/G;->medianFilter(Ljava/io/File;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
 
-    .line 44
+    .line 122
     iput-object p1, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
 
     iput-object p2, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
@@ -42,14 +42,14 @@
 .method public run()V
     .locals 3
 
-    .line 47
+    .line 125
     sget v0, Lcom/Globals;->sHdr_process:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 48
+    .line 126
     iget-object v0, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x64
@@ -58,13 +58,19 @@
 
     goto :goto_0
 
-    .line 50
+    .line 128
     :cond_0
-    iget-object v0, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
+    new-instance v0, Landroid/os/Handler;
 
-    invoke-static {v0}, Lnan/ren/WaterMarkUtil;->addWaterMark(Ljava/lang/String;)V
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    .line 52
+    new-instance v1, Lnan/ren/G$1$1;
+
+    invoke-direct {v1, p0}, Lnan/ren/G$1$1;-><init>(Lnan/ren/G$1;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 154
     :goto_0
     return-void
 .end method

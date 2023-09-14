@@ -1985,7 +1985,7 @@
 .end method
 
 .method public static setDeveloperSettingsNonPixel()V
-    .locals 5
+    .locals 6
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
@@ -2251,6 +2251,12 @@
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
+    sget-object v1, Ldhu;->i:Ldhj;
+
+    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Ldit;
+
     sget-object v1, Ldhw;->q:Ldhj;
 
     invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
@@ -2455,9 +2461,9 @@
 
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v0, v1, v4}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+    invoke-virtual {v0, v1, v5}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
@@ -2495,6 +2501,66 @@
 
     invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
 
+    sget-object v0, LAGC;->gcaConfig:Ldit;
+
+    sget-object v1, Ldgu;->aj:Ldhj;
+
+    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+
+    const-string v0, "lib_initial_zoom_key"
+
+    invoke-static {v0, v4}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v4
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "initialZoom"
+
+    invoke-static {v1, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;F)I
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->bN:Ldhj;
+
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->bO:Ldhj;
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+
+    :cond_0
+    const-string v0, "lib_tele_zoom_ratio_key"
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-eqz v1, :cond_1
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->ao:Ldhj;
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+
+    :cond_1
     return-void
 .end method
 

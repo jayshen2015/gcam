@@ -594,47 +594,17 @@
 .method public final L()Z
     .locals 6
 
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, LDeveloperOptions;->auxl:Ldhj;
 
-    sget-object v1, Lkli;->c:[I
+    invoke-static {v0}, LAGC;->GetDevSettingsBooleanValue(Ldhj;)Z
 
-    invoke-virtual {p0, v0, v1}, Lklh;->m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
-
-    check-cast v0, [I
-
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    :goto_0
-    if-ge v3, v1, :cond_1
-
-    aget v4, v0, v3
-
-    const/16 v5, 0x9
-
-    if-ne v4, v5, :cond_0
-
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
     return v0
 
     :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final M()Z
-    .locals 6
-
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     sget-object v1, Lkli;->c:[I
@@ -656,9 +626,61 @@
 
     aget v4, v0, v3
 
-    const/16 v5, 0xb
+    const/16 v5, 0x9
 
     if-ne v4, v5, :cond_1
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return v2
+.end method
+
+.method public final M()Z
+    .locals 6
+
+    sget-object v0, LDeveloperOptions;->auxl:Ldhj;
+
+    invoke-static {v0}, LAGC;->GetDevSettingsBooleanValue(Ldhj;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v0
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    sget-object v1, Lkli;->c:[I
+
+    invoke-virtual {p0, v0, v1}, Lklh;->m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [I
+
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_0
+    if-ge v3, v1, :cond_3
+
+    aget v4, v0, v3
+
+    const/16 v5, 0xb
+
+    if-ne v4, v5, :cond_2
 
     iget-object v0, p0, Lklh;->b:Lmwn;
 
@@ -668,19 +690,19 @@
 
     const/4 v1, 0x1
 
-    if-le v0, v1, :cond_0
+    if-le v0, v1, :cond_1
 
     move v2, v1
 
-    :cond_0
+    :cond_1
     return v2
 
-    :cond_1
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     return v2
 .end method
 

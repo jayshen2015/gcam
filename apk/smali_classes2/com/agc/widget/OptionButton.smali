@@ -193,44 +193,25 @@
     move-result-object v1
 
     iget-object v2, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
-		
-	invoke-static {v2}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-	
-	move-result-object v3
-	
-	if-eqz v3, :cond_4
-	
-	invoke-virtual {p0, v3}, Lcom/agc/widget/OptionButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-	
-	goto :goto_3
-	
-	:cond_4
 
-    invoke-virtual {p0}, Lcom/agc/widget/OptionButton;->getContext()Landroid/content/Context;
+    #invoke-virtual {p0}, Lcom/agc/widget/OptionButton;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    #move-result-object v3
 
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    #invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    #move-result-object v3
 
-    const-string v4, "drawable"
+    #const-string v4, "drawable"
 
-    invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    #invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    #move-result v1
+
+    #invoke-virtual {p0, v1}, Lcom/agc/widget/OptionButton;->setImageResource(I)V
     
-    if-nez v0, :cond_5
-    
-    const-string v2, "agc_lib_patcher"
-    
-    invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    
-    move-result v0
-    
-    :cond_5
-    invoke-virtual {p0, v0}, Lcom/agc/widget/OptionButton;->setImageResource(I)V
-    :goto_3
+    invoke-static {p0,v2}, Lnan/ren/G;->initIcon(Lcom/agc/widget/OptionButton;Ljava/lang/String;)V
+
     :cond_3
     return-void
 .end method
@@ -280,6 +261,7 @@
 
     return-void
 .end method
+
 
 # virtual methods
 .method public init(Landroid/content/Context;)V

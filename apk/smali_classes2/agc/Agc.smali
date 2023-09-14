@@ -84,7 +84,7 @@
 .method public static native drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
-.method public static native drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static native drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
 .method public static native experimentalKeys(I)V

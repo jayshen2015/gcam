@@ -71,14 +71,12 @@
 
     move-result-object v2
 
-    const/4 v8, -0x1
-
     :try_start_0
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v10
+    move-result v8
 
-    if-eqz v10, :cond_1
+    if-eqz v8, :cond_1
 
     goto :goto_1
 
@@ -88,108 +86,89 @@
     :goto_1
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v8
+    move-result v2
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3
+    goto :goto_4
 
     :catch_0
-    move-exception v9
+    move-exception v8
 
-    const/16 v9, 0x2e
+    const/16 v8, 0x2e
 
-    invoke-virtual {v2, v9}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v2, v8}, Ljava/lang/String;->lastIndexOf(I)I
 
-    move-result v9
+    move-result v8
 
-    if-lez v9, :cond_2
+    if-lez v8, :cond_2
 
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    invoke-virtual {v2, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v2, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
     :cond_2
-    const-string v9, "txt"
+    const-string v8, "txt"
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v8
 
-    const-string v10, "/"
+    if-nez v8, :cond_4
 
-    const-string v11, "awb_data"
+    const-string v8, "gawb"
 
-    if-eqz v9, :cond_3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    :goto_2
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
-
-    move-result-object v9
-
-    invoke-static {v9, v11}, Lcom/agc/util/FileUtil;->getFilesPath(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_3
-
-    :cond_3
-    const-string v9, "gawb"
-
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v0, :cond_3
 
     goto :goto_2
 
-    :cond_4
-    const/4 v8, -0x2
+    :cond_3
+    const/4 v0, -0x2
 
-    move-object v0, v2
+    goto :goto_3
+
+    :cond_4
+    :goto_2
+    const/4 v0, -0x1
+
+    new-instance v8, Ljava/io/File;
+
+    sget-object v9, Lcom/Globals;->awbFolder:Ljava/io/File;
+
+    invoke-direct {v8, v9, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v8}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
 
     :goto_3
-    invoke-static {v8, v0, v5, v7, v1}, Lagc/Agc;->newAwb(ILjava/lang/String;FFLjava/lang/String;)V
+    move-object v14, v2
+
+    move v2, v0
+
+    move-object v0, v14
+
+    :goto_4
+    invoke-static {v2, v0, v5, v7, v1}, Lagc/Agc;->newAwb(ILjava/lang/String;FFLjava/lang/String;)V
 
     new-instance v0, Lcom/google/googlex/gcam/QcColorCalibration;
 
     invoke-direct {v0}, Lcom/google/googlex/gcam/QcColorCalibration;-><init>()V
 
     :try_start_1
-    new-instance v14, Lcom/google/googlex/gcam/QcIlluminantVector;
+    new-instance v13, Lcom/google/googlex/gcam/QcIlluminantVector;
 
-    invoke-direct {v14}, Lcom/google/googlex/gcam/QcIlluminantVector;-><init>()V
+    invoke-direct {v13}, Lcom/google/googlex/gcam/QcIlluminantVector;-><init>()V
 
     const/4 v1, 0x0
 
-    :goto_4
+    :goto_5
     invoke-static {}, Lagc/Agc;->getAWBEntryLen()I
 
     move-result v2
@@ -216,26 +195,26 @@
 
     invoke-static {v7, v8, v12, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->QcColorCalibration_IlluminantData_bg_ratio_set(JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;F)V
 
-    iget-wide v7, v14, Lcom/google/googlex/gcam/QcIlluminantVector;->a:J
+    iget-wide v7, v13, Lcom/google/googlex/gcam/QcIlluminantVector;->a:J
 
     iget-wide v10, v12, Lcom/google/googlex/gcam/QcColorCalibration$IlluminantData;->a:J
 
-    move-object v9, v14
+    move-object v9, v13
 
     invoke-static/range {v7 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->QcIlluminantVector_add(JLcom/google/googlex/gcam/QcIlluminantVector;JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;)V
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_5
-    iget-wide v9, v0, Lcom/google/googlex/gcam/QcColorCalibration;->a:J
+    iget-wide v8, v0, Lcom/google/googlex/gcam/QcColorCalibration;->a:J
 
-    iget-wide v12, v14, Lcom/google/googlex/gcam/QcIlluminantVector;->a:J
+    iget-wide v11, v13, Lcom/google/googlex/gcam/QcIlluminantVector;->a:J
 
-    move-object v11, v0
+    move-object v10, v0
 
-    invoke-static/range {v9 .. v14}, Lcom/google/googlex/gcam/GcamModuleJNI;->QcColorCalibration_illuminant_data_set(JLcom/google/googlex/gcam/QcColorCalibration;JLcom/google/googlex/gcam/QcIlluminantVector;)V
+    invoke-static/range {v8 .. v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->QcColorCalibration_illuminant_data_set(JLcom/google/googlex/gcam/QcColorCalibration;JLcom/google/googlex/gcam/QcIlluminantVector;)V
 
     cmpl-float v1, v3, v4
 
@@ -264,21 +243,21 @@
 
     move v6, v3
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_7
     const-string v1, "Error WB_CALIB_GR_OVER_GB_RATIO is not available. Setting the value to 1.0f."
 
     invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
-    :goto_5
+    :goto_6
     iget-wide v1, v0, Lcom/google/googlex/gcam/QcColorCalibration;->a:J
 
     invoke-static {v1, v2, v0, v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->QcColorCalibration_grgb_ratio_set(JLcom/google/googlex/gcam/QcColorCalibration;F)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_6
+    goto :goto_7
 
     :catchall_0
     move-exception v1
@@ -287,16 +266,16 @@
 
     invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
-    :goto_6
-    iget-wide v9, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
+    :goto_7
+    iget-wide v8, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
 
-    iget-wide v12, v0, Lcom/google/googlex/gcam/QcColorCalibration;->a:J
+    iget-wide v11, v0, Lcom/google/googlex/gcam/QcColorCalibration;->a:J
 
-    move-object v11, p0
+    move-object v10, p0
 
-    move-object v14, v0
+    move-object v13, v0
 
-    invoke-static/range {v9 .. v14}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_qc_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/QcColorCalibration;)V
+    invoke-static/range {v8 .. v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_qc_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/QcColorCalibration;)V
 
     return-void
 .end method

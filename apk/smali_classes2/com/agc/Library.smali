@@ -86,49 +86,25 @@
 
     if-eqz v5, :cond_4
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/io/File;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v7, Lcom/Globals;->libFolder:Ljava/io/File;
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+    invoke-direct {v5, v7, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/agc/pref/LibraryLoader;->getLibDirectory(Landroid/content/Context;)Ljava/io/File;
+    invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v7, "/"
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    new-instance v7, Ljava/io/File;
-
-    invoke-direct {v7, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7}, Ljava/io/File;->exists()Z
+    invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v8
 
     if-eqz v8, :cond_3
 
-    move-object v3, v5
+    move-object v3, v7
 
-    invoke-static {v5}, Ljava/lang/System;->load(Ljava/lang/String;)V
+    invoke-static {v7}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
     goto :goto_0
 

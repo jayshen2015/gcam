@@ -147,14 +147,42 @@ public class ExifInterfaceUtil {
         "YCbCrSubSampling\n" +
         "YResolution").split("\n");
 
-    public static void saveExifInterface(ExifInterface exif)  {
+    public static ExifInterface get(String absolutePath){
+        try{
+            return new ExifInterface(absolutePath);
+        }catch (Exception ex){
+            return null;
+        }
+    }
+
+    public static void saveNowExifInterface(String imgfile)  {
+        try {
+            if(imgfile.toLowerCase().endsWith(".dng"))return ;
+            saveExifInterface(new ExifInterface(imgfile));
+        }catch (Exception ex){}
+    }
+    private static void saveExifInterface(ExifInterface exif)  {
         if(Build.BRAND.equalsIgnoreCase("OPPO")||Build.BRAND.equalsIgnoreCase("OnePlus")){
-            exif.setAttribute("UserComment","oplus_262176");
+//            exif.setAttribute("UserComment","oplus_262176");
             exif.setAttribute("Model",NUtil.getProp("ro.vendor.oplus.market.name",Build.MODEL));
-            exif.setAttribute("ExifVersion","0220");
-            exif.setAttribute("MakerNote","{\"PiFlag\":\"0\",\"nightFlag\":\"1\",\"nightMode\": \"0\",\"asdOut\": [\"0\"],\"apsAsdOut\": [\"7\"],\"apsAsdClsOut\": [\"7\", \"0\"],\"iso\": \"362\",\"expTime\": \"0\",\"fType\":\"48\",\"bkMode\":\"25\",\"aideblur\":\"0\",\"aisState\":\"0\"}");
+//            exif.setAttribute("ExifVersion","0220");
+//            exif.setAttribute("MakerNote","{\"PiFlag\":\"0\",\"nightFlag\":\"1\",\"nightMode\": \"0\",\"asdOut\": [\"0\"],\"apsAsdOut\": [\"7\"],\"apsAsdClsOut\": [\"7\", \"0\"],\"iso\": \"362\",\"expTime\": \"0\",\"fType\":\"48\",\"bkMode\":\"25\",\"aideblur\":\"0\",\"aisState\":\"0\"}");
+        }
+        String pztitle=NUtil.getProfileTitle();
+        if(pztitle!=null) {
+         //   G.log("ProfileTitle:"+pztitle);
+//            exif.setAttribute(ExifInterface.TAG_MAKE, pztitle);
+            exif.setAttribute(ExifInterface.TAG_USER_COMMENT, pztitle);
+//            exif.setAttribute(ExifInterface.TAG_MAKER_NOTE, pztitle);
+//            exif.setAttribute(ExifInterface.TAG_ARTIST, pztitle);
+//            exif.setAttribute("Model",pztitle);
         }
         try{exif.saveAttributes();}catch (Exception ex){}
+    }
+    public static void copyExifInterface(String filePath,String srcfile)  {
+        try {
+            copyExifInterface(filePath, new ExifInterface(srcfile));
+        }catch (Exception ex){}
     }
     public static void copyExifInterface(String filePath,ExifInterface exif)  {
         try{

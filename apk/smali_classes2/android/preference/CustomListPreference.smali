@@ -78,20 +78,7 @@
     goto :goto_0
 
     :sswitch_0
-    const-string v1, "lut"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :sswitch_1
-    const-string v1, "lib"
+    const-string v1, "xml"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -103,8 +90,8 @@
 
     goto :goto_1
 
-    :sswitch_2
-    const-string v1, "awb"
+    :sswitch_1
+    const-string v1, "lut"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -113,6 +100,32 @@
     if-eqz v0, :cond_0
 
     const/4 v0, 0x2
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v1, "lib"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :sswitch_3
+    const-string v1, "awb"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x3
 
     goto :goto_1
 
@@ -137,6 +150,11 @@
     :pswitch_2
     invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomLib(Landroid/content/Context;)V
 
+    goto :goto_2
+
+    :pswitch_3
+    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomXml(Landroid/content/Context;)V
+
     :goto_2
     return-void
 
@@ -144,13 +162,15 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x17aec -> :sswitch_2
-        0x1a285 -> :sswitch_1
-        0x1a40b -> :sswitch_0
+        0x17aec -> :sswitch_3
+        0x1a285 -> :sswitch_2
+        0x1a40b -> :sswitch_1
+        0x1d017 -> :sswitch_0
     .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0
@@ -166,9 +186,9 @@
 
     move-result-object v0
 
-    const-string v1, "awb_data"
+    sget-object v1, Lcom/Globals;->awbFolder:Ljava/io/File;
 
-    invoke-static {v1}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v1}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -210,7 +230,9 @@
 .method initCustomLib(Landroid/content/Context;)V
     .locals 2
 
-    invoke-static {}, Lcom/agc/pref/LibraryLoader;->customLibs()[Ljava/lang/String;
+    sget-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -269,16 +291,129 @@
     return-void
 .end method
 
+.method initCustomXml(Landroid/content/Context;)V
+    .locals 4
+
+    const-string v0, "pref_xml_path_key"
+
+    invoke-static {v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/io/File;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/preference/CustomListPreference;->defaultEntries:[Ljava/lang/CharSequence;
+
+    invoke-static {v3, v2}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v3}, Landroid/preference/CustomListPreference;->setEntries([Ljava/lang/CharSequence;)V
+
+    iget-object v3, p0, Landroid/preference/CustomListPreference;->defaultEntryValues:[Ljava/lang/CharSequence;
+
+    invoke-static {v3, v2}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v3}, Landroid/preference/CustomListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Landroid/preference/CustomListPreference;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    packed-switch v1, :pswitch_data_0
+
+    :cond_0
+    goto :goto_0
+
+    :pswitch_0
+    const-string v1, "xml"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    move v0, v2
+
+    goto :goto_1
+
+    :goto_0
+    const/4 v0, -0x1
+
+    :goto_1
+    packed-switch v0, :pswitch_data_1
 
     const/4 v0, 0x1
 
     return v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Landroid/preference/CustomListPreference;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/agc/pref/ConfigLoader;->importConfig(Landroid/content/Context;Ljava/lang/String;)V
+
+    return v2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1d017
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method public update()V

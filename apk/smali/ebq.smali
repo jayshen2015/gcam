@@ -139,6 +139,17 @@
 .method public static c(Lkli;)Z
     .locals 5
 
+    sget-object v0, LDeveloperOptions;->auxl:Ldhj;
+
+    invoke-static {v0}, LAGC;->GetDevSettingsBooleanValue(Ldhj;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v0
+
+    :cond_0
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     sget-object v1, Lebq;->b:[I
@@ -156,24 +167,24 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v0, :cond_1
+    if-ge v2, v0, :cond_2
 
     aget v3, p0, v2
 
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_0
+    if-ne v3, v4, :cond_1
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_0
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     return v1
 .end method
 

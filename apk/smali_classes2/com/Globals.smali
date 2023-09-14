@@ -10,15 +10,27 @@
 
 .field public static ISOsystem:I = 0x0
 
+.field public static final awbFolder:Ljava/io/File;
+
+.field public static final awbPath:Ljava/lang/String;
+
 .field public static final configPath:Ljava/lang/String;
 
 .field private static final intentNameRequireFocus:Ljava/lang/String; = "android.intent.extra.REQUIRE_FOCUS"
+
+.field public static final libFolder:Ljava/io/File;
+
+.field public static final libPath:Ljava/lang/String; = "gcastartup_libs"
 
 .field public static final lutFolder:Ljava/io/File;
 
 .field public static final lutPath:Ljava/lang/String;
 
 .field public static maxAnalogSens:F
+
+.field public static final noiseFolder:Ljava/io/File;
+
+.field public static final noisePath:Ljava/lang/String;
 
 .field static previousHdrPlus:Ljava/lang/String;
 
@@ -29,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
@@ -69,6 +81,126 @@
 
     sput-object v0, Lcom/Globals;->configPath:Ljava/lang/String;
 
+    new-instance v0, Ljava/io/File;
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v2
+
+    const-string v3, "gcastartup_libs"
+
+    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "/luts/"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/Globals;->lutPath:Ljava/lang/String;
+
+    new-instance v2, Ljava/io/File;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    sput-object v2, Lcom/Globals;->lutFolder:Ljava/io/File;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "/awb/"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/Globals;->awbPath:Ljava/lang/String;
+
+    new-instance v2, Ljava/io/File;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    sput-object v2, Lcom/Globals;->awbFolder:Ljava/io/File;
+
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -83,7 +215,7 @@
 
     move-result-object v0
 
-    const-string v1, "/luts/"
+    const-string v1, "/noise/"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -93,7 +225,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/Globals;->lutPath:Ljava/lang/String;
+    sput-object v0, Lcom/Globals;->noisePath:Ljava/lang/String;
 
     new-instance v1, Ljava/io/File;
 
@@ -119,7 +251,7 @@
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    sput-object v1, Lcom/Globals;->lutFolder:Ljava/io/File;
+    sput-object v1, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
     return-void
 .end method
@@ -945,6 +1077,11 @@
 .end method
 
 .method public static medianFilter(Ljava/io/File;)V
+    .locals 1
+	invoke-static {p0}, Lnan/ren/G;->medianFilter(Ljava/io/File;)V
+    return-void
+.end method	
+.method public static medianFilter2(Ljava/io/File;)V
     .locals 5
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -1174,66 +1311,86 @@
 .end method
 
 .method public static setSMode(Ljava/lang/String;)V
-    .locals 3
+    .locals 4
 
     const-string v0, "setSMode"
 
     invoke-static {v0, p0}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    invoke-static {p0}, Lagc/Agc;->setSMode(Ljava/lang/String;)V
+    const-string v0, "pref_prevent_portrait_hdr_auto_key"
 
-    invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;
+    const/4 v1, 0x0
 
-    move-result-object v0
-
-    const-string v1, "shot_mode"
-
-    invoke-virtual {v0, v1, p0}, Lcom/Utils/EventBus;->post(Ljava/lang/String;Ljava/lang/Object;)V
-
-    const-string v0, "PORTRAIT"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result v0
 
-    const-string v1, "pref_camera_hdr_plus_key"
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    if-eq v0, v1, :cond_1
 
-    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, "PORTRAIT"
 
-    move-result-object v0
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    move-result v1
 
-    const-string v0, "auto"
+    const-string v2, "pref_camera_hdr_plus_key"
 
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lagc/Agc;->getSMode()I
+
+    move-result v1
+
+    const/4 v3, 0x2
+
+    if-eq v1, v3, :cond_1
+
+    invoke-static {v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+
+    const-string v1, "auto"
+
+    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sget-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    const-string v2, ""
+    const-string v3, ""
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sget-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sput-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
     :cond_1
     :goto_0
+    invoke-static {p0}, Lagc/Agc;->setSMode(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;
+
+    move-result-object v1
+
+    const-string v2, "shot_mode"
+
+    invoke-virtual {v1, v2, p0}, Lcom/Utils/EventBus;->post(Ljava/lang/String;Ljava/lang/Object;)V
+
     return-void
 .end method

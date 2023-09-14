@@ -2,16 +2,78 @@ package nan.ren;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.icu.text.SimpleDateFormat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.Utils.Lens;
+import com.Utils.Pref;
 import com.agc.CrashHandler;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 public class NUtil {
+    private static String PATH=G.BASE_AGC_PATH+"/logs/";
+    private static String FILE_NAME="my_log";
+
+    public static void dumpExceptionToSDCard(Throwable th) {
+        ThreadPoolManager.add(new Runnable() {
+            @Override
+            public void run() {
+
+                    try {
+                        File file = new File(G.BASE_AGC_PATH);
+                        if (!file.exists()) {
+                            file.mkdirs();
+                        }
+                        long currentTimeMillis = System.currentTimeMillis();
+                        String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(currentTimeMillis));
+                        File file2 = new File(PATH + FILE_NAME + "_" + new SimpleDateFormat("yyyyMMdd").format(new Date(currentTimeMillis)) + ".log");
+                        if (!file2.exists()) {
+                            file2.createNewFile();
+                        }
+                        try {
+                            PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(file2, true)));
+                            printWriter.print("Crash time: ");
+                            printWriter.println(format);
+                            printWriter.println();
+                            th.printStackTrace(printWriter);
+                            printWriter.println("---------------------------------end----------------------------------");
+                            printWriter.println();
+                            printWriter.close();
+                        } catch (Exception e) {
+
+                        }
+                    }catch (Exception ex){
+
+                    }
+
+            }
+        });
+    }
+
+
+    public static String getProfileTitle() {
+        try {
+            int i = Pref.MenuValue("lib_patch_profile_key", 1);
+            if (i < 1) return null;
+            String ccid = Lens.getCurrentCameraID();
+            return Pref.getStringValue("lib_profile_title_key_p" + i + "_" + ccid, "配置" + i);
+        }catch (Exception ex){
+            return null;
+        }
+    }
+
+
     private static AlertDialog dialog;
     public static String getProp(String key, String defaultValue) {
         String value = defaultValue;
@@ -48,6 +110,16 @@ public class NUtil {
         }
     }
 
+    public static void deleteFile(String fileName){
+        deleteFile(new File(fileName));
+    }
+    public static void deleteFile(File file){
+        if(file.exists())file.delete();
+    }
+
+    public static boolean fileExists(String file){
+        return new File(file).exists();
+    }
     public static  void toastL(String msg){
         Toast.makeText(G.CONTEXT,msg,Toast.LENGTH_SHORT).show();
     }

@@ -196,35 +196,13 @@
     :catch_0
     move-exception v0
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/io/File;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v7, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+    invoke-direct {v6, v7, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    move-result-object v7
-
-    const-string v8, "noise_model"
-
-    invoke-static {v7, v8}, Lcom/agc/util/FileUtil;->getFilesPath(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, "/"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
 

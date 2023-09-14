@@ -259,8 +259,7 @@
 
     iget-object v10, v10, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
 
-    invoke-static {v10}, Lnan/ren/G;->drawWaterMark(Ljava/lang/String;)V
-	
+    invoke-static {v10, v0, v7, v6}, Lagc/Agc;->drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_1
 
@@ -270,8 +269,12 @@
     iget-object v0, v0, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
 
     invoke-static {v0}, Lagc/Agc;->drawTimeWaterMark(Ljava/lang/String;)V
-	
-	const-string v0, "pref_lost_exif_key"
+
+    :cond_7
+    :goto_1
+    if-eqz v2, :cond_8
+
+    const-string v0, "pref_lost_exif_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->getBoolValue(Ljava/lang/String;)Z
 
@@ -279,14 +282,7 @@
 
     if-nez v0, :cond_8
 
-    #invoke-virtual {v1}, Landroid/media/ExifInterface;->saveAttributes()V
-	
-	invoke-static {v1}, Lnan/ren/G;->saveExifInterface(Landroid/media/ExifInterface;)V
-	
-    :cond_7
-    :goto_1
-    if-eqz v2, :cond_8
-
+    invoke-virtual {v1}, Landroid/media/ExifInterface;->saveAttributes()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

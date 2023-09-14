@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final auxl:Ldhj;
+
 .field public static final ccam:Ldhk;
 
 .field public static final coloco:Ldhk;
@@ -26,6 +28,16 @@
     new-instance v0, Lnoc;
 
     invoke-direct {v0}, Lnoc;-><init>()V
+
+    const-string v1, "camera.fix_request_capabilities"
+
+    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+
+    move-result-object v1
+
+    sput-object v1, LDeveloperOptions;->auxl:Ldhj;
 
     const/4 v1, -0x1
 
@@ -347,7 +359,19 @@
 .end method
 
 .method public static setDefaultValue()V
-    .locals 3
+    .locals 4
+
+    sget-object v0, LAGC;->gcaConfig:Ldit;
+
+    sget-object v1, LDeveloperOptions;->auxl:Ldhj;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
@@ -377,31 +401,25 @@
 
     sget-object v1, LDeveloperOptions;->ccam:Ldhk;
 
-    const/4 v2, 0x0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, LDeveloperOptions;->discm:Ldhk;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, LDeveloperOptions;->coloco:Ldhk;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, LDeveloperOptions;->tonmod:Ldhk;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
 
     return-void
 .end method

@@ -180,8 +180,8 @@
 # virtual methods
 .method public init(Landroid/content/Context;)V
     .locals 9
-	
-	new-instance v0, Ljava/util/ArrayList;
+
+    new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x3
 
@@ -232,16 +232,10 @@
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v0, p0, Lcom/agc/widget/PatchButton;->items:Ljava/util/List;
-		
-	invoke-static {}, Lcom/Utils/Pref;->isHideKaKaItems()Z
-
-	move-result v1
-	 	
-	if-eqz v1 , :cond_0
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
 	
-	:cond_0
+    iget-object v0, p0, Lcom/agc/widget/PatchButton;->items:Ljava/util/List;
+
+    invoke-static {v0}, Lnan/ren/G;->initKaKaItems(Ljava/util/List;)V
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -262,7 +256,7 @@
 
     const-string v3, "lib_profile_show_key_p"
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_2
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -284,17 +278,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
-    const/16 v2, 0xff
+    const/16 v2, 0xc
 
-    if-lt v1, v2, :cond_1
+    if-lt v1, v2, :cond_0
 
     const-string v2, "agc_lib_patcher"
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -332,12 +326,12 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_2
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     const-string v1, "lib_patch_profile_key"
 
     invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
@@ -372,18 +366,18 @@
 
     move-result v1
 
-    if-lez v1, :cond_4
+    if-lez v1, :cond_3
 
     iput v5, p0, Lcom/agc/widget/PatchButton;->selectedIndex:I
 
-    :cond_4
+    :cond_3
     iget v1, p0, Lcom/agc/widget/PatchButton;->selectedIndex:I
 
-    if-lez v1, :cond_5
+    if-lez v1, :cond_4
 
     move v5, v6
 
-    :cond_5
+    :cond_4
     invoke-virtual {p0, v5}, Lcom/agc/widget/PatchButton;->setChecked(Z)V
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V

@@ -53,29 +53,29 @@ public class LocationUtil {
         }
         return editText.toString();
     }
-    public static String getLocationInfoByExifInterface(ExifInterface exifInterface) {
+    public static String getExifInterfaceLocalInfo(ExifInterface exifInterface) {
         StringBuilder sb = new StringBuilder();
         String lat="",lon="",latRef="N",logRef="E";
         if(exifInterface!=null) {
-            /*GPSLatitude "30/1,11/1,3758/100"  GPSLongitude "120/1,10/1,4722/100" */
             lat = exifInterface.getAttribute("GPSLatitude");
             lon = exifInterface.getAttribute("GPSLongitude");
             latRef = exifInterface.getAttribute("GPSLatitudeRef");//N
             logRef = exifInterface.getAttribute("GPSLongitudeRef");//E
         }
-        if(lat==null || lat.trim().isEmpty() ||  lon==null || lon.trim().isEmpty()){
-            G.log("图片位置信息未获取到，将重新获取位置信息。。。");
-            latRef="N";
-            logRef="E";
-            Location l=getLocation();
-            lat=degressToString(l.getLatitude());
-            lon=degressToString(l.getLongitude());
-            exifInterface.setAttribute("GPSLatitude",lat);
-            exifInterface.setAttribute("GPSLongitude",lon);
-            exifInterface.setAttribute("GPSLatitudeRef","N");
-            exifInterface.setAttribute("GPSLongitudeRef","E");
-        }
-        return sb.append(toDmsString(lat)).append(latRef).append(" ").append(toDmsString(lon)).append(logRef).toString();
+        if(lat!=null &&!lat.trim().isEmpty() )sb.append(toDmsString(lat));
+        if(latRef!=null &&!latRef.trim().isEmpty() )sb.append(latRef);
+        if(sb.length()>1)sb.append(" ");
+        if(lon!=null &&!lon.trim().isEmpty() )sb.append(toDmsString(lon));
+        if(logRef!=null &&!logRef.trim().isEmpty() )sb.append(logRef);
+        return sb.toString();
+    }
+    public static String getGpsLocalInfo() {
+        StringBuilder sb = new StringBuilder();
+        Location l=getLocation();
+        if(l==null)return "";
+        String lat=degressToString(l.getLatitude());
+        String lon=degressToString(l.getLongitude());
+        return sb.append(toDmsString(lat)).append("N").append(" ").append(toDmsString(lon)).append("E").toString();
     }
 
     private static String toDmsString(String str) {

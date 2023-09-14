@@ -140,9 +140,7 @@
 
     mul-float/2addr v5, v12
 
-    float-to-int v5, v5
-
-    int-to-long v12, v5
+    float-to-long v12, v5
 
     invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

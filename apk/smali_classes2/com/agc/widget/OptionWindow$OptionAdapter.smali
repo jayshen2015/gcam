@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 9
+    .locals 8
 
     invoke-virtual {p0, p1}, Lcom/agc/widget/OptionWindow$OptionAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -102,7 +102,6 @@
     move-result-object v3
 
     check-cast v3, Landroid/widget/ImageView;
-	
 
     iget-object v4, p0, Lcom/agc/widget/OptionWindow$OptionAdapter;->mContext:Landroid/content/Context;
 
@@ -112,45 +111,21 @@
 
     iget-object v5, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
 
-    const-string v8, ""
-    
-    invoke-static {v5}, Lcom/Utils/Pref;->getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    
-    move-result-object v8
-    
-    if-eqz v8, :cond_1
-    
-    invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-    
-    goto :goto_2
-    
-    :cond_1
-	
-    iget-object v6, p0, Lcom/agc/widget/OptionWindow$OptionAdapter;->mContext:Landroid/content/Context;
+    #iget-object v6, p0, Lcom/agc/widget/OptionWindow$OptionAdapter;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v6}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    #invoke-virtual {v6}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v6
+    #move-result-object v6
 
-    const-string v7, "drawable"
+    #const-string v7, "drawable"
 
-    invoke-virtual {v4, v5, v7, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    #invoke-virtual {v4, v5, v7, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v8
-    
-    if-nez v8, :cond_2
-    
-    const-string v5, "agc_lib_patcher"
-    
-    invoke-virtual {v4, v5, v7, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-    
-    move-result v8
-    
-    :cond_2
+    #move-result v4
 
-    invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageResource(I)V
-	
-    :goto_2
+    #invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    invoke-static {v3,v5}, Lnan/ren/G;->initIcon(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     const-string v3, "agc_option_tv"
 

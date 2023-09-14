@@ -1,4 +1,4 @@
-.class public Lnan/ren/GActivity;
+.class public Lnan/ren/activity/GActivity;
 .super Landroid/app/Activity;
 .source "GActivity.java"
 
@@ -33,37 +33,40 @@
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-object v0, v1
 
-    .line 16
-    nop
-
-    .line 17
+    .line 14
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 18
+    .line 15
     .local v1, "intent":Landroid/content/Intent;
     const-string v2, "android.media.action.VIDEO_CAMERA"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 16
+    invoke-virtual {p0, v1}, Lnan/ren/activity/GActivity;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 19
-    invoke-virtual {p0, v1}, Lnan/ren/GActivity;->startActivity(Landroid/content/Intent;)V
+    .end local v1    # "intent":Landroid/content/Intent;
+    nop
 
     .line 20
+    invoke-virtual {p0}, Lnan/ren/activity/GActivity;->finish()V
+
+    .line 21
     return-void
 
-    .line 14
-    .end local v1    # "intent":Landroid/content/Intent;
+    .line 17
     :catch_0
     move-exception v1
 
-    .line 15
+    .line 18
     .local v1, "e":Ljava/lang/ClassNotFoundException;
     new-instance v2, Ljava/lang/RuntimeException;
 

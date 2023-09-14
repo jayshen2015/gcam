@@ -295,7 +295,7 @@
 .end method
 
 .method public static customFiles(Ljava/io/File;)[Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
@@ -315,6 +315,10 @@
     new-array v0, v0, [Ljava/lang/String;
 
     :goto_0
+    sget-object v1, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+
     return-object v0
 .end method
 
@@ -329,7 +333,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/io/File;->list()[Ljava/lang/String;
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 

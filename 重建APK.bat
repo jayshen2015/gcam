@@ -1,9 +1,10 @@
 @echo off
 rem set BP=%~dp0build
 cd %~dp0
+set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.8.224_V6.0
+set apkname=AGC8.8.224_V7.0
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 echo ###############请选择要编译的包名（默认抖音版本）######################
@@ -23,12 +24,12 @@ if "%num%"=="2" (
 echo -------------------[%pkg%]--------------------
 
 del /F /Q %ROOT%AndroidManifest.xml
-echo %ROOT%AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
-copy %ROOT%AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
+echo %BASE%\dxml\AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
+copy %BASE%\dxml\AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
 
 del /F /Q %ROOT%res\xml\shortcuts.xml
-echo %ROOT%res\xml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
-copy %ROOT%res\xml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
+echo %BASE%\dxml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
+copy %BASE%\dxml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
 
 rmdir /S /Q %BP%
 

@@ -6,15 +6,19 @@
             <include layout="@layout/minibar" />
         </FrameLayout>
         <LinearLayout android:layout_gravity="center|right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <com.agc.widget.GrayscaleButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-            <com.agc.widget.WatermarkButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-            <com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		
+            <!--com.agc.widget.GrayscaleButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+            <com.agc.widget.WatermarkButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
+            <nan.ren.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+            <nan.ren.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />     
+			<com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
         </LinearLayout>
     </FrameLayout>
     <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
         <com.custom.shutter.RotSeek android:layout_gravity="center|left|top" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="60.0dip" android:layout_height="120.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="56.0dip" android:contextClickable="true" />
         <com.custom.iso.RotSeek android:layout_gravity="center|left|top" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="60.0dip" android:layout_height="120.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="180.0dip" android:contextClickable="true" />
         <com.custom.focus.RotSeek android:layout_gravity="bottom|center|left" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="60.0dip" android:layout_height="200.0dip" android:layout_marginLeft="12.0dip" android:layout_marginBottom="8.0dip" android:contextClickable="true" />
+        <com.custom.lut.RotSeek android:layout_gravity="bottom|center|right" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="60.0dip" android:layout_height="120.0dip" android:layout_marginRight="72.0dip" android:layout_marginBottom="8.0dip" android:contextClickable="true" />
     </FrameLayout>
     <FrameLayout android:paddingLeft="16.0dip" android:paddingTop="4.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
         <LinearLayout android:gravity="center" android:layout_gravity="bottom|center|right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">

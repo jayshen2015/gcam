@@ -188,9 +188,9 @@
 .method initCustomAwbDelete(Landroid/content/Context;)V
     .locals 1
 
-    const-string v0, "awb_data"
+    sget-object v0, Lcom/Globals;->awbFolder:Ljava/io/File;
 
-    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -204,7 +204,9 @@
 .method initCustomLibDelete(Landroid/content/Context;)V
     .locals 1
 
-    invoke-static {}, Lcom/agc/pref/LibraryLoader;->customLibs()[Ljava/lang/String;
+    sget-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -234,9 +236,9 @@
 .method initCustomNoiseDelete(Landroid/content/Context;)V
     .locals 1
 
-    const-string v0, "noise_model"
+    sget-object v0, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
-    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
 
     move-result-object v0
 
@@ -248,7 +250,7 @@
 .end method
 
 .method onCustomAwbDelete(Landroid/preference/Preference;Ljava/lang/Object;)V
-    .locals 7
+    .locals 6
 
     move-object v0, p2
 
@@ -283,15 +285,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const-string v6, "awb_data"
-
-    invoke-static {v5, v6}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v5
+    sget-object v5, Lcom/Globals;->awbFolder:Ljava/io/File;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -378,13 +372,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/agc/pref/LibraryLoader;->getLibDirectory(Landroid/content/Context;)Ljava/io/File;
-
-    move-result-object v5
+    sget-object v5, Lcom/Globals;->libFolder:Ljava/io/File;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -423,7 +411,7 @@
 
     const/4 v2, 0x0
 
-    const-string v3, "The libs are deleted."
+    const-string v3, "The lut files are deleted."
 
     invoke-static {v1, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
@@ -523,7 +511,7 @@
 .end method
 
 .method onCustomNoiseDelete(Landroid/preference/Preference;Ljava/lang/Object;)V
-    .locals 7
+    .locals 6
 
     move-object v0, p2
 
@@ -558,15 +546,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const-string v6, "noise_model"
-
-    invoke-static {v5, v6}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v5
+    sget-object v5, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

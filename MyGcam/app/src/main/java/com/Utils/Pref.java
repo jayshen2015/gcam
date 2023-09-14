@@ -32,6 +32,10 @@ public class Pref {
         if(b==0)return i;
         return b;
     }
+    public  static  void setMenuValue(String a,int i){
+
+    }
+
 
     public static  int getAuxPrefIntValue(String a){
         return  0;

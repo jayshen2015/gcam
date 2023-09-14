@@ -91,6 +91,240 @@
     return-object v7
 .end method
 
+.method public static getExifInterfaceLocalInfo(Landroid/media/ExifInterface;)Ljava/lang/String;
+    .locals 7
+    .param p0, "exifInterface"    # Landroid/media/ExifInterface;
+
+    .line 57
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 58
+    .local v0, "sb":Ljava/lang/StringBuilder;
+    const-string v1, ""
+
+    .local v1, "lat":Ljava/lang/String;
+    const-string v2, ""
+
+    .local v2, "lon":Ljava/lang/String;
+    const-string v3, "N"
+
+    .local v3, "latRef":Ljava/lang/String;
+    const-string v4, "E"
+
+    .line 59
+    .local v4, "logRef":Ljava/lang/String;
+    if-eqz p0, :cond_0
+
+    .line 60
+    const-string v5, "GPSLatitude"
+
+    invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 61
+    const-string v5, "GPSLongitude"
+
+    invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 62
+    const-string v5, "GPSLatitudeRef"
+
+    invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 63
+    const-string v5, "GPSLongitudeRef"
+
+    invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 65
+    :cond_0
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    invoke-static {v1}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 66
+    :cond_1
+    if-eqz v3, :cond_2
+
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 67
+    :cond_2
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-le v5, v6, :cond_3
+
+    const-string v5, " "
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 68
+    :cond_3
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    invoke-static {v2}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 69
+    :cond_4
+    if-eqz v4, :cond_5
+
+    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_5
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 70
+    :cond_5
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    return-object v5
+.end method
+
+.method public static getGpsLocalInfo()Ljava/lang/String;
+    .locals 6
+
+    .line 73
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 74
+    .local v0, "sb":Ljava/lang/StringBuilder;
+    invoke-static {}, Lnan/ren/LocationUtil;->getLocation()Landroid/location/Location;
+
+    move-result-object v1
+
+    .line 75
+    .local v1, "l":Landroid/location/Location;
+    if-nez v1, :cond_0
+
+    const-string v2, ""
+
+    return-object v2
+
+    .line 76
+    :cond_0
+    invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 77
+    .local v2, "lat":Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 78
+    .local v3, "lon":Ljava/lang/String;
+    invoke-static {v2}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "N"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {v3}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "E"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    return-object v4
+.end method
+
 .method public static getLocation()Landroid/location/Location;
     .locals 3
 
@@ -250,178 +484,6 @@
     move-result-object v2
 
     return-object v2
-.end method
-
-.method public static getLocationInfoByExifInterface(Landroid/media/ExifInterface;)Ljava/lang/String;
-    .locals 12
-    .param p0, "exifInterface"    # Landroid/media/ExifInterface;
-
-    .line 57
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 58
-    .local v0, "sb":Ljava/lang/StringBuilder;
-    const-string v1, ""
-
-    .local v1, "lat":Ljava/lang/String;
-    const-string v2, ""
-
-    .local v2, "lon":Ljava/lang/String;
-    const-string v3, "N"
-
-    .local v3, "latRef":Ljava/lang/String;
-    const-string v4, "E"
-
-    .line 59
-    .local v4, "logRef":Ljava/lang/String;
-    const-string v5, "GPSLongitudeRef"
-
-    const-string v6, "GPSLatitudeRef"
-
-    const-string v7, "GPSLongitude"
-
-    const-string v8, "GPSLatitude"
-
-    if-eqz p0, :cond_0
-
-    .line 61
-    invoke-virtual {p0, v8}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 62
-    invoke-virtual {p0, v7}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 63
-    invoke-virtual {p0, v6}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 64
-    invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 66
-    :cond_0
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v9
-
-    if-nez v9, :cond_1
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_2
-
-    .line 67
-    :cond_1
-    const-string v9, "\u56fe\u7247\u4f4d\u7f6e\u4fe1\u606f\u672a\u83b7\u53d6\u5230\uff0c\u5c06\u91cd\u65b0\u83b7\u53d6\u4f4d\u7f6e\u4fe1\u606f\u3002\u3002\u3002"
-
-    invoke-static {v9}, Lnan/ren/G;->log(Ljava/lang/Object;)V
-
-    .line 68
-    const-string v3, "N"
-
-    .line 69
-    const-string v4, "E"
-
-    .line 70
-    invoke-static {}, Lnan/ren/LocationUtil;->getLocation()Landroid/location/Location;
-
-    move-result-object v9
-
-    .line 71
-    .local v9, "l":Landroid/location/Location;
-    invoke-virtual {v9}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v10
-
-    invoke-static {v10, v11}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 72
-    invoke-virtual {v9}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v10
-
-    invoke-static {v10, v11}, Lnan/ren/LocationUtil;->degressToString(D)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 73
-    invoke-virtual {p0, v8, v1}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 74
-    invoke-virtual {p0, v7, v2}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 75
-    const-string v7, "N"
-
-    invoke-virtual {p0, v6, v7}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 76
-    const-string v6, "E"
-
-    invoke-virtual {p0, v5, v6}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 78
-    .end local v9    # "l":Landroid/location/Location;
-    :cond_2
-    invoke-static {v1}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-static {v2}, Lnan/ren/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    return-object v5
 .end method
 
 .method public static newLocation()Landroid/location/Location;

@@ -206,9 +206,9 @@
 
     new-instance v6, Lcom/agc/pref/FileLoader;
 
-    const-string v2, "Import AWB Data"
+    sget-object v3, Lcom/Globals;->awbFolder:Ljava/io/File;
 
-    const-string v3, "awb_data"
+    const-string v2, "Import AWB Data"
 
     const-string v4, ""
 
@@ -218,19 +218,43 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0, v6}, Landroid/preference/CustomPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+    const/16 v0, 0xa
+
+    invoke-virtual {v6, v0}, Lcom/agc/pref/FileLoader;->withMultipleCount(I)Lcom/agc/pref/FileLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/preference/CustomPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
     return-void
 .end method
 
 .method initCustomLib(Landroid/content/Context;)V
-    .locals 1
+    .locals 7
 
-    new-instance v0, Lcom/agc/pref/LibraryLoader;
+    new-instance v6, Lcom/agc/pref/FileLoader;
 
-    invoke-direct {v0, p0}, Lcom/agc/pref/LibraryLoader;-><init>(Landroid/preference/Preference;)V
+    sget-object v3, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    const-string v2, "Import Lib File"
+
+    const-string v4, ""
+
+    const-string v5, "so"
+
+    move-object v0, v6
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
+
+    const/16 v0, 0xa
+
+    invoke-virtual {v6, v0}, Lcom/agc/pref/FileLoader;->withMultipleCount(I)Lcom/agc/pref/FileLoader;
+
+    move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/preference/CustomPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
@@ -272,9 +296,9 @@
 
     new-instance v6, Lcom/agc/pref/FileLoader;
 
-    const-string v2, "Import Noise Model"
+    sget-object v3, Lcom/Globals;->noiseFolder:Ljava/io/File;
 
-    const-string v3, "noise_model"
+    const-string v2, "Import Noise Model"
 
     const-string v4, ""
 
@@ -284,9 +308,15 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lcom/agc/pref/FileLoader;-><init>(Landroid/preference/Preference;Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0, v6}, Landroid/preference/CustomPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+    const/16 v0, 0xa
+
+    invoke-virtual {v6, v0}, Lcom/agc/pref/FileLoader;->withMultipleCount(I)Lcom/agc/pref/FileLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/preference/CustomPreference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
     return-void
 .end method

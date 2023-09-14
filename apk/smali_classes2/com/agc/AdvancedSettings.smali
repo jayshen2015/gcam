@@ -93,7 +93,7 @@
     return v0
 .end method
 
-.method public static getAutoNs()I
+.method public static getAutoNs(Z)Z
     .locals 2
 
     const-string v0, "pref_auto_ns_key"
@@ -104,7 +104,24 @@
 
     move-result v0
 
-    return v0
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    const/4 p0, 0x1
+
+    :cond_1
+    :goto_0
+    return p0
 .end method
 
 .method public static getCompressMergedDNG()Z
