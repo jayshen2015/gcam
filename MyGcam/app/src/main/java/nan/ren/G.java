@@ -22,6 +22,12 @@ import java.util.List;
 
 import agc.Agc;
 import nan.ren.activity.PreviewActivity;
+import nan.ren.util.CameraUtil;
+import nan.ren.util.ExifInterfaceUtil;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.JsonUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.WaterMarkUtil;
 
 public class G {
 
@@ -36,6 +42,8 @@ public class G {
     public static String TMP_PATH;
     public static String LUT_PATH;
 
+    public static String CAMERA_PATH;
+
     static {
         SHOW_TASK_LOG= Pref.MenuValue("show_task_log")==1;
         CONTEXT=Globals.getAppContext();
@@ -46,6 +54,7 @@ public class G {
         LOGO_PATH=G.BASE_AGC_PATH+"/logos/";
         TMP_PATH=G.BASE_AGC_PATH+"/.tmp/";
         LUT_PATH=G.BASE_AGC_PATH+"/luts/";
+        CAMERA_PATH=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+"/Camera/";
     }
 
     public static void initIcon(OptionButton op,String fileName) {
@@ -107,7 +116,7 @@ public class G {
 
     public static void  log(Object o){
         try {
-            String msg=JsonUtil.toJSONString(o);
+            String msg= JsonUtil.toJSONString(o);
             NUtil.log(msg);
             if(SHOW_TASK_LOG)
                 Toast.makeText(CONTEXT,msg,Toast.LENGTH_SHORT).show();
@@ -118,6 +127,7 @@ public class G {
 
     public static void medianFilter(File file) {
         final String absolutePath = file.getAbsolutePath();
+        if(absolutePath.toLowerCase().endsWith(".dng"))return;
         final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
@@ -129,24 +139,28 @@ public class G {
                         @Override
                         public void run() {
                             try {
-//                                ExifInterface exifInterface = new ExifInterface(absolutePath);
-//                                Agc.getImageExif(absolutePath, "", "", "", "");
-
+                                ExifInterface exifInterface = new ExifInterface(absolutePath);
+                                Agc.getImageExif(absolutePath, "", "", "", "");
                                 int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
                                 if (auxPrefIntValue != 0) {
                                     Agc.medianFilter(absolutePath, auxPrefIntValue);
                                 }
-                                if (Pref.MenuValue("my_preview_luts") == 1) {
+                                String picPath=absolutePath;
+                                boolean isPreviewLut=(Pref.MenuValue("my_preview_luts") == 1);
+                                if (Pref.MenuValue("pref_photo_watermark_key") == 1 &&
+                                    Pref.MenuValue("my_hide_wmbtn") == 0){
+                                    if(!isPreviewLut)G.saveImageByLUT(picPath,Pref.getAuxProfilePrefStringValue("lib_lut_key"));
+                                    picPath= WaterMarkUtil.addWaterMark(picPath);
+                                    ExifInterfaceUtil.copyExifInterface(picPath,exifInterface);
+                                }
+                                if (isPreviewLut) {
                                     Intent intent = new Intent(CONTEXT, PreviewActivity.class);
-                                    intent.putExtra("imagePath",absolutePath);
+                                    intent.putExtra("imagePath",picPath);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                     CONTEXT.startActivity(intent);
-                                }else {
-                                    G.saveImageByLUT(absolutePath,Pref.getAuxProfilePrefStringValue("lib_lut_key"));
                                 }
                             } catch (Exception e) {
                                 NUtil.dumpExceptionToSDCard(e);
-                                log("Error: " + e.getMessage());
                             }
                         }
                     });

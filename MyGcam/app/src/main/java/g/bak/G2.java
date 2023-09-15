@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,12 +18,12 @@ import java.io.File;
 import java.util.List;
 
 import agc.Agc;
-import nan.ren.CameraUtil;
-import nan.ren.ExifInterfaceUtil;
-import nan.ren.ImageUtil;
-import nan.ren.JsonUtil;
-import nan.ren.NUtil;
-import nan.ren.WaterMarkUtil;
+import nan.ren.util.CameraUtil;
+import nan.ren.util.ExifInterfaceUtil;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.JsonUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.WaterMarkUtil;
 import nan.ren.activity.PreviewActivity;
 
 public class G2 {

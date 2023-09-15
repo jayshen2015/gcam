@@ -1,4 +1,4 @@
-.class public Lnan/ren/CameraUtil;
+.class public Lnan/ren/util/CameraUtil;
 .super Ljava/lang/Object;
 .source "CameraUtil.java"
 
@@ -34,12 +34,12 @@
     .line 22
     const/4 v0, 0x0
 
-    sput-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sput-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     .line 23
     const-string v1, ""
 
-    sput-object v1, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sput-object v1, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     .line 25
     const-string v2, "my_use_cust_cameras"
@@ -63,16 +63,16 @@
     if-eqz v3, :cond_1
 
     :cond_0
-    sput-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sput-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     .line 30
     :cond_1
     :try_start_0
-    invoke-static {v2}, Lnan/ren/JsonUtil;->toJson(Ljava/lang/String;)Lorg/json/JSONObject;
+    invoke-static {v2}, Lnan/ren/util/JsonUtil;->toJson(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
 
-    sput-object v3, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sput-object v3, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     .line 31
     const-string v4, "id"
@@ -81,12 +81,12 @@
 
     move-result-object v3
 
-    sput-object v3, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sput-object v3, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     .line 32
     if-nez v3, :cond_2
 
-    sput-object v1, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sput-object v1, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -100,13 +100,13 @@
 
     .line 35
     .local v1, "ex":Ljava/lang/Exception;
-    sput-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sput-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     .line 44
     .end local v1    # "ex":Ljava/lang/Exception;
     .end local v2    # "tmp":Ljava/lang/String;
     :goto_0
-    sput-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sput-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     .line 113
     new-instance v0, Landroid/util/Size;
@@ -117,7 +117,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/util/Size;-><init>(II)V
 
-    sput-object v0, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sput-object v0, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     .line 114
     new-instance v0, Landroid/util/Size;
@@ -128,19 +128,19 @@
 
     invoke-direct {v0, v1, v2}, Landroid/util/Size;-><init>(II)V
 
-    sput-object v0, Lnan/ren/CameraUtil;->size3280:Landroid/util/Size;
+    sput-object v0, Lnan/ren/util/CameraUtil;->size3280:Landroid/util/Size;
 
     .line 115
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    sput-object v0, Lnan/ren/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
+    sput-object v0, Lnan/ren/util/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
 
     .line 116
     const-string v0, "RAW_SENSOR,JPEG,PRIVATE,YUV_420_888,RAW_PRIVATE,RAW10,YCBCR_P010,HEIC"
 
-    sput-object v0, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sput-object v0, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     return-void
 .end method
@@ -158,7 +158,7 @@
     .locals 47
 
     .line 164
-    sget-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
@@ -170,7 +170,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sput-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     .line 167
     new-instance v0, Lcom/agc/Camera;
@@ -191,7 +191,7 @@
 
     const v6, 0x41be80c0
 
-    sget-object v7, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v7, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     const v8, 0x404ccccc    # 3.1999998f
 
@@ -234,7 +234,7 @@
 
     move-object/from16 v16, v4
 
-    sget-object v17, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v17, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     const/16 v24, 0x0
 
@@ -242,11 +242,11 @@
 
     const/16 v17, 0x3
 
-    sget-object v18, Lnan/ren/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
+    sget-object v18, Lnan/ren/util/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
 
     const-string v19, "BACKWARD_COMPATIBLE,CONSTRAINED_HIGH_SPEED_VIDEO,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18"
 
-    sget-object v20, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v20, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v4, Ljava/util/HashMap;
 
@@ -290,7 +290,7 @@
 
     const v31, 0x41761800
 
-    sget-object v32, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v32, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     const/high16 v33, 0x40000000    # 2.0f
 
@@ -331,17 +331,17 @@
 
     move-object/from16 v41, v7
 
-    sget-object v8, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v8, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     aput-object v8, v7, v24
 
     const/16 v42, 0x3
 
-    sget-object v43, Lnan/ren/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
+    sget-object v43, Lnan/ren/util/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
 
     const-string v44, "BACKWARD_COMPATIBLE,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18"
 
-    sget-object v45, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v45, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v7, Ljava/util/HashMap;
 
@@ -381,7 +381,7 @@
 
     const v30, 0x42872d00
 
-    sget-object v31, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v31, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     const/high16 v32, 0x40000000    # 2.0f
 
@@ -412,17 +412,17 @@
 
     move-object/from16 v40, v4
 
-    sget-object v5, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v5, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     aput-object v5, v4, v24
 
     const/16 v41, 0x3
 
-    sget-object v42, Lnan/ren/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
+    sget-object v42, Lnan/ren/util/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
 
     const-string v43, "BACKWARD_COMPATIBLE,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18,14"
 
-    sget-object v44, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v44, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v4, Ljava/util/HashMap;
 
@@ -464,7 +464,7 @@
 
     const v30, 0x41b14190
 
-    sget-object v31, Lnan/ren/CameraUtil;->size3280:Landroid/util/Size;
+    sget-object v31, Lnan/ren/util/CameraUtil;->size3280:Landroid/util/Size;
 
     const v32, 0x3fcccccd    # 1.6f
 
@@ -503,15 +503,15 @@
 
     move-object/from16 v40, v8
 
-    sget-object v9, Lnan/ren/CameraUtil;->size3280:Landroid/util/Size;
+    sget-object v9, Lnan/ren/util/CameraUtil;->size3280:Landroid/util/Size;
 
     aput-object v9, v8, v24
 
-    sget-object v42, Lnan/ren/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
+    sget-object v42, Lnan/ren/util/CameraUtil;->emptyphysicalIds:Ljava/util/Set;
 
     const-string v43, "BACKWARD_COMPATIBLE,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18"
 
-    sget-object v44, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v44, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v8, Ljava/util/HashMap;
 
@@ -547,7 +547,7 @@
 
     const v30, 0x41be80c0
 
-    sget-object v31, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v31, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     const v32, 0x404ccccc    # 3.1999998f
 
@@ -582,7 +582,7 @@
 
     move-object/from16 v40, v9
 
-    sget-object v12, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v12, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     aput-object v12, v9, v24
 
@@ -607,7 +607,7 @@
 
     const-string v43, "BACKWARD_COMPATIBLE,CONSTRAINED_HIGH_SPEED_VIDEO,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18,LOGICAL_MULTI_CAMERA"
 
-    sget-object v44, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v44, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v9, Ljava/util/HashMap;
 
@@ -637,7 +637,7 @@
 
     move-result-object v29
 
-    sget-object v31, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v31, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     .line 208
     invoke-static/range {v23 .. v23}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -660,7 +660,7 @@
 
     move-object/from16 v40, v3
 
-    sget-object v6, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v6, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     aput-object v6, v3, v24
 
@@ -683,7 +683,7 @@
 
     const-string v43, "BACKWARD_COMPATIBLE,CONSTRAINED_HIGH_SPEED_VIDEO,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18,LOGICAL_MULTI_CAMERA,14"
 
-    sget-object v44, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v44, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v3, Ljava/util/HashMap;
 
@@ -703,32 +703,32 @@
     invoke-virtual {v3, v1}, Lcom/agc/Camera;->setType(Ljava/lang/String;)V
 
     .line 215
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 216
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 217
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 218
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 219
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 220
-    sget-object v1, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v1, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -814,7 +814,7 @@
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
     .line 48
-    sget-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
@@ -826,7 +826,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sput-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     .line 50
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -977,7 +977,7 @@
 
     move-result-object v2
 
-    sget-object v3, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sget-object v3, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -986,7 +986,7 @@
     if-eqz v2, :cond_7
 
     .line 66
-    invoke-static {}, Lnan/ren/CameraUtil;->getCamerAsTele()Lcom/agc/Camera;
+    invoke-static {}, Lnan/ren/util/CameraUtil;->getCamerAsTele()Lcom/agc/Camera;
 
     move-result-object v2
 
@@ -999,7 +999,7 @@
     invoke-virtual {v2, v3}, Lcom/agc/Camera;->setSizes(Ljava/util/Map;)V
 
     .line 68
-    sget-object v3, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v3, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1009,7 +1009,7 @@
 
     .line 70
     :cond_7
-    sget-object v2, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v2, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1020,7 +1020,7 @@
 
     .line 73
     :cond_8
-    sget-object v0, Lnan/ren/CameraUtil;->cameras:Ljava/util/List;
+    sget-object v0, Lnan/ren/util/CameraUtil;->cameras:Ljava/util/List;
 
     return-object v0
 
@@ -1075,11 +1075,11 @@
 
     .line 124
     .local v9, "pid":Ljava/lang/String;
-    sget-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     if-eqz v0, :cond_10
 
-    sget-object v0, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sget-object v0, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     if-eqz v0, :cond_10
 
@@ -1091,7 +1091,7 @@
 
     .line 126
     :try_start_0
-    sget-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v10, "fl"
 
@@ -1126,7 +1126,7 @@
 
     .line 129
     :cond_1
-    sget-object v12, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v12, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v13, "mnfd"
 
@@ -1159,7 +1159,7 @@
 
     .line 132
     :cond_3
-    sget-object v13, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v13, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v14, "fl35"
 
@@ -1192,7 +1192,7 @@
 
     .line 135
     :cond_5
-    sget-object v14, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v14, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v15, "ps"
 
@@ -1225,7 +1225,7 @@
 
     .line 138
     :cond_7
-    sget-object v15, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v15, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v10, "at"
 
@@ -1260,7 +1260,7 @@
 
     .line 141
     :cond_9
-    sget-object v11, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v11, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v15, "zs"
 
@@ -1295,7 +1295,7 @@
 
     .line 144
     :cond_b
-    sget-object v15, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v15, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     move-object/from16 v16, v0
 
@@ -1343,7 +1343,7 @@
 
     .line 147
     :cond_d
-    sget-object v0, Lnan/ren/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
+    sget-object v0, Lnan/ren/util/CameraUtil;->my_use_cust_cameras:Lorg/json/JSONObject;
 
     const-string v7, "pid"
 
@@ -1420,7 +1420,7 @@
 
     move-object v10, v0
 
-    sget-object v11, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sget-object v11, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     const/4 v12, 0x0
 
@@ -1428,7 +1428,7 @@
 
     move-result-object v14
 
-    sget-object v16, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v16, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -1466,7 +1466,7 @@
 
     const/4 v13, 0x0
 
-    sget-object v15, Lnan/ren/CameraUtil;->size4096:Landroid/util/Size;
+    sget-object v15, Lnan/ren/util/CameraUtil;->size4096:Landroid/util/Size;
 
     aput-object v15, v7, v13
 
@@ -1491,7 +1491,7 @@
 
     const-string v28, "BACKWARD_COMPATIBLE,RAW,YUV_REPROCESSING,PRIVATE_REPROCESSING,READ_SENSOR_SETTINGS,MANUAL_SENSOR,BURST_CAPTURE,MANUAL_POST_PROCESSING,19,18,14"
 
-    sget-object v29, Lnan/ren/CameraUtil;->formats:Ljava/lang/String;
+    sget-object v29, Lnan/ren/util/CameraUtil;->formats:Ljava/lang/String;
 
     new-instance v7, Ljava/util/HashMap;
 
@@ -1724,7 +1724,7 @@
 
     move-result-object v2
 
-    sget-object v3, Lnan/ren/CameraUtil;->cid:Ljava/lang/String;
+    sget-object v3, Lnan/ren/util/CameraUtil;->cid:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1733,7 +1733,7 @@
     if-eqz v2, :cond_8
 
     .line 101
-    invoke-static {}, Lnan/ren/CameraUtil;->getCamerAsTele()Lcom/agc/Camera;
+    invoke-static {}, Lnan/ren/util/CameraUtil;->getCamerAsTele()Lcom/agc/Camera;
 
     move-result-object v0
 

@@ -1991,5 +1991,13 @@ SM8150 = 32770, SM8250 = 40962"</string>
 	
 	<string name="my_add_watermark_title">添加水印</string>
 	
+	<string name="my_hide_wmbtn_title">隐藏水印按钮</string>
+	
+	<string name="my_hide_lutbtn_title">隐藏LUT预览按钮</string>
+	
+	<string name="my_hide_ajbtn_title">隐藏暗角按钮</string>
+	
+	 
+	
 	
 </resources>

@@ -33,14 +33,14 @@ import com.agc.util.AssetsUtil;
 
 import java.io.File;
 
-import nan.ren.ExifInterfaceUtil;
+import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.G;
-import nan.ren.ImageUtil;
-import nan.ren.LocationUtil;
-import nan.ren.NUtil;
-import nan.ren.ThreadPoolManager;
-import nan.ren.UriUtil;
-import nan.ren.WaterMarkUtil;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.LocationUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.ThreadPoolManager;
+import nan.ren.util.UriUtil;
+import nan.ren.util.WaterMarkUtil;
 
 public class WmActivity extends Activity  implements View.OnClickListener {
     ExifInterface exb;
@@ -184,6 +184,8 @@ public class WmActivity extends Activity  implements View.OnClickListener {
        picinfo= WaterMarkUtil.getPicInfo(exb);
       // locationInfo= WaterMarkUtil.getLocationInfo(exb);
        locationInfo=  LocationUtil.getExifInterfaceLocalInfo(exb);
+       if(locationInfo==null||locationInfo.length()<10)locationInfo=LocationUtil.getGpsLocalInfo();
+
    }
 
    void selectPic(int code){

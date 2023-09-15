@@ -1,4 +1,4 @@
-.class public Lnan/ren/ExifInterfaceUtil;
+.class public Lnan/ren/util/ExifInterfaceUtil;
 .super Ljava/lang/Object;
 .source "ExifInterfaceUtil.java"
 
@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lnan/ren/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    sput-object v0, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
 
     .line 6
     return-void
@@ -51,7 +51,7 @@
 
     .line 190
     .local v0, "exnew":Landroid/media/ExifInterface;
-    sget-object v1, Lnan/ren/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
 
     array-length v2, v1
 
@@ -95,7 +95,7 @@
 
     .line 196
     :cond_1
-    invoke-virtual {v0}, Landroid/media/ExifInterface;->saveAttributes()V
+    invoke-static {v0}, Lnan/ren/util/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -123,7 +123,7 @@
 
     invoke-direct {v0, p1}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p0, v0}, Lnan/ren/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
+    invoke-static {p0, v0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -196,7 +196,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lnan/ren/NUtil;->getProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lnan/ren/util/NUtil;->getProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -206,7 +206,7 @@
 
     .line 171
     :cond_1
-    invoke-static {}, Lnan/ren/NUtil;->getProfileTitle()Ljava/lang/String;
+    invoke-static {}, Lnan/ren/util/NUtil;->getProfileTitle()Ljava/lang/String;
 
     move-result-object v0
 
@@ -262,7 +262,7 @@
 
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lnan/ren/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
+    invoke-static {v0}, Lnan/ren/util/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

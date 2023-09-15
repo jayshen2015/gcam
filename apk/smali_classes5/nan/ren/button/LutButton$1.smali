@@ -1,4 +1,4 @@
-.class Lnan/ren/LutButton$1;
+.class Lnan/ren/button/LutButton$1;
 .super Ljava/lang/Object;
 .source "LutButton.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/LutButton;->init(Landroid/content/Context;)V
+    value = Lnan/ren/button/LutButton;->init(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,16 @@
 
 
 # instance fields
-.field final synthetic this$0:Lnan/ren/LutButton;
+.field final synthetic this$0:Lnan/ren/button/LutButton;
 
 
 # direct methods
-.method constructor <init>(Lnan/ren/LutButton;)V
+.method constructor <init>(Lnan/ren/button/LutButton;)V
     .locals 0
-    .param p1, "this$0"    # Lnan/ren/LutButton;
+    .param p1, "this$0"    # Lnan/ren/button/LutButton;
 
     .line 49
-    iput-object p1, p0, Lnan/ren/LutButton$1;->this$0:Lnan/ren/LutButton;
+    iput-object p1, p0, Lnan/ren/button/LutButton$1;->this$0:Lnan/ren/button/LutButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,9 +41,9 @@
     .param p1, "view"    # Landroid/view/View;
 
     .line 52
-    iget-object v0, p0, Lnan/ren/LutButton$1;->this$0:Lnan/ren/LutButton;
+    iget-object v0, p0, Lnan/ren/button/LutButton$1;->this$0:Lnan/ren/button/LutButton;
 
-    invoke-virtual {v0}, Lnan/ren/LutButton;->showPreview()V
+    invoke-virtual {v0}, Lnan/ren/button/LutButton;->showPreview()V
 
     .line 53
     const/4 v0, 0x1

@@ -9480,6 +9480,9 @@
     <public type="string" name="my_preview_luts_title" id="0x7f140f3f" />
     <public type="string" name="my_preview_luts_summary" id="0x7f140f40" />
     <public type="string" name="my_add_watermark_title" id="0x7f140f41" />
+    <public type="string" name="my_hide_wmbtn_title" id="0x7f140f42" />
+    <public type="string" name="my_hide_lutbtn_title" id="0x7f140f43" />
+    <public type="string" name="my_hide_ajbtn_title" id="0x7f140f44" />
 	
 	
 </resources>

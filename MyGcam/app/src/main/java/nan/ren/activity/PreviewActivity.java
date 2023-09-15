@@ -28,11 +28,11 @@ import java.util.List;
 
 import agc.Agc;
 import nan.ren.G;
-import nan.ren.ImageUtil;
-import nan.ren.LutUtil;
-import nan.ren.NUtil;
-import nan.ren.ThreadPoolManager;
-import nan.ren.UriUtil;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.LutUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.ThreadPoolManager;
+import nan.ren.util.UriUtil;
 
 public class PreviewActivity extends Activity  implements View.OnClickListener {
 
@@ -54,7 +54,6 @@ public class PreviewActivity extends Activity  implements View.OnClickListener {
     static float dsp=1;
     static ViewGroup.LayoutParams txtlp;
     static ViewGroup.LayoutParams btnlp;
-
     static  Size picSize;
 
     static {
@@ -67,7 +66,7 @@ public class PreviewActivity extends Activity  implements View.OnClickListener {
         btnlp=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,image_title_height);
         int widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
         int heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
-        picSize=new Size((int)(0.9*widthPixels/GRID_COLUMN_COUNT),(int)(0.9*heightPixels/GRID_COLUMN_COUNT));
+        picSize=new Size((int)(widthPixels/GRID_COLUMN_COUNT)-30,(int)(0.9f*heightPixels/GRID_COLUMN_COUNT));
         File tempFile=new File(G.TMP_PATH);
         if(!tempFile.exists())tempFile.mkdirs();
     }
@@ -88,11 +87,12 @@ public class PreviewActivity extends Activity  implements View.OnClickListener {
         if(srcImagePath==null||srcImagePath.trim().isEmpty())return;
         gridLayout.removeAllViews();
         G.log(srcImagePath);
+        ThreadPoolManager.getInstance().stopThreadPool();
         Bitmap pic=ImageUtil.compressImage(srcImagePath,picSize,true);
         ImageUtil.saveBitmapFile(pic,tempFilePath);
         List<File> lutsFile= LutUtil.getLuts();
-        ViewGroup.LayoutParams imgLp=new ViewGroup.LayoutParams(pic.getWidth(), pic.getHeight() );
-        ViewGroup.LayoutParams llLp=new ViewGroup.LayoutParams(pic.getWidth(), pic.getHeight()+image_title_height*2+30 );
+        ViewGroup.LayoutParams imgLp=new ViewGroup.LayoutParams(picSize.getWidth(), pic.getHeight() );
+        ViewGroup.LayoutParams llLp=new ViewGroup.LayoutParams(picSize.getWidth(), pic.getHeight()+image_title_height*2+30 );
         for(File lut:lutsFile){
             LinearLayout rl=new LinearLayout(this);
             rl.setId(View.generateViewId());
@@ -271,11 +271,13 @@ public class PreviewActivity extends Activity  implements View.OnClickListener {
        }
    }
 
+
     @Override
     public void onClick(View view) {
         if(view instanceof Button){
             Button btn=(Button)view;
             if(btn.getText().equals("关闭")) {
+                ThreadPoolManager.getInstance().stopThreadPool();
                 finishAndRemoveTask();
                 return;
             }

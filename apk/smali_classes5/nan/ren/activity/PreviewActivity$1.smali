@@ -77,7 +77,7 @@
     .line 120
     .local v0, "newFileWithLutImage":Ljava/lang/String;
     :try_start_0
-    invoke-static {v0}, Lnan/ren/NUtil;->deleteFile(Ljava/lang/String;)V
+    invoke-static {v0}, Lnan/ren/util/NUtil;->deleteFile(Ljava/lang/String;)V
 
     .line 121
     sget-object v1, Lnan/ren/activity/PreviewActivity;->tempFilePath:Ljava/lang/String;
@@ -139,7 +139,7 @@
     invoke-static {v2}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
     .line 148
-    invoke-static {v1}, Lnan/ren/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
+    invoke-static {v1}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
     .line 150
     .end local v1    # "ex":Ljava/lang/Exception;

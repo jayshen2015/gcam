@@ -117,7 +117,7 @@
     :try_start_0
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$1$1;->val$newFileWithLutImage:Ljava/lang/String;
 
-    invoke-static {v0}, Lnan/ren/ImageUtil;->getOuterDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lnan/ren/util/ImageUtil;->getOuterDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
     :try_end_0

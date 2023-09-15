@@ -3,9 +3,7 @@ package agc;
 import android.graphics.Bitmap;
 import android.util.Size;
 
-import java.io.File;
-
-import nan.ren.ImageUtil;
+import nan.ren.util.ImageUtil;
 
 public class Agc {
     public static  void processImageWithLUT(String src, String dsc, String lutfile, float rate, String lutpath){

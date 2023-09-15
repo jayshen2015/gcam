@@ -1,4 +1,4 @@
-.class Lnan/ren/NUtil$2;
+.class Lnan/ren/util/NUtil$2;
 .super Ljava/lang/Object;
 .source "NUtil.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/NUtil;->showDialog(Ljava/lang/String;Ljava/lang/String;)V
+    value = Lnan/ren/util/NUtil;->showDialog(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

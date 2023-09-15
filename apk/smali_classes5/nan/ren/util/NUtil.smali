@@ -1,4 +1,4 @@
-.class public Lnan/ren/NUtil;
+.class public Lnan/ren/util/NUtil;
 .super Ljava/lang/Object;
 .source "NUtil.java"
 
@@ -36,12 +36,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lnan/ren/NUtil;->PATH:Ljava/lang/String;
+    sput-object v0, Lnan/ren/util/NUtil;->PATH:Ljava/lang/String;
 
     .line 26
     const-string v0, "my_log"
 
-    sput-object v0, Lnan/ren/NUtil;->FILE_NAME:Ljava/lang/String;
+    sput-object v0, Lnan/ren/util/NUtil;->FILE_NAME:Ljava/lang/String;
 
     return-void
 .end method
@@ -59,7 +59,7 @@
     .locals 1
 
     .line 24
-    sget-object v0, Lnan/ren/NUtil;->PATH:Ljava/lang/String;
+    sget-object v0, Lnan/ren/util/NUtil;->PATH:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -68,7 +68,7 @@
     .locals 1
 
     .line 24
-    sget-object v0, Lnan/ren/NUtil;->FILE_NAME:Ljava/lang/String;
+    sget-object v0, Lnan/ren/util/NUtil;->FILE_NAME:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lnan/ren/NUtil;->dialog:Landroid/app/AlertDialog;
+    sput-object v0, Lnan/ren/util/NUtil;->dialog:Landroid/app/AlertDialog;
 
     .line 207
     return-object v0
@@ -132,7 +132,7 @@
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lnan/ren/NUtil;->deleteFile(Ljava/io/File;)V
+    invoke-static {v0}, Lnan/ren/util/NUtil;->deleteFile(Ljava/io/File;)V
 
     .line 115
     return-void
@@ -143,11 +143,11 @@
     .param p0, "th"    # Ljava/lang/Throwable;
 
     .line 29
-    new-instance v0, Lnan/ren/NUtil$1;
+    new-instance v0, Lnan/ren/util/NUtil$1;
 
-    invoke-direct {v0, p0}, Lnan/ren/NUtil$1;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0, p0}, Lnan/ren/util/NUtil$1;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v0}, Lnan/ren/ThreadPoolManager;->add(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lnan/ren/util/ThreadPoolManager;->add(Ljava/lang/Runnable;)V
 
     .line 62
     return-void
@@ -380,7 +380,7 @@
     .line 98
     :cond_0
     :try_start_1
-    invoke-static {p0}, Lnan/ren/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lnan/ren/util/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
     :try_end_1
@@ -727,9 +727,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lnan/ren/NUtil$2;
+    new-instance v1, Lnan/ren/util/NUtil$2;
 
-    invoke-direct {v1}, Lnan/ren/NUtil$2;-><init>()V
+    invoke-direct {v1}, Lnan/ren/util/NUtil$2;-><init>()V
 
     .line 194
     const-string v2, "\u786e\u8ba4"
@@ -743,7 +743,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lnan/ren/NUtil;->dialog:Landroid/app/AlertDialog;
+    sput-object v0, Lnan/ren/util/NUtil;->dialog:Landroid/app/AlertDialog;
 
     .line 200
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V

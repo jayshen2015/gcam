@@ -1,4 +1,4 @@
-.class public Lnan/ren/LutButton;
+.class public Lnan/ren/button/LutButton;
 .super Lcom/agc/widget/OptionButton;
 .source "LutButton.java"
 
@@ -18,10 +18,10 @@
     .line 15
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iput-object v0, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     .line 19
-    invoke-virtual {p0, p1}, Lnan/ren/LutButton;->init(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lnan/ren/button/LutButton;->init(Landroid/content/Context;)V
 
     .line 20
     return-void
@@ -38,10 +38,10 @@
     .line 15
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iput-object v0, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     .line 24
-    invoke-virtual {p0, p1}, Lnan/ren/LutButton;->init(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lnan/ren/button/LutButton;->init(Landroid/content/Context;)V
 
     .line 25
     return-void
@@ -59,10 +59,10 @@
     .line 15
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iput-object v0, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     .line 29
-    invoke-virtual {p0, p1}, Lnan/ren/LutButton;->init(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lnan/ren/button/LutButton;->init(Landroid/content/Context;)V
 
     .line 30
     return-void
@@ -81,10 +81,10 @@
     .line 15
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iput-object v0, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     .line 34
-    invoke-virtual {p0, p1}, Lnan/ren/LutButton;->init(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lnan/ren/button/LutButton;->init(Landroid/content/Context;)V
 
     .line 35
     return-void
@@ -97,12 +97,12 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .line 39
-    iput-object p1, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iput-object p1, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     .line 40
     const/16 v0, 0xa
 
-    iput v0, p0, Lnan/ren/LutButton;->iconPadding:I
+    iput v0, p0, Lnan/ren/button/LutButton;->iconPadding:I
 
     .line 41
     new-instance v6, Ljava/util/ArrayList;
@@ -156,7 +156,7 @@
 
     invoke-direct {v6, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v6, p0, Lnan/ren/LutButton;->items:Ljava/util/List;
+    iput-object v6, p0, Lnan/ren/button/LutButton;->items:Ljava/util/List;
 
     .line 47
     const-string v1, "my_preview_luts"
@@ -165,29 +165,44 @@
 
     move-result v1
 
-    iput v1, p0, Lnan/ren/LutButton;->selectedIndex:I
+    iput v1, p0, Lnan/ren/button/LutButton;->selectedIndex:I
 
     .line 48
-    iget v1, p0, Lnan/ren/LutButton;->selectedIndex:I
+    iget v1, p0, Lnan/ren/button/LutButton;->selectedIndex:I
 
     if-lez v1, :cond_0
 
     move v9, v0
 
     :cond_0
-    invoke-virtual {p0, v9}, Lnan/ren/LutButton;->setChecked(Z)V
+    invoke-virtual {p0, v9}, Lnan/ren/button/LutButton;->setChecked(Z)V
 
     .line 49
-    new-instance v0, Lnan/ren/LutButton$1;
+    new-instance v1, Lnan/ren/button/LutButton$1;
 
-    invoke-direct {v0, p0}, Lnan/ren/LutButton$1;-><init>(Lnan/ren/LutButton;)V
+    invoke-direct {v1, p0}, Lnan/ren/button/LutButton$1;-><init>(Lnan/ren/button/LutButton;)V
 
-    invoke-virtual {p0, v0}, Lnan/ren/LutButton;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {p0, v1}, Lnan/ren/button/LutButton;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 56
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
-    .line 57
+    .line 58
+    const-string v1, "my_hide_lutbtn"
+
+    invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_1
+
+    .line 59
+    const/16 v0, 0x8
+
+    invoke-virtual {p0, v0}, Lnan/ren/button/LutButton;->setVisibility(I)V
+
+    .line 61
+    :cond_1
     return-void
 .end method
 
@@ -196,11 +211,11 @@
     .param p1, "compoundButton"    # Landroid/widget/CompoundButton;
     .param p2, "z"    # Z
 
-    .line 61
+    .line 65
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
-    .line 62
-    iget v0, p0, Lnan/ren/LutButton;->selectedIndex:I
+    .line 66
+    iget v0, p0, Lnan/ren/button/LutButton;->selectedIndex:I
 
     if-lez v0, :cond_0
 
@@ -212,9 +227,9 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lnan/ren/LutButton;->setChecked(Z)V
+    invoke-virtual {p0, v0}, Lnan/ren/button/LutButton;->setChecked(Z)V
 
-    .line 63
+    .line 67
     return-void
 .end method
 
@@ -222,41 +237,41 @@
     .locals 1
     .param p1, "i"    # I
 
-    .line 66
+    .line 70
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->onClickPopItem(I)V
 
-    .line 67
+    .line 71
     const-string v0, "my_preview_luts"
 
     invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 68
+    .line 72
     return-void
 .end method
 
 .method showPreview()V
     .locals 3
 
-    .line 71
+    .line 75
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    iget-object v1, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     const-class v2, Lnan/ren/activity/PreviewActivity;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 72
+    .line 76
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 73
-    iget-object v1, p0, Lnan/ren/LutButton;->myContext:Landroid/content/Context;
+    .line 77
+    iget-object v1, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 74
+    .line 78
     return-void
 .end method

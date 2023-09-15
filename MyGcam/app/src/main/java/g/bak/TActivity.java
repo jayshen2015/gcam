@@ -28,11 +28,11 @@ import java.util.List;
 
 import agc.Agc;
 import nan.ren.G;
-import nan.ren.ImageUtil;
-import nan.ren.LutUtil;
-import nan.ren.NUtil;
-import nan.ren.ThreadPoolManager;
-import nan.ren.UriUtil;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.LutUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.ThreadPoolManager;
+import nan.ren.util.UriUtil;
 
 public class TActivity extends Activity  implements View.OnClickListener {
 

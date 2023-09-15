@@ -1,4 +1,4 @@
-.class Lnan/ren/NUtil$1;
+.class Lnan/ren/util/NUtil$1;
 .super Ljava/lang/Object;
 .source "NUtil.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
+    value = Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
 
     .line 29
-    iput-object p1, p0, Lnan/ren/NUtil$1;->val$th:Ljava/lang/Throwable;
+    iput-object p1, p0, Lnan/ren/util/NUtil$1;->val$th:Ljava/lang/Throwable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -87,7 +87,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lnan/ren/NUtil;->access$000()Ljava/lang/String;
+    invoke-static {}, Lnan/ren/util/NUtil;->access$000()Ljava/lang/String;
 
     move-result-object v6
 
@@ -95,7 +95,7 @@
 
     move-result-object v5
 
-    invoke-static {}, Lnan/ren/NUtil;->access$100()Ljava/lang/String;
+    invoke-static {}, Lnan/ren/util/NUtil;->access$100()Ljava/lang/String;
 
     move-result-object v6
 
@@ -182,7 +182,7 @@
     invoke-virtual {v5}, Ljava/io/PrintWriter;->println()V
 
     .line 49
-    iget-object v6, p0, Lnan/ren/NUtil$1;->val$th:Ljava/lang/Throwable;
+    iget-object v6, p0, Lnan/ren/util/NUtil$1;->val$th:Ljava/lang/Throwable;
 
     invoke-virtual {v6, v5}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 

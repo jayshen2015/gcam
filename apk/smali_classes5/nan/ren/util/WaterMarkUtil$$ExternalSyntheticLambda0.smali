@@ -1,4 +1,4 @@
-.class public final synthetic Lnan/ren/WaterMarkUtil$$ExternalSyntheticLambda0;
+.class public final synthetic Lnan/ren/util/WaterMarkUtil$$ExternalSyntheticLambda0;
 .super Ljava/lang/Object;
 .source "D8$$SyntheticClass"
 
@@ -20,7 +20,7 @@
 .method public final onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 0
 
-    invoke-static {p1, p2}, Lnan/ren/WaterMarkUtil;->lambda$noticSysPhoto$0(Ljava/lang/String;Landroid/net/Uri;)V
+    invoke-static {p1, p2}, Lnan/ren/util/WaterMarkUtil;->lambda$noticSysPhoto$0(Ljava/lang/String;Landroid/net/Uri;)V
 
     return-void
 .end method

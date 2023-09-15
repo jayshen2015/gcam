@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 348
+    .line 350
     iput-object p1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 351
+    .line 353
     const-string v0, "#"
 
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -58,7 +58,7 @@
 
     iput-object v2, v1, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
 
-    .line 352
+    .line 354
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -85,7 +85,7 @@
     :catch_0
     move-exception v1
 
-    .line 354
+    .line 356
     :goto_0
     :try_start_1
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -100,7 +100,7 @@
 
     move-result-object v1
 
-    .line 355
+    .line 357
     .local v1, "txtbgcolor":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -128,7 +128,7 @@
 
     move-object v1, v2
 
-    .line 356
+    .line 358
     :cond_0
     iget-object v2, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -146,7 +146,7 @@
     :catch_1
     move-exception v1
 
-    .line 359
+    .line 361
     :goto_1
     :try_start_2
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -161,7 +161,7 @@
 
     move-result-object v1
 
-    .line 360
+    .line 362
     .local v1, "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -189,7 +189,7 @@
 
     move-object v1, v2
 
-    .line 361
+    .line 363
     :cond_1
     iget-object v2, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -207,7 +207,7 @@
     :catch_2
     move-exception v1
 
-    .line 364
+    .line 366
     :goto_2
     :try_start_3
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -222,7 +222,7 @@
 
     move-result-object v1
 
-    .line 365
+    .line 367
     .restart local v1    # "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_2
 
@@ -250,7 +250,7 @@
 
     move-object v1, v0
 
-    .line 366
+    .line 368
     :cond_2
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -268,7 +268,7 @@
     :catch_3
     move-exception v0
 
-    .line 368
+    .line 370
     :goto_3
     :try_start_4
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -296,7 +296,7 @@
     :catch_4
     move-exception v0
 
-    .line 370
+    .line 372
     :goto_4
     :try_start_5
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -320,7 +320,7 @@
     :catch_5
     move-exception v0
 
-    .line 371
+    .line 373
     :goto_5
     :try_start_6
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -344,7 +344,7 @@
     :catch_6
     move-exception v0
 
-    .line 372
+    .line 374
     :goto_6
     :try_start_7
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -368,7 +368,7 @@
     :catch_7
     move-exception v0
 
-    .line 373
+    .line 375
     :goto_7
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -380,7 +380,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 374
+    .line 376
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     const/4 v1, 0x0
@@ -389,7 +389,7 @@
 
     goto :goto_8
 
-    .line 376
+    .line 378
     :cond_3
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -405,7 +405,7 @@
 
     iput-object v1, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
-    .line 377
+    .line 379
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
@@ -430,22 +430,22 @@
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
-    invoke-static {v1}, Lnan/ren/WaterMarkUtil;->getBitmapFromUri(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    invoke-static {v1}, Lnan/ren/util/WaterMarkUtil;->getBitmapFromUri(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v0, Lnan/ren/activity/WmActivity;->bt:Landroid/graphics/Bitmap;
 
-    .line 379
+    .line 381
     :cond_4
     :goto_8
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 380
+    .line 382
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->show()V
 
-    .line 381
+    .line 383
     return-void
 .end method

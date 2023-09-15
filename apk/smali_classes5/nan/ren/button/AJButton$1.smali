@@ -1,6 +1,6 @@
-.class Lnan/ren/WMButton$1;
+.class Lnan/ren/button/AJButton$1;
 .super Ljava/lang/Object;
-.source "WMButton.java"
+.source "AJButton.java"
 
 # interfaces
 .implements Landroid/view/View$OnLongClickListener;
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/WMButton;->init(Landroid/content/Context;)V
+    value = Lnan/ren/button/AJButton;->init(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,16 @@
 
 
 # instance fields
-.field final synthetic this$0:Lnan/ren/WMButton;
+.field final synthetic this$0:Lnan/ren/button/AJButton;
 
 
 # direct methods
-.method constructor <init>(Lnan/ren/WMButton;)V
+.method constructor <init>(Lnan/ren/button/AJButton;)V
     .locals 0
-    .param p1, "this$0"    # Lnan/ren/WMButton;
+    .param p1, "this$0"    # Lnan/ren/button/AJButton;
 
-    .line 33
-    iput-object p1, p0, Lnan/ren/WMButton$1;->this$0:Lnan/ren/WMButton;
+    .line 34
+    iput-object p1, p0, Lnan/ren/button/AJButton$1;->this$0:Lnan/ren/button/AJButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,12 +40,12 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 36
-    iget-object v0, p0, Lnan/ren/WMButton$1;->this$0:Lnan/ren/WMButton;
-
-    invoke-virtual {v0}, Lnan/ren/WMButton;->showWmView()V
-
     .line 37
+    iget-object v0, p0, Lnan/ren/button/AJButton$1;->this$0:Lnan/ren/button/AJButton;
+
+    invoke-virtual {v0}, Lnan/ren/button/AJButton;->showWmView()V
+
+    .line 38
     const/4 v0, 0x1
 
     return v0

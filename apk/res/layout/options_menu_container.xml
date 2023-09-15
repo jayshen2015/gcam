@@ -9,8 +9,9 @@
 		
             <!--com.agc.widget.GrayscaleButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             <com.agc.widget.WatermarkButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
-            <nan.ren.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-            <nan.ren.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />     
+            <nan.ren.button.AJButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+            <nan.ren.button.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+            <nan.ren.button.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
 			<com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
         </LinearLayout>
     </FrameLayout>
