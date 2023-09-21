@@ -22,16 +22,20 @@
 
 .field final synthetic val$btn:Landroid/widget/Button;
 
+.field final synthetic val$rate:F
+
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/Button;)V
+.method constructor <init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/Button;F)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 260
+    .line 326
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$2;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$2;->val$btn:Landroid/widget/Button;
+
+    iput p3, p0, Lnan/ren/activity/PreviewActivity$2;->val$rate:F
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,9 +45,9 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
-    .line 263
+    .line 329
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$2;->val$btn:Landroid/widget/Button;
@@ -56,15 +60,17 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget v2, p0, Lnan/ren/activity/PreviewActivity$2;->val$rate:F
 
-    .line 264
+    invoke-static {v0, v1, v2}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;F)Ljava/lang/String;
+
+    .line 330
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$2;->val$btn:Landroid/widget/Button;
 
     const-string v1, "\u5df2\u4fdd\u5b58"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 265
+    .line 331
     return-void
 .end method

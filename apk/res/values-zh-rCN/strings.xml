@@ -1979,9 +1979,7 @@ SM8150 = 32770, SM8250 = 40962"</string>
 	
 	<string name="my_watermark_height_title">水印高度</string>
     <string name="my_watermark_height_summary">水印高度，默认是460，负数时，水印将显示在图片里面</string>
-	
-	<string name="my_watermark_fontsize_title">水印字体大小</string>
-    <string name="my_watermark_fontsize_summary">字体大小，默认80</string>
+
 		
 	<string name="my_watermark_asnew_title">保留原图</string>
     <string name="my_watermark_asnew_summary">选中后，会同时保留原图和带水印的图</string>
@@ -1996,8 +1994,25 @@ SM8150 = 32770, SM8250 = 40962"</string>
 	<string name="my_hide_lutbtn_title">隐藏LUT预览按钮</string>
 	
 	<string name="my_hide_ajbtn_title">隐藏暗角按钮</string>
+		
+	<string name="my_watermark_fontsize_title">水印字体大小</string>
+    <string name="my_watermark_fontsize_summary">即标题以及图片信息的字体大小，默认80</string>
 	
-	 
+	<string name="my_watermark_secfontsize_title">副文本字体大小</string>
+    <string name="my_watermark_secfontsize_summary">时间和位置的字体大小</string>
+
+	<string name="my_watermark_txtcolor_title">主文本字体颜色</string>
+    <string name="my_watermark_txtcolor_summary">即标题以及图片信息的字体颜色，为空时,根据背景自动调整</string>
+
+	<string name="my_watermark_sectxtcolor_title">副文本字体颜色</string>
+    <string name="my_watermark_sectxtcolor_summary">时间和位置的字体颜色，为空时,根据背景自动调整</string>	
 	
+	<string name="my_hide_libbtn_title">隐藏选库按钮</string>
+	
+	<string name="my_watermark_hide_altitude_title">隐藏海拔高度</string>
+	
+	<string name="my_hebing_config_title">合并配置</string>
+	
+	<string name="my_lut_grid_column_cnt_title">LUT预览每行图数</string>
 	
 </resources>

@@ -3,12 +3,12 @@
 .source "WmActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/text/TextWatcher;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/WmActivity;->getLogoCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
+    value = Lnan/ren/activity/WmActivity;->getWmParamerView()Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 481
+    .line 421
     iput-object p1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,17 +36,98 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
-    .param p1, "view"    # Landroid/view/View;
+.method public afterTextChanged(Landroid/text/Editable;)V
+    .locals 0
+    .param p1, "editable"    # Landroid/text/Editable;
 
-    .line 484
+    .line 434
+    return-void
+.end method
+
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+    .param p1, "charSequence"    # Ljava/lang/CharSequence;
+    .param p2, "i"    # I
+    .param p3, "i1"    # I
+    .param p4, "i2"    # I
+
+    .line 423
+    return-void
+.end method
+
+.method public onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 3
+    .param p1, "charSequence"    # Ljava/lang/CharSequence;
+    .param p2, "i"    # I
+    .param p3, "i1"    # I
+    .param p4, "i2"    # I
+
+    .line 427
+    const-string v0, "#"
+
+    :try_start_0
+    iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v1, v1, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 428
+    .local v1, "v":Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    .line 429
+    :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
-    const/4 v1, 0x3
+    iget-object v0, v0, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
 
-    invoke-virtual {v0, v1}, Lnan/ren/activity/WmActivity;->selectPic(I)V
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    .line 485
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setBackgroundColor(I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .end local v1    # "v":Ljava/lang/String;
+    goto :goto_0
+
+    .line 430
+    :catch_0
+    move-exception v0
+
+    :goto_0
+    nop
+
+    .line 431
     return-void
 .end method

@@ -280,7 +280,7 @@
 
     if-nez v2, :cond_1
 
-    const/16 v2, 0xc
+    const/16 v2, 0xff
 
     if-lt v1, v2, :cond_0
 

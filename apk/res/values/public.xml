@@ -9460,6 +9460,7 @@
 
     <public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
     <public type="drawable" name="my_lut" id="0x7f089425" />
+    <public type="drawable" name="my_lib" id="0x7f089426" />
 
     <public type="string" name="my_watermark_dateformat_enable_title" id="0x7f140f2f" />
     <public type="string" name="my_patch_profile_title" id="0x7f140f30" />
@@ -9483,6 +9484,22 @@
     <public type="string" name="my_hide_wmbtn_title" id="0x7f140f42" />
     <public type="string" name="my_hide_lutbtn_title" id="0x7f140f43" />
     <public type="string" name="my_hide_ajbtn_title" id="0x7f140f44" />
+	
+	
+    <public type="string" name="my_watermark_secfontsize_title" id="0x7f140f45" />	
+    <public type="string" name="my_watermark_secfontsize_summary" id="0x7f140f46" />
+	
+    <public type="string" name="my_watermark_txtcolor_title" id="0x7f140f47" />	
+    <public type="string" name="my_watermark_txtcolor_summary" id="0x7f140f48" />
+	
+    <public type="string" name="my_watermark_sectxtcolor_title" id="0x7f140f49" />	
+    <public type="string" name="my_watermark_sectxtcolor_summary" id="0x7f140f4a" />
+	
+    <public type="string" name="my_hide_libbtn_title" id="0x7f140f4b" />
+	
+	<public type="string" name="my_watermark_hide_altitude_title" id="0x7f140f4c" />
+	<public type="string" name="my_hebing_config_title" id="0x7f140f4d" />
+	<public type="string" name="my_lut_grid_column_cnt_title" id="0x7f140f4e" />
 	
 	
 </resources>

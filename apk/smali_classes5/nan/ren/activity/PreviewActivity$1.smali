@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/PreviewActivity;->addImage(Landroid/widget/ImageView;)V
+    value = Lnan/ren/activity/PreviewActivity;->genImage(Landroid/widget/ImageView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,18 +24,30 @@
 
 .field final synthetic val$lutfile:Ljava/lang/String;
 
+.field final synthetic val$rate:F
+
+.field final synthetic val$rl:Landroid/widget/LinearLayout;
+
+.field final synthetic val$that:Lnan/ren/activity/PreviewActivity;
+
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/PreviewActivity;Ljava/lang/String;Landroid/widget/ImageView;)V
+.method constructor <init>(Lnan/ren/activity/PreviewActivity;Ljava/lang/String;FLandroid/widget/ImageView;Landroid/widget/LinearLayout;Lnan/ren/activity/PreviewActivity;)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 115
+    .line 166
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$1;->val$lutfile:Ljava/lang/String;
 
-    iput-object p3, p0, Lnan/ren/activity/PreviewActivity$1;->val$iv:Landroid/widget/ImageView;
+    iput p3, p0, Lnan/ren/activity/PreviewActivity$1;->val$rate:F
+
+    iput-object p4, p0, Lnan/ren/activity/PreviewActivity$1;->val$iv:Landroid/widget/ImageView;
+
+    iput-object p5, p0, Lnan/ren/activity/PreviewActivity$1;->val$rl:Landroid/widget/LinearLayout;
+
+    iput-object p6, p0, Lnan/ren/activity/PreviewActivity$1;->val$that:Lnan/ren/activity/PreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +59,7 @@
 .method public run()V
     .locals 5
 
-    .line 118
+    .line 169
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -74,23 +86,23 @@
 
     move-result-object v0
 
-    .line 120
+    .line 171
     .local v0, "newFileWithLutImage":Ljava/lang/String;
     :try_start_0
     invoke-static {v0}, Lnan/ren/util/NUtil;->deleteFile(Ljava/lang/String;)V
 
-    .line 121
+    .line 172
     sget-object v1, Lnan/ren/activity/PreviewActivity;->tempFilePath:Ljava/lang/String;
 
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity$1;->val$lutfile:Ljava/lang/String;
 
-    sget v3, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
+    iget v3, p0, Lnan/ren/activity/PreviewActivity$1;->val$rate:F
 
     const-string v4, ""
 
     invoke-static {v1, v0, v2, v3, v4}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 
-    .line 122
+    .line 173
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     new-instance v2, Lnan/ren/activity/PreviewActivity$1$1;
@@ -101,14 +113,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 149
+    .line 207
     goto :goto_0
 
-    .line 146
+    .line 204
     :catch_0
     move-exception v1
 
-    .line 147
+    .line 205
     .local v1, "ex":Ljava/lang/Exception;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -138,10 +150,10 @@
 
     invoke-static {v2}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 148
+    .line 206
     invoke-static {v1}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 150
+    .line 208
     .end local v1    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void

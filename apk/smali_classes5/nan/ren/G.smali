@@ -8,9 +8,13 @@
 
 .field public static CAMERA_PATH:Ljava/lang/String;
 
+.field public static CONFIG_PATH:Ljava/lang/String;
+
 .field public static CONTEXT:Landroid/content/Context;
 
 .field public static ICON_PATH:Ljava/lang/String;
+
+.field public static LIB_PATH:Ljava/lang/String;
 
 .field public static LOGO_PATH:Ljava/lang/String;
 
@@ -24,27 +28,40 @@
 
 .field public static TMP_PATH:Ljava/lang/String;
 
+.field static final handler:Landroid/os/Handler;
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 34
+    .line 37
     const-string v0, ""
 
     sput-object v0, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
 
-    .line 35
+    .line 38
     const/4 v0, 0x0
 
     sput-boolean v0, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
-    .line 39
+    .line 42
     const-string v1, "/sdcard/Download/AGC.8.8"
 
     sput-object v1, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
 
-    .line 48
+    .line 53
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    sput-object v1, Lnan/ren/G;->handler:Landroid/os/Handler;
+
+    .line 57
     const-string v1, "show_task_log"
 
     invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
@@ -60,21 +77,21 @@
     :cond_0
     sput-boolean v0, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
-    .line 49
+    .line 58
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
-    .line 50
+    .line 59
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
-    .line 51
+    .line 60
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -107,7 +124,7 @@
 
     sput-object v0, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
 
-    .line 52
+    .line 61
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -116,7 +133,7 @@
 
     sput-object v0, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
 
-    .line 53
+    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -139,7 +156,7 @@
 
     sput-object v0, Lnan/ren/G;->ICON_PATH:Ljava/lang/String;
 
-    .line 54
+    .line 63
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -162,7 +179,7 @@
 
     sput-object v0, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
 
-    .line 55
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -185,7 +202,7 @@
 
     sput-object v0, Lnan/ren/G;->TMP_PATH:Ljava/lang/String;
 
-    .line 56
+    .line 65
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,7 +225,53 @@
 
     sput-object v0, Lnan/ren/G;->LUT_PATH:Ljava/lang/String;
 
-    .line 57
+    .line 66
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/libs/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnan/ren/G;->LIB_PATH:Ljava/lang/String;
+
+    .line 67
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/configs/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnan/ren/G;->CONFIG_PATH:Ljava/lang/String;
+
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -235,14 +298,14 @@
 
     sput-object v0, Lnan/ren/G;->CAMERA_PATH:Ljava/lang/String;
 
-    .line 58
+    .line 69
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 32
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -262,7 +325,7 @@
         }
     .end annotation
 
-    .line 94
+    .line 101
     .local p0, "llist":Ljava/util/List;, "Ljava/util/List<Lcom/agc/Camera;>;"
     invoke-static {p0}, Lnan/ren/util/CameraUtil;->getAllCameras(Ljava/util/List;)Ljava/util/List;
 
@@ -274,7 +337,7 @@
 .method public static getShutterColor()I
     .locals 2
 
-    .line 100
+    .line 107
     const-string v0, "camera_mode_idle_color"
 
     const-string v1, "#ff808080"
@@ -283,7 +346,7 @@
 
     move-result-object v0
 
-    .line 101
+    .line 108
     .local v0, "colorStr":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -300,7 +363,7 @@
     .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
 
-    .line 105
+    .line 112
     invoke-static {}, Lnan/ren/G;->getShutterColor()I
 
     move-result v0
@@ -322,7 +385,7 @@
         }
     .end annotation
 
-    .line 97
+    .line 104
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Lcom/agc/Camera;>;"
     invoke-static {p0}, Lnan/ren/util/CameraUtil;->reSetCameras(Ljava/util/List;)Ljava/util/List;
 
@@ -336,7 +399,7 @@
     .param p0, "iv"    # Landroid/widget/ImageView;
     .param p1, "fileName"    # Ljava/lang/String;
 
-    .line 66
+    .line 77
     const-string v0, "drawable"
 
     const-string v1, "agc_patch_profile_"
@@ -344,27 +407,6 @@
     const-string v2, "getMyIcon error:"
 
     :try_start_0
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getMyIcon>>>>>:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lnan/ren/G;->log(Ljava/lang/Object;)V
-
-    .line 67
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -389,7 +431,7 @@
 
     move-result-object v3
 
-    .line 68
+    .line 78
     .local v3, "extDrawable":Landroid/graphics/drawable/Drawable;
     if-nez v3, :cond_0
 
@@ -399,7 +441,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 69
+    .line 79
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -430,32 +472,11 @@
 
     move-object v3, v1
 
-    .line 71
+    .line 81
     :cond_0
     if-nez v3, :cond_2
 
-    .line 72
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getMyIcon getOuterDrawable is null >>>>>:"
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
-
-    .line 73
+    .line 82
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     sget-object v4, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
@@ -464,32 +485,11 @@
 
     move-result v1
 
-    .line 74
+    .line 83
     .local v1, "identifier":I
     if-nez v1, :cond_1
 
-    .line 75
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "getMyIcon getInnerDrawable is null  loadDefault >>>>>:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lnan/ren/G;->log(Ljava/lang/Object;)V
-
-    .line 76
+    .line 84
     sget-object v4, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     const-string v5, "agc_lib_patcher"
@@ -502,51 +502,29 @@
 
     move v1, v0
 
-    .line 78
+    .line 86
     :cond_1
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 79
+    .line 87
     .end local v1    # "identifier":I
     goto :goto_0
 
-    .line 80
+    .line 88
     :cond_2
     invoke-virtual {p0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 82
-    :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "getMyIcon success:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v3    # "extDrawable":Landroid/graphics/drawable/Drawable;
-    goto :goto_1
+    goto :goto_0
 
-    .line 86
+    .line 93
+    .end local v3    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :catchall_0
     move-exception v0
 
-    .line 87
+    .line 94
     .local v0, "ex":Ljava/lang/Throwable;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -566,17 +544,17 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 88
+    .line 95
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 83
+    .line 90
     .end local v0    # "ex":Ljava/lang/Throwable;
     :catch_0
     move-exception v0
 
-    .line 84
+    .line 91
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -596,16 +574,16 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 85
+    .line 92
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 89
+    .line 96
     .end local v0    # "ex":Ljava/lang/Exception;
-    :goto_1
+    :goto_0
     nop
 
-    .line 91
-    :goto_2
+    .line 98
+    :goto_1
     return-void
 .end method
 
@@ -614,14 +592,14 @@
     .param p0, "op"    # Lcom/agc/widget/OptionButton;
     .param p1, "fileName"    # Ljava/lang/String;
 
-    .line 61
+    .line 72
     move-object v0, p0
 
-    .line 62
+    .line 73
     .local v0, "iv":Landroid/widget/ImageView;
     invoke-static {v0, p1}, Lnan/ren/G;->initIcon(Landroid/widget/ImageView;Ljava/lang/String;)V
 
-    .line 63
+    .line 74
     return-void
 .end method
 
@@ -636,7 +614,7 @@
         }
     .end annotation
 
-    .line 111
+    .line 118
     .local p0, "items":Ljava/util/List;, "Ljava/util/List<Lcom/agc/widget/OptionButton$OptionButtonItem;>;"
     const-string v0, "my_hidden_kaka_items"
 
@@ -648,10 +626,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 112
+    .line 119
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    .line 114
+    .line 121
     :cond_0
     return-void
 .end method
@@ -660,22 +638,22 @@
     .locals 3
     .param p0, "o"    # Ljava/lang/Object;
 
-    .line 119
+    .line 126
     :try_start_0
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 120
+    .line 127
     .local v0, "msg":Ljava/lang/String;
     invoke-static {v0}, Lnan/ren/util/NUtil;->log(Ljava/lang/Object;)V
 
-    .line 121
+    .line 128
     sget-boolean v1, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
     if-eqz v1, :cond_0
 
-    .line 122
+    .line 129
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const/4 v2, 0x0
@@ -691,23 +669,23 @@
 
     goto :goto_0
 
-    .line 124
+    .line 131
     .end local v0    # "msg":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 123
+    .line 130
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 131
     :cond_0
     :goto_0
     nop
 
-    .line 125
+    .line 132
     return-void
 .end method
 
@@ -715,12 +693,12 @@
     .locals 5
     .param p0, "file"    # Ljava/io/File;
 
-    .line 129
+    .line 136
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 130
+    .line 137
     .local v0, "absolutePath":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -736,159 +714,179 @@
 
     return-void
 
-    .line 131
+    .line 138
     :cond_0
-    new-instance v1, Landroid/os/Handler;
+    sget-object v1, Lnan/ren/G;->handler:Landroid/os/Handler;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    .line 132
-    .local v1, "handler":Landroid/os/Handler;
     new-instance v2, Lnan/ren/G$1;
 
-    invoke-direct {v2, v1, v0}, Lnan/ren/G$1;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Lnan/ren/G$1;-><init>(Ljava/lang/String;)V
 
     const-wide/16 v3, 0x64
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 170
+    .line 185
     return-void
 .end method
 
 .method public static saveImageByLUT(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 8
+    .locals 2
     .param p0, "srcImage"    # Ljava/lang/String;
     .param p1, "lutFileName"    # Ljava/lang/String;
 
-    .line 173
-    const/4 v0, 0x0
+    .line 188
+    const-string v0, "lib_lut_intensity_key"
 
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    .line 189
+    .local v0, "auxProfilePrefFloatValue":F
+    invoke-static {p0, p1, v0}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;F)Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static saveImageByLUT(Ljava/lang/String;Ljava/lang/String;F)Ljava/lang/String;
+    .locals 6
+    .param p0, "srcImage"    # Ljava/lang/String;
+    .param p1, "lutFileName"    # Ljava/lang/String;
+    .param p2, "auxProfilePrefFloatValue"    # F
+
+    .line 193
     if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    if-gtz v1, :cond_0
+    if-gtz v0, :cond_0
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 174
+    .line 194
     :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    add-int/lit8 v2, v2, -0x4
+    add-int/lit8 v1, v1, -0x4
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "_"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "."
+
+    invoke-virtual {p1, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "."
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ".jpg"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 195
+    .local v0, "newFile":Ljava/lang/String;
+    const-string v1, ""
+
+    invoke-static {p0, v0, p1, p2, v1}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
+
+    .line 196
+    new-instance v1, Ljava/io/File;
+
+    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 197
+    .local v1, "f":Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
-    invoke-virtual {p1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    if-eqz v2, :cond_1
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-wide v2
 
-    move-result-object v1
+    const-wide/16 v4, 0x3e8
 
-    const-string v2, ".jpg"
+    cmp-long v2, v2, v4
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v2, :cond_1
 
-    move-result-object v1
+    .line 198
+    invoke-static {v0, p0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 199
+    new-instance v2, Ljava/io/File;
 
-    move-result-object v1
+    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 175
-    .local v1, "newFile":Ljava/lang/String;
-    const-string v2, "lib_lut_intensity_key"
+    invoke-static {v2}, Lnan/ren/util/WaterMarkUtil;->noticSysPhoto(Ljava/io/File;)V
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    goto :goto_0
 
-    invoke-static {v2, v3}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
-
-    move-result v2
-
-    .line 176
-    .local v2, "auxProfilePrefFloatValue":F
-    const-string v3, ""
-
-    invoke-static {p0, v1, p1, v2, v3}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
-
-    .line 177
-    new-instance v3, Ljava/io/File;
-
-    invoke-direct {v3, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 178
-    .local v3, "f":Ljava/io/File;
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v3}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x3e8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_1
-
-    .line 179
-    invoke-static {v1, p0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 180
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Lnan/ren/util/WaterMarkUtil;->noticSysPhoto(Ljava/io/File;)V
-
-    .line 181
-    return-object v1
-
-    .line 183
+    .line 201
     :cond_1
-    return-object v0
+    move-object v0, p0
 
-    .line 173
-    .end local v1    # "newFile":Ljava/lang/String;
-    .end local v2    # "auxProfilePrefFloatValue":F
-    .end local v3    # "f":Ljava/io/File;
-    :cond_2
+    .line 203
     :goto_0
     return-object v0
+
+    .line 193
+    .end local v0    # "newFile":Ljava/lang/String;
+    .end local v1    # "f":Ljava/io/File;
+    :cond_2
+    :goto_1
+    return-object p0
 .end method

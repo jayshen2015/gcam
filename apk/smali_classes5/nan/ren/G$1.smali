@@ -20,17 +20,13 @@
 # instance fields
 .field final synthetic val$absolutePath:Ljava/lang/String;
 
-.field final synthetic val$handler:Landroid/os/Handler;
-
 
 # direct methods
-.method constructor <init>(Landroid/os/Handler;Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 132
-    iput-object p1, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
-
-    iput-object p2, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
+    .line 138
+    iput-object p1, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,15 +38,15 @@
 .method public run()V
     .locals 3
 
-    .line 135
+    .line 141
     sget v0, Lcom/Globals;->sHdr_process:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 136
-    iget-object v0, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
+    .line 142
+    sget-object v0, Lnan/ren/G;->handler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x64
 
@@ -58,7 +54,7 @@
 
     goto :goto_0
 
-    .line 138
+    .line 144
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
@@ -70,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 168
+    .line 183
     :goto_0
     return-void
 .end method

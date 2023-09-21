@@ -25,6 +25,16 @@ public class NUtil {
     private static String PATH= G.BASE_AGC_PATH+"/logs/";
     private static String FILE_NAME="my_log";
 
+
+    private static Class<?> SystemPropertiesClass =null;
+    private static Method SystemPropertiesGetMethod = null;
+    static {
+        try{
+            SystemPropertiesClass = Class.forName("android.os.SystemProperties");
+            SystemPropertiesGetMethod = SystemPropertiesClass.getMethod("get", String.class, String.class);
+        }catch (Exception ex){}
+    }
+
     public static void dumpExceptionToSDCard(Throwable th) {
         ThreadPoolManager.add(new Runnable() {
             @Override
@@ -76,11 +86,10 @@ public class NUtil {
 
     private static AlertDialog dialog;
     public static String getProp(String key, String defaultValue) {
+        if(SystemPropertiesClass==null||SystemPropertiesGetMethod==null)return defaultValue;
         String value = defaultValue;
         try {
-            Class<?> c = Class.forName("android.os.SystemProperties");
-            Method get = c.getMethod("get", String.class, String.class);
-            value = (String)(get.invoke(c, key, "unknown" ));
+            value = (String)(SystemPropertiesGetMethod.invoke(SystemPropertiesClass, key, defaultValue ));
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
@@ -121,7 +130,7 @@ public class NUtil {
         return new File(file).exists();
     }
     public static  void toastL(String msg){
-        Toast.makeText(G.CONTEXT,msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(G.CONTEXT,msg,Toast.LENGTH_LONG).show();
     }
     public static  void toastS(String msg){
         Toast.makeText(G.CONTEXT,msg,Toast.LENGTH_SHORT).show();

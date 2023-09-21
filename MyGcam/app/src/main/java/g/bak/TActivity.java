@@ -9,10 +9,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Size;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -20,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Utils.Pref;
 
@@ -34,7 +38,7 @@ import nan.ren.util.NUtil;
 import nan.ren.util.ThreadPoolManager;
 import nan.ren.util.UriUtil;
 
-public class TActivity extends Activity  implements View.OnClickListener {
+public class TActivity extends Activity implements View.OnClickListener, View.OnTouchListener, ViewTreeObserver.OnScrollChangedListener {
 
     GridLayout gridLayout;
     static String tempFilePath=G.TMP_PATH+System.currentTimeMillis()+".jpg";
@@ -110,6 +114,8 @@ public class TActivity extends Activity  implements View.OnClickListener {
             rl.addView(iv);
             rl.addView(getBottomView(lutFileName));
             rl.setLayoutParams(llLp);
+
+            iv.setOnTouchListener(this);
            // iv.setImageDrawable(ImageUtil.getOuterDrawable(tempFilePath));
             addImage(iv);
             gridLayout.addView(rl);
@@ -214,7 +220,8 @@ public class TActivity extends Activity  implements View.OnClickListener {
         gridLayout.setLayoutParams(lp);
         gridLayout.setColumnCount(GRID_COLUMN_COUNT);
         scrollView.addView(gridLayout);
-
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(this);
+        scrollView.setOnTouchListener(this);
         linearLayout.addView(scrollView);
         setContentView(linearLayout);
     }
@@ -364,5 +371,37 @@ public class TActivity extends Activity  implements View.OnClickListener {
                 }
             }
         }
+    }
+
+    ImageView lastIv;
+    float x,lw;
+    long lastDown=0;
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        Log.i("================","view:"+view.getClass().getName()+" action:"+motionEvent.getAction()
+                +" RAM(x,y):"+motionEvent.getRawX()+","+motionEvent.getRawY()
+                +" | (x,y):"+motionEvent.getX()+","+motionEvent.getY());
+//        if(view instanceof  ImageView) {
+//            ImageView iv = (ImageView) view;
+//            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+//                lastIv=iv;
+//                x=motionEvent.getX();
+//                lw=0;
+//            }
+//        }else if(view instanceof  ScrollView) {
+//
+//        }
+//
+//        if(motionEvent.getAction()==MotionEvent.ACTION_UP||motionEvent.getAction()==MotionEvent.ACTION_CANCEL){
+//            lw=Integer.MAX_VALUE;
+//            float w=motionEvent.getX()-x;
+//            Toast.makeText(this,w+"",Toast.LENGTH_LONG);
+//        }
+        return false;
+    }
+
+    @Override
+    public void onScrollChanged() {
+
     }
 }

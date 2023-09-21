@@ -393,5 +393,6 @@
 	
         <activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>
 		<activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
+		<activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
     </application>
 </manifest>

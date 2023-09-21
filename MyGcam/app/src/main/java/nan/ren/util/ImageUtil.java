@@ -4,7 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Environment;
 import android.util.Size;
+
+import com.Globals;
+import com.agc.util.AssetsUtil;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -34,9 +38,36 @@ public class ImageUtil {
 
     }
 
+    public static String getMyLogoPath(String fileName)
+    {
+        try {
+            if(fileName==null||fileName.trim().length()<1)return null;
+            String logoPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + fileName;
+            if (!new File(logoPath).exists()) {
+                try {
+                    logoPath = AssetsUtil.getAssetsFile(G.CONTEXT, "logos/" + fileName).getAbsolutePath();
+                }catch (Exception ex){ }
+            }
+            return logoPath;
+        }catch (Exception ex){
+            return null;
+        }
+    }
+
+    public static Bitmap getMyLogo(String fileName) {
+        try {
+            return getBitMap(getMyLogoPath(fileName));
+        }catch (Exception ex){
+             NUtil.dumpExceptionToSDCard(ex);
+            return null;
+        }catch (Throwable ex){
+            NUtil.dumpExceptionToSDCard(ex);
+            return null;
+        }
+    }
+
     public static Drawable getMyIcon(String fileName) {
         try {
-            G.log("getMyIcon>>>>>:"+fileName);
             Drawable extDrawable=null;
             try{extDrawable=getOuterDrawable(G.ICON_PATH+fileName,true);}catch (Exception ex){}
             try{
@@ -45,18 +76,14 @@ public class ImageUtil {
                 }
             }catch (Exception ex){}
             if(extDrawable==null) {
-                G.log("getMyIcon getOuterDrawable is null >>>>>:"+fileName);
                 extDrawable= getInnerDrawable(fileName);
             }
 
-            G.log("getMyIcon success:"+fileName);
             return extDrawable;
         }catch (Exception ex){
-            G.log("getMyIcon error:"+fileName);
             NUtil.dumpExceptionToSDCard(ex);
             return null;
         }catch (Throwable ex){
-            G.log("getMyIcon error:"+fileName);
             NUtil.dumpExceptionToSDCard(ex);
             return null;
         }
@@ -81,7 +108,6 @@ public class ImageUtil {
     public static Drawable getInnerDrawable(String filename){
         int identifier = G.RESOURCES.getIdentifier(filename, "drawable", G.PACKAGE_NAME);
         if (identifier == 0) {
-            G.log("getMyIcon getInnerDrawable is null  loadDefault >>>>>:"+filename);
             identifier = G.RESOURCES.getIdentifier("agc_lib_patcher", "drawable", G.PACKAGE_NAME);
         }
         if(identifier!=0)return  G.RESOURCES.getDrawable(identifier, null);
@@ -182,6 +208,16 @@ public class ImageUtil {
             bos.close();
         } catch (Exception e) {
             if(bos!=null)try{bos.close();}catch (Exception e2){}
+        }
+    }
+
+    public static Bitmap getBitMap(String path){
+        try {
+            Bitmap decodeFile = BitmapFactory.decodeFile(path);
+            decodeFile.copy(Bitmap.Config.ARGB_8888, true);
+            return decodeFile;
+        }catch (Exception ex){
+            return null;
         }
     }
 }

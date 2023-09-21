@@ -11,6 +11,7 @@ import com.Globals;
 
 import agc.Agc;
 import g.bak.TActivity;
+import nan.ren.activity.ConfigActivity;
 import nan.ren.activity.WmActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -20,24 +21,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         Globals.context=getApplicationContext();
         setContentView(R.layout.activity_main);
-        Intent intent=new Intent(this, WmActivity.class);
+        bind();
+        Intent intent=new Intent(this, ConfigActivity.class);
+        // Intent intent=new Intent(this, WmActivity.class);
         startActivity(intent);
-      //  bind();
-        //G.medianFilter(new File("/sdcard/DCIM/cc/1.jpg"));
-//        int width=getResources().getDisplayMetrics().widthPixels;
-//        GridLayout v=findViewById(R.id.poto_grid);
-//        int cnt=v.getColumnCount();
-//        G.log(width+"   "+cnt);
-//        for(int i=0;i<6;i++){
-//            ImageView iv=new ImageView(this);
-//            iv.setBackgroundColor(Color.parseColor("#55000000"));
-//            Size size=new Size((int)(0.9*width/cnt),200);
-//            Bitmap pic=ImageUtil.compressImage(ImageUtil.TMP_PATH+"0.jpg",size,true);
-//            iv.setImageDrawable(ImageUtil.bitmap2Drawable(pic));
-//            iv.setLayoutParams(new ViewGroup.LayoutParams(pic.getWidth(),pic.getHeight()));
-//            iv.setPadding(10,10,0,0);
-//            v.addView(iv);
-//        }
     }
 
 
@@ -50,12 +37,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         Log.i("xxxxxxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxx");
         try {
+            Intent intent=new Intent(this, WmActivity.class);
+            startActivity(intent);
           //  new File("/storage/emulated/0/Download/AGC.8.8/.tmp/1-1.jpg").createNewFile();
-            Agc.processImageWithLUT("/storage/emulated/0/Download/AGC.8.8/.tmp/1.jpg", "/storage/emulated/0/Download/AGC.8.8/.tmp/1-1.jpg", "Vier.cube", 1f, "/storage/emulated/0/Download/AGC.8.8/luts/");
+           // Agc.processImageWithLUT("/storage/emulated/0/Download/AGC.8.8/.tmp/1.jpg", "/storage/emulated/0/Download/AGC.8.8/.tmp/1-1.jpg", "Vier.cube", 1f, "/storage/emulated/0/Download/AGC.8.8/luts/");
         }catch (Exception e){
             Log.i("xxxxxxxxxxxxxxx",e.getMessage());
             e.printStackTrace();
         }
+        if(true)return;
         try {
            // new File("/storage/emulated/0/Download/AGC.8.8/.tmp/1-2.jpg").createNewFile();
             Agc.processImageWithLUT("/storage/emulated/0/Download/AGC.8.8/.tmp/1.jpg", "/storage/emulated/0/Download/AGC.8.8/.tmp/1-2.jpg", "kce.cube", 1f, "/storage/emulated/0/Download/AGC.8.8/luts/");
