@@ -17,7 +17,9 @@ import android.widget.TextView;
 
 import com.Utils.Lens;
 import com.Utils.Pref;
+import com.agc.pref.ConfigLoader;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -118,16 +120,25 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
    }
 
     View getToolBarView(){
+        int btnCount=5;
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,70));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        linearLayout.addView(getButton("关闭","close",screen_width/4-10));
+        linearLayout.addView(getButton("关闭","close",(screen_width/btnCount)/2-10));
         linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("选择主配文件","mainCfg",screen_width/4-10));
+        linearLayout.addView(getButton("选择主配置","mainCfg",screen_width/btnCount-10));
         linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("选择副配文件","secCfg",screen_width/4-10));
+        linearLayout.addView(getButton("选择副配置","secCfg",screen_width/btnCount-10));
         linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("合并","hebing",screen_width/4));
+        foceShow=getButton("强制显示","0",screen_width/btnCount-10);
+        setFoceShow(false);
+        linearLayout.addView(foceShow);
+        linearLayout.addView(getSplitView(10));
+        linearLayout.addView(getButton("合并","hebing",(screen_width/btnCount)/2-10));
+
+        linearLayout.addView(getSplitView(10));
+        linearLayout.addView(getButton("导入配置","import",screen_width/btnCount));
+
         return linearLayout;
     }
     View getSplitView(int w){
@@ -210,9 +221,11 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
 
     String getConfigByIndex(String configTxt,int index){
         StringBuffer configBf=new StringBuffer();
+        boolean isFoceShow=isFoceShow();
         String[] lines=configTxt.split("\n");
         for(int i=0;i<lines.length;i++){
             String tmp=lines[i].trim();
+            if(isFoceShow && tmp.indexOf("lib_profile_show_key_p")>0)continue;
             if(tmp.toLowerCase().indexOf("_key_p"+index+"_")>0) {
                 configBf.append(tmp).append("\n");
             }
@@ -291,7 +304,15 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
            } else if ("secCfg".equals(tag)) {
                selectFile(2);
                return;
+           } else if ("import".equals(tag)) {
+              // selectFile(3);
+               new ConfigLoader(this).onClick(view);
+               return;
+           } else if ((((Button) view).getText().toString()).startsWith("强制显示")) {
+               setFoceShow(!isFoceShow());
+               return;
            }
+
            return;
        }
 
@@ -338,13 +359,19 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
                             .replace("\n</string>","</string>");
                     initConfigNameMap(mainConfigTxt,true);
                     loadConfig(true);
-                }else{
+                }else if(requestCode==2){
                     secConfigTxt=FileUtil.getFileText(this,uri);
                     secConfigTxt=secConfigTxt.replace("><",">\n<")
                             .replace("> <",">\n<")
                             .replace("\n</string>","</string>");;
                     initConfigNameMap(secConfigTxt,false);
                     loadConfig(false);
+                }else{
+                    String cfgTxt=FileUtil.getFileText(this,uri);
+                    File configFile=ConfigLoader.getFileSharedPreferences(this);
+                    if(configFile.exists())configFile.delete();
+                    FileUtil.writeFile(configFile.getAbsolutePath(),cfgTxt);
+                    NUtil.toastL("导入配置成功！！");
                 }
             }
         }
@@ -377,6 +404,20 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
                     G.log("Error >> :"+tmp);
                 }
             }
+        }
+    }
+
+    Button foceShow;
+    boolean isFoceShow(){
+        return foceShow!=null&&foceShow.getTag().toString().equals("1");
+    }
+    void setFoceShow(boolean check){
+        if(check){
+            foceShow.setTag("1");
+            foceShow.setText("强制显示✔");
+        }else{
+            foceShow.setTag("0");
+            foceShow.setText("强制显示❌");
         }
     }
     String[] getCameraIdList(){
